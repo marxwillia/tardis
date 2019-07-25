@@ -7,9 +7,9 @@ import matplotlib.pylab as plt
 
 
 if os.environ.get('QT_API', None)=='pyqt':
-    from PyQt4 import QtGui, QtCore
+    from PyQt5 import QtGui, QtCore, QtWidgets
 elif os.environ.get('QT_API', None)=='pyside':
-    from PySide import QtGui, QtCore
+    from PySide import QtGui, QtCore, QtWidgets
 else:
     raise ImportError('QT_API was not set! Please exit the IPython console\n'
         ' and at the bash prompt use : \n\n export QT_API=pyside \n or\n'
@@ -416,7 +416,7 @@ class TreeModel(QtCore.QAbstractItemModel):
             return children[0].get_data(0)
 
 
-class TreeDelegate(QtGui.QStyledItemDelegate):
+class TreeDelegate(QtWidgets.QStyledItemDelegate):
     """Create a custom delegate to modify the columnview that displays the 
     TreeModel.
 
