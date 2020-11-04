@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.plasma.properties.ion_population &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href="../../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.plasma.properties.ion_population</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.plasma.properties.ion_population</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numexpr</span> <span class="k">as</span> <span class="nn">ne</span>
+
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+
+<span class="kn">from</span> <span class="nn">tardis.plasma.properties.base</span> <span class="kn">import</span> <span class="n">ProcessingPlasmaProperty</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.properties.continuum_processes</span> <span class="kn">import</span> <span class="n">get_ion_multi_index</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.exceptions</span> <span class="kn">import</span> <span class="n">PlasmaIonizationError</span>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;PhiSahaNebular&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PhiSahaLTE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RadiationFieldCorrection&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IonNumberDensity&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;IonNumberDensityHeNLTE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SahaFactor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ThermalPhiSahaLTE&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">calculate_block_ids_from_dataframe</span><span class="p">(</span><span class="n">dataframe</span><span class="p">):</span>
+    <span class="n">block_start_id</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">dataframe</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(([</span><span class="mi">0</span><span class="p">],</span> <span class="n">block_start_id</span><span class="p">,</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">dataframe</span><span class="p">)]))</span>
+
+
+<div class="viewcode-block" id="PhiSahaLTE"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.PhiSahaLTE">[docs]</a><span class="k">class</span> <span class="nc">PhiSahaLTE</span><span class="p">(</span><span class="n">ProcessingPlasmaProperty</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attributes:</span>
+<span class="sd">    phi : Pandas DataFrame, dtype float</span>
+<span class="sd">          Used for LTE ionization (at the radiation temperature).</span>
+<span class="sd">          Indexed by atomic number, ion number. Columns are zones.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;phi&quot;</span><span class="p">,)</span>
+    <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\Phi&quot;</span><span class="p">,)</span>
+    <span class="n">latex_formula</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">r</span><span class="s2">&quot;\dfrac{2Z_{i,j+1}}{Z_{i,j}}\Big(</span><span class="se">\</span>
+<span class="s2">                     dfrac{2\pi m_</span><span class="si">{e}</span><span class="s2">/\beta_{\textrm</span><span class="si">{rad}</span><span class="s2">}}{h^2}</span><span class="se">\</span>
+<span class="s2">                     Big)^{3/2}e^{\dfrac{-\chi_{i,j}}{kT_{\textrm</span><span class="si">{rad}</span><span class="s2">}}}&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">broadcast_ionization_energy</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="PhiSahaLTE.calculate"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.PhiSahaLTE.calculate">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="n">g_electron</span><span class="p">,</span> <span class="n">beta_rad</span><span class="p">,</span> <span class="n">partition_function</span><span class="p">,</span> <span class="n">ionization_data</span><span class="p">):</span>
+
+        <span class="n">phis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="n">partition_function</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="o">-</span> <span class="n">partition_function</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
+                <span class="n">partition_function</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="n">block_ids</span> <span class="o">=</span> <span class="n">calculate_block_ids_from_dataframe</span><span class="p">(</span><span class="n">partition_function</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">start_id</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">block_ids</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">end_id</span> <span class="o">=</span> <span class="n">block_ids</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">current_block</span> <span class="o">=</span> <span class="n">partition_function</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">start_id</span><span class="p">:</span><span class="n">end_id</span><span class="p">]</span>
+            <span class="n">current_phis</span> <span class="o">=</span> <span class="n">current_block</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">/</span> <span class="n">current_block</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">phis</span><span class="p">[</span><span class="n">start_id</span> <span class="o">-</span> <span class="n">i</span> <span class="p">:</span> <span class="n">end_id</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_phis</span>
+
+        <span class="n">broadcast_ionization_energy</span> <span class="o">=</span> <span class="n">ionization_data</span><span class="p">[</span>
+            <span class="n">partition_function</span><span class="o">.</span><span class="n">index</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+        <span class="n">phi_index</span> <span class="o">=</span> <span class="n">broadcast_ionization_energy</span><span class="o">.</span><span class="n">index</span>
+        <span class="n">broadcast_ionization_energy</span> <span class="o">=</span> <span class="n">broadcast_ionization_energy</span><span class="o">.</span><span class="n">values</span>
+
+        <span class="n">phi_coefficient</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mi">2</span>
+            <span class="o">*</span> <span class="n">g_electron</span>
+            <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">broadcast_ionization_energy</span><span class="p">,</span> <span class="o">-</span><span class="n">beta_rad</span><span class="p">))</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">phis</span> <span class="o">*</span> <span class="n">phi_coefficient</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">phi_index</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_calculate_block_ids</span><span class="p">(</span><span class="n">partition_function</span><span class="p">):</span>
+        <span class="n">partition_function</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="ThermalPhiSahaLTE"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.ThermalPhiSahaLTE">[docs]</a><span class="k">class</span> <span class="nc">ThermalPhiSahaLTE</span><span class="p">(</span><span class="n">PhiSahaLTE</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attributes:</span>
+<span class="sd">    phi : Pandas DataFrame, dtype float</span>
+<span class="sd">          Used for LTE ionization (at the electron temperature).</span>
+<span class="sd">          Indexed by atomic number, ion number. Columns are zones.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;thermal_phi_lte&quot;</span><span class="p">,)</span>
+    <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\Phi^{*}(T_\mathrm</span><span class="si">{e}</span><span class="s2">)&quot;</span><span class="p">,)</span>
+    <span class="n">latex_formula</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">r</span><span class="s2">&quot;\dfrac{2Z_{i,j+1}}{Z_{i,j}}\Big(</span><span class="se">\</span>
+<span class="s2">                     dfrac{2\pi m_</span><span class="si">{e}</span><span class="s2">/\beta_{\textrm</span><span class="si">{electron}</span><span class="s2">}}{h^2}</span><span class="se">\</span>
+<span class="s2">                     Big)^{3/2}e^{\dfrac{-\chi_{i,j}}{kT_{\textrm</span><span class="si">{electron}</span><span class="s2">}}}&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="ThermalPhiSahaLTE.calculate"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.ThermalPhiSahaLTE.calculate">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span>
+        <span class="n">thermal_g_electron</span><span class="p">,</span>
+        <span class="n">beta_electron</span><span class="p">,</span>
+        <span class="n">thermal_lte_partition_function</span><span class="p">,</span>
+        <span class="n">ionization_data</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ThermalPhiSahaLTE</span><span class="p">,</span> <span class="n">ThermalPhiSahaLTE</span><span class="p">)</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span>
+            <span class="n">thermal_g_electron</span><span class="p">,</span>
+            <span class="n">beta_electron</span><span class="p">,</span>
+            <span class="n">thermal_lte_partition_function</span><span class="p">,</span>
+            <span class="n">ionization_data</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="PhiSahaNebular"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.PhiSahaNebular">[docs]</a><span class="k">class</span> <span class="nc">PhiSahaNebular</span><span class="p">(</span><span class="n">ProcessingPlasmaProperty</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attributes:</span>
+<span class="sd">    phi : Pandas DataFrame, dtype float</span>
+<span class="sd">          Used for nebular ionization. Indexed by atomic number, ion number. Columns are zones.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;phi&quot;</span><span class="p">,)</span>
+    <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\Phi&quot;</span><span class="p">,)</span>
+    <span class="n">latex_formula</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">r</span><span class="s2">&quot;W(\delta\zeta_{i,j}+W(1-\zeta_{i,j}))\left(</span><span class="se">\</span>
+<span class="s2">                     dfrac{T_{\textrm</span><span class="si">{electron}</span><span class="s2">}}{T_{\textrm</span><span class="si">{rad}</span><span class="s2">}}\right)^{1/2}&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="PhiSahaNebular.calculate"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.PhiSahaNebular.calculate">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span>
+        <span class="n">t_rad</span><span class="p">,</span>
+        <span class="n">w</span><span class="p">,</span>
+        <span class="n">zeta_data</span><span class="p">,</span>
+        <span class="n">t_electrons</span><span class="p">,</span>
+        <span class="n">delta</span><span class="p">,</span>
+        <span class="n">g_electron</span><span class="p">,</span>
+        <span class="n">beta_rad</span><span class="p">,</span>
+        <span class="n">partition_function</span><span class="p">,</span>
+        <span class="n">ionization_data</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">phi_lte</span> <span class="o">=</span> <span class="n">PhiSahaLTE</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span>
+            <span class="n">g_electron</span><span class="p">,</span> <span class="n">beta_rad</span><span class="p">,</span> <span class="n">partition_function</span><span class="p">,</span> <span class="n">ionization_data</span>
+        <span class="p">)</span>
+        <span class="n">zeta</span> <span class="o">=</span> <span class="n">PhiSahaNebular</span><span class="o">.</span><span class="n">get_zeta_values</span><span class="p">(</span><span class="n">zeta_data</span><span class="p">,</span> <span class="n">phi_lte</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">t_rad</span><span class="p">)</span>
+        <span class="n">phis</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">phi_lte</span>
+            <span class="o">*</span> <span class="n">w</span>
+            <span class="o">*</span> <span class="p">((</span><span class="n">zeta</span> <span class="o">*</span> <span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">zeta</span><span class="p">))</span>
+            <span class="o">*</span> <span class="p">(</span><span class="n">t_electrons</span> <span class="o">/</span> <span class="n">t_rad</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">phis</span></div>
+
+<div class="viewcode-block" id="PhiSahaNebular.get_zeta_values"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.PhiSahaNebular.get_zeta_values">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_zeta_values</span><span class="p">(</span><span class="n">zeta_data</span><span class="p">,</span> <span class="n">ion_index</span><span class="p">,</span> <span class="n">t_rad</span><span class="p">):</span>
+        <span class="n">zeta_t_rad</span> <span class="o">=</span> <span class="n">zeta_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">zeta_values</span> <span class="o">=</span> <span class="n">zeta_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ion_index</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="n">zeta</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span>
+            <span class="n">zeta_t_rad</span><span class="p">,</span> <span class="n">zeta_values</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="p">)(</span><span class="n">t_rad</span><span class="p">)</span>
+        <span class="n">zeta</span> <span class="o">=</span> <span class="n">zeta</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">zeta</span><span class="p">)):</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;t_rads outside of zeta factor interpolation&quot;</span>
+                <span class="s2">&quot; zeta_min=</span><span class="si">{0:.2f}</span><span class="s2"> zeta_max=</span><span class="si">{1:.2f}</span><span class="s2"> &quot;</span>
+                <span class="s2">&quot;- replacing with 1s&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">zeta_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+                    <span class="n">zeta_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+                    <span class="n">t_rad</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">zeta</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">zeta</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+        <span class="k">return</span> <span class="n">zeta</span></div></div>
+
+
+<div class="viewcode-block" id="RadiationFieldCorrection"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.RadiationFieldCorrection">[docs]</a><span class="k">class</span> <span class="nc">RadiationFieldCorrection</span><span class="p">(</span><span class="n">ProcessingPlasmaProperty</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attributes:</span>
+<span class="sd">    delta : Pandas DataFrame, dtype float</span>
+<span class="sd">            Calculates the radiation field correction (see Mazzali &amp; Lucy, 1993) if</span>
+<span class="sd">            not given as input in the config. file. The default chi_0_species is</span>
+<span class="sd">            Ca II, which is good for type Ia supernovae. For type II supernovae,</span>
+<span class="sd">            (1, 1) should be used. Indexed by atomic number, ion number. The columns are zones.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">,)</span>
+    <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\delta&quot;</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">plasma_parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">departure_coefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">chi_0_species</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="n">delta_treatment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">RadiationFieldCorrection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">plasma_parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">departure_coefficient</span> <span class="o">=</span> <span class="n">departure_coefficient</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delta_treatment</span> <span class="o">=</span> <span class="n">delta_treatment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chi_0_species</span> <span class="o">=</span> <span class="n">chi_0_species</span>
+
+    <span class="k">def</span> <span class="nf">_set_chi_0</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ionization_data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_0_species</span> <span class="o">==</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">chi_0</span> <span class="o">=</span> <span class="mf">1.9020591570241798e-11</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">chi_0</span> <span class="o">=</span> <span class="n">ionization_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">chi_0_species</span><span class="p">]</span>
+
+<div class="viewcode-block" id="RadiationFieldCorrection.calculate"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.RadiationFieldCorrection.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">ionization_data</span><span class="p">,</span> <span class="n">beta_rad</span><span class="p">,</span> <span class="n">t_electrons</span><span class="p">,</span> <span class="n">t_rad</span><span class="p">,</span> <span class="n">beta_electron</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;chi_0&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set_chi_0</span><span class="p">(</span><span class="n">ionization_data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_treatment</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">departure_coefficient</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">departure_coefficient</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">w</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">departure_coefficient</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">departure_coefficient</span>
+            <span class="n">radiation_field_correction</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span>
+                <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ionization_data</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">beta_rad</span><span class="p">))</span>
+            <span class="p">)</span>
+            <span class="n">less_than_chi_0</span> <span class="o">=</span> <span class="p">(</span><span class="n">ionization_data</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+            <span class="n">factor_a</span> <span class="o">=</span> <span class="n">t_electrons</span> <span class="o">/</span> <span class="p">(</span><span class="n">departure_coefficient</span> <span class="o">*</span> <span class="n">w</span> <span class="o">*</span> <span class="n">t_rad</span><span class="p">)</span>
+            <span class="n">radiation_field_correction</span><span class="p">[</span><span class="o">~</span><span class="n">less_than_chi_0</span><span class="p">]</span> <span class="o">=</span> <span class="n">factor_a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span>
+                    <span class="n">ionization_data</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">~</span><span class="n">less_than_chi_0</span><span class="p">],</span>
+                    <span class="n">beta_rad</span> <span class="o">-</span> <span class="n">beta_electron</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">radiation_field_correction</span><span class="p">[</span><span class="n">less_than_chi_0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">ionization_data</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">less_than_chi_0</span><span class="p">],</span> <span class="n">beta_rad</span><span class="p">)</span>
+                <span class="o">-</span> <span class="n">beta_rad</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_0</span>
+            <span class="p">)</span>
+            <span class="n">radiation_field_correction</span><span class="p">[</span><span class="n">less_than_chi_0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">factor_a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">ionization_data</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">less_than_chi_0</span><span class="p">],</span> <span class="n">beta_rad</span><span class="p">)</span>
+                <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_0</span> <span class="o">*</span> <span class="n">beta_electron</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">radiation_field_correction</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">ionization_data</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">beta_rad</span><span class="p">)))</span>
+                <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_treatment</span>
+            <span class="p">)</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">radiation_field_correction</span><span class="p">,</span>
+            <span class="n">columns</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_rad</span><span class="p">)),</span>
+            <span class="n">index</span><span class="o">=</span><span class="n">ionization_data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">delta</span></div></div>
+
+
+<div class="viewcode-block" id="IonNumberDensity"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.IonNumberDensity">[docs]</a><span class="k">class</span> <span class="nc">IonNumberDensity</span><span class="p">(</span><span class="n">ProcessingPlasmaProperty</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attributes:</span>
+<span class="sd">    ion_number_density : Pandas DataFrame, dtype float</span>
+<span class="sd">                         Index atom number, ion number. Columns zones.</span>
+<span class="sd">    electron_densities : Numpy Array, dtype float</span>
+
+<span class="sd">    Convergence process to find the correct solution. A trial value for</span>
+<span class="sd">    the electron density is initiated in a particular zone. The ion</span>
+<span class="sd">    number densities are then calculated using the Saha equation. The</span>
+<span class="sd">    electron density is then re-calculated by using the ion number</span>
+<span class="sd">    densities to sum over the number of free electrons. If the two values</span>
+<span class="sd">    for the electron densities are not similar to within the threshold</span>
+<span class="sd">    value, a new guess for the value of the electron density is chosen</span>
+<span class="sd">    and the process is repeated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;ion_number_density&quot;</span><span class="p">,</span> <span class="s2">&quot;electron_densities&quot;</span><span class="p">)</span>
+    <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;N_{i,j}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;n_</span><span class="si">{e}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="p">,</span> <span class="n">ion_zero_threshold</span><span class="o">=</span><span class="mf">1e-20</span><span class="p">,</span> <span class="n">electron_densities</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">IonNumberDensity</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">plasma_parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ion_zero_threshold</span> <span class="o">=</span> <span class="n">ion_zero_threshold</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_electron_densities</span> <span class="o">=</span> <span class="n">electron_densities</span>
+
+<div class="viewcode-block" id="IonNumberDensity.calculate_with_n_electron"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.IonNumberDensity.calculate_with_n_electron">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">calculate_with_n_electron</span><span class="p">(</span>
+        <span class="n">phi</span><span class="p">,</span>
+        <span class="n">partition_function</span><span class="p">,</span>
+        <span class="n">number_density</span><span class="p">,</span>
+        <span class="n">n_electron</span><span class="p">,</span>
+        <span class="n">block_ids</span><span class="p">,</span>
+        <span class="n">ion_zero_threshold</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">block_ids</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">block_ids</span> <span class="o">=</span> <span class="n">IonNumberDensity</span><span class="o">.</span><span class="n">_calculate_block_ids</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+        <span class="n">ion_populations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">partition_function</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+        <span class="n">phi_electron</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">phi</span><span class="o">.</span><span class="n">values</span> <span class="o">/</span> <span class="n">n_electron</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">start_id</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">block_ids</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">end_id</span> <span class="o">=</span> <span class="n">block_ids</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">current_phis</span> <span class="o">=</span> <span class="n">phi_electron</span><span class="p">[</span><span class="n">start_id</span><span class="p">:</span><span class="n">end_id</span><span class="p">]</span>
+            <span class="n">phis_product</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumprod</span><span class="p">(</span><span class="n">current_phis</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">tmp_ion_populations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">current_phis</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">current_phis</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">)</span>
+            <span class="n">tmp_ion_populations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">number_density</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span>
+                <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">phis_product</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">tmp_ion_populations</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">tmp_ion_populations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">phis_product</span>
+
+            <span class="n">ion_populations</span><span class="p">[</span><span class="n">start_id</span> <span class="o">+</span> <span class="n">i</span> <span class="p">:</span> <span class="n">end_id</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_ion_populations</span>
+
+        <span class="n">ion_populations</span><span class="p">[</span><span class="n">ion_populations</span> <span class="o">&lt;</span> <span class="n">ion_zero_threshold</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ion_populations</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">partition_function</span><span class="o">.</span><span class="n">index</span><span class="p">),</span>
+            <span class="n">block_ids</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_calculate_block_ids</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">calculate_block_ids_from_dataframe</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+
+<div class="viewcode-block" id="IonNumberDensity.calculate"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.IonNumberDensity.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">partition_function</span><span class="p">,</span> <span class="n">number_density</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_electron_densities</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">n_e_convergence_threshold</span> <span class="o">=</span> <span class="mf">0.05</span>
+            <span class="n">n_electron</span> <span class="o">=</span> <span class="n">number_density</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">n_electron_iterations</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="p">(</span>
+                    <span class="n">ion_number_density</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span><span class="p">,</span>
+                <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_with_n_electron</span><span class="p">(</span>
+                    <span class="n">phi</span><span class="p">,</span>
+                    <span class="n">partition_function</span><span class="p">,</span>
+                    <span class="n">number_density</span><span class="p">,</span>
+                    <span class="n">n_electron</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ion_zero_threshold</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">ion_numbers</span> <span class="o">=</span> <span class="n">ion_number_density</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span>
+                    <span class="mi">1</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">values</span>
+                <span class="n">ion_numbers</span> <span class="o">=</span> <span class="n">ion_numbers</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">ion_numbers</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="n">new_n_electron</span> <span class="o">=</span> <span class="p">(</span><span class="n">ion_number_density</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="n">ion_numbers</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+                    <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">new_n_electron</span><span class="p">)):</span>
+                    <span class="k">raise</span> <span class="n">PlasmaIonizationError</span><span class="p">(</span>
+                        <span class="s1">&#39;n_electron just turned &quot;nan&quot; -&#39;</span> <span class="s2">&quot; aborting&quot;</span>
+                    <span class="p">)</span>
+                <span class="n">n_electron_iterations</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">n_electron_iterations</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                        <span class="s2">&quot;n_electron iterations above 100 (</span><span class="si">{0}</span><span class="s2">) -&quot;</span>
+                        <span class="s2">&quot; something is probably wrong&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">n_electron_iterations</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">new_n_electron</span> <span class="o">-</span> <span class="n">n_electron</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_electron</span>
+                    <span class="o">&lt;</span> <span class="n">n_e_convergence_threshold</span>
+                <span class="p">):</span>
+                    <span class="k">break</span>
+                <span class="n">n_electron</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">new_n_electron</span> <span class="o">+</span> <span class="n">n_electron</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n_electron</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_electron_densities</span>
+            <span class="n">ion_number_density</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_with_n_electron</span><span class="p">(</span>
+                <span class="n">phi</span><span class="p">,</span>
+                <span class="n">partition_function</span><span class="p">,</span>
+                <span class="n">number_density</span><span class="p">,</span>
+                <span class="n">n_electron</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ion_zero_threshold</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ion_number_density</span><span class="p">,</span> <span class="n">n_electron</span></div></div>
+
+
+<div class="viewcode-block" id="IonNumberDensityHeNLTE"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.IonNumberDensityHeNLTE">[docs]</a><span class="k">class</span> <span class="nc">IonNumberDensityHeNLTE</span><span class="p">(</span><span class="n">ProcessingPlasmaProperty</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attributes:</span>
+<span class="sd">    ion_number_density : Pandas DataFrame, dtype float</span>
+<span class="sd">                         Index atom number, ion number. Columns zones.</span>
+<span class="sd">    electron_densities : Numpy Array, dtype float</span>
+
+<span class="sd">    Convergence process to find the correct solution. A trial value for</span>
+<span class="sd">    the electron density is initiated in a particular zone. The ion</span>
+<span class="sd">    number densities are then calculated using the Saha equation. The</span>
+<span class="sd">    electron density is then re-calculated by using the ion number</span>
+<span class="sd">    densities to sum over the number of free electrons. If the two values</span>
+<span class="sd">    for the electron densities are not similar to within the threshold</span>
+<span class="sd">    value, a new guess for the value of the electron density is chosen</span>
+<span class="sd">    and the process is repeated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;ion_number_density&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;electron_densities&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;helium_population_updated&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;N_{i,j}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;n_</span><span class="si">{e}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">plasma_parent</span><span class="p">,</span> <span class="n">ion_zero_threshold</span><span class="o">=</span><span class="mf">1e-20</span><span class="p">,</span> <span class="n">electron_densities</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">IonNumberDensityHeNLTE</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">plasma_parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ion_zero_threshold</span> <span class="o">=</span> <span class="n">ion_zero_threshold</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_electron_densities</span> <span class="o">=</span> <span class="n">electron_densities</span>
+
+<div class="viewcode-block" id="IonNumberDensityHeNLTE.update_he_population"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.IonNumberDensityHeNLTE.update_he_population">[docs]</a>    <span class="k">def</span> <span class="nf">update_he_population</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">helium_population</span><span class="p">,</span> <span class="n">n_electron</span><span class="p">,</span> <span class="n">number_density</span>
+    <span class="p">):</span>
+        <span class="n">helium_population_updated</span> <span class="o">=</span> <span class="n">helium_population</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">he_one_population</span> <span class="o">=</span> <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="n">n_electron</span><span class="p">)</span>
+        <span class="n">he_three_population</span> <span class="o">=</span> <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span>
+            <span class="mf">1.0</span> <span class="o">/</span> <span class="n">n_electron</span>
+        <span class="p">)</span>
+        <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">he_one_population</span><span class="p">)</span>
+        <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">he_three_population</span><span class="p">)</span>
+        <span class="n">unnormalised</span> <span class="o">=</span> <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">normalised</span> <span class="o">=</span> <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span>
+            <span class="n">number_density</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="n">unnormalised</span>
+        <span class="p">)</span>
+        <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">normalised</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">helium_population_updated</span></div>
+
+<div class="viewcode-block" id="IonNumberDensityHeNLTE.calculate"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.IonNumberDensityHeNLTE.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">partition_function</span><span class="p">,</span> <span class="n">number_density</span><span class="p">,</span> <span class="n">helium_population</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_electron_densities</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">n_e_convergence_threshold</span> <span class="o">=</span> <span class="mf">0.05</span>
+            <span class="n">n_electron</span> <span class="o">=</span> <span class="n">number_density</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">n_electron_iterations</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="p">(</span>
+                    <span class="n">ion_number_density</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span><span class="p">,</span>
+                <span class="p">)</span> <span class="o">=</span> <span class="n">IonNumberDensity</span><span class="o">.</span><span class="n">calculate_with_n_electron</span><span class="p">(</span>
+                    <span class="n">phi</span><span class="p">,</span>
+                    <span class="n">partition_function</span><span class="p">,</span>
+                    <span class="n">number_density</span><span class="p">,</span>
+                    <span class="n">n_electron</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ion_zero_threshold</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">helium_population_updated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_he_population</span><span class="p">(</span>
+                    <span class="n">helium_population</span><span class="p">,</span> <span class="n">n_electron</span><span class="p">,</span> <span class="n">number_density</span>
+                <span class="p">)</span>
+                <span class="n">ion_number_density</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                    <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">ion_number_density</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                    <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">ion_number_density</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                    <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="n">ion_numbers</span> <span class="o">=</span> <span class="n">ion_number_density</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span>
+                    <span class="mi">1</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">values</span>
+                <span class="n">ion_numbers</span> <span class="o">=</span> <span class="n">ion_numbers</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">ion_numbers</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="n">new_n_electron</span> <span class="o">=</span> <span class="p">(</span><span class="n">ion_number_density</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="n">ion_numbers</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+                    <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">new_n_electron</span><span class="p">)):</span>
+                    <span class="k">raise</span> <span class="n">PlasmaIonizationError</span><span class="p">(</span>
+                        <span class="s1">&#39;n_electron just turned &quot;nan&quot; -&#39;</span> <span class="s2">&quot; aborting&quot;</span>
+                    <span class="p">)</span>
+                <span class="n">n_electron_iterations</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">n_electron_iterations</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                        <span class="s2">&quot;n_electron iterations above 100 (</span><span class="si">{0}</span><span class="s2">) -&quot;</span>
+                        <span class="s2">&quot; something is probably wrong&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">n_electron_iterations</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">new_n_electron</span> <span class="o">-</span> <span class="n">n_electron</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_electron</span>
+                    <span class="o">&lt;</span> <span class="n">n_e_convergence_threshold</span>
+                <span class="p">):</span>
+                    <span class="k">break</span>
+                <span class="n">n_electron</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">new_n_electron</span> <span class="o">+</span> <span class="n">n_electron</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n_electron</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_electron_densities</span>
+            <span class="p">(</span>
+                <span class="n">ion_number_density</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span><span class="p">,</span>
+            <span class="p">)</span> <span class="o">=</span> <span class="n">IonNumberDensity</span><span class="o">.</span><span class="n">calculate_with_n_electron</span><span class="p">(</span>
+                <span class="n">phi</span><span class="p">,</span>
+                <span class="n">partition_function</span><span class="p">,</span>
+                <span class="n">number_density</span><span class="p">,</span>
+                <span class="n">n_electron</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">block_ids</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ion_zero_threshold</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="n">helium_population_updated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_he_population</span><span class="p">(</span>
+                <span class="n">helium_population</span><span class="p">,</span> <span class="n">n_electron</span><span class="p">,</span> <span class="n">number_density</span>
+            <span class="p">)</span>
+            <span class="n">ion_number_density</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">ion_number_density</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">ion_number_density</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="n">helium_population_updated</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">ion_number_density</span><span class="p">,</span> <span class="n">n_electron</span><span class="p">,</span> <span class="n">helium_population_updated</span></div></div>
+
+
+<div class="viewcode-block" id="SahaFactor"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.SahaFactor">[docs]</a><span class="k">class</span> <span class="nc">SahaFactor</span><span class="p">(</span><span class="n">ProcessingPlasmaProperty</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates the &#39;Saha factor&#39; Phi_ik = n_i* / (n_k* n_e), i.e.,</span>
+<span class="sd">    the ratio of the LTE level population n_i*, and the product of</span>
+<span class="sd">    the LTE ion density n_k* and the actual electron density n_e.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">    phi_ik: Pandas DataFrame, dtype float</span>
+<span class="sd">            Indexed by atom number, ion number, level number.</span>
+<span class="sd">            Columns are zones.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;phi_ik&quot;</span><span class="p">,)</span>
+    <span class="n">latex_name</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\Phi_{i,\kappa}&quot;</span><span class="p">,)</span>
+
+<div class="viewcode-block" id="SahaFactor.calculate"><a class="viewcode-back" href="../../../../api/tardis.plasma.properties.ion_population.html#tardis.plasma.properties.ion_population.SahaFactor.calculate">[docs]</a>    <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">thermal_phi_lte</span><span class="p">,</span>
+        <span class="n">thermal_lte_level_boltzmann_factor</span><span class="p">,</span>
+        <span class="n">thermal_lte_partition_function</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">boltzmann_factor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_boltzmann_factor</span><span class="p">(</span>
+            <span class="n">thermal_lte_level_boltzmann_factor</span>
+        <span class="p">)</span>
+        <span class="n">phi_saha_index</span> <span class="o">=</span> <span class="n">get_ion_multi_index</span><span class="p">(</span><span class="n">boltzmann_factor</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">partition_function_index</span> <span class="o">=</span> <span class="n">get_ion_multi_index</span><span class="p">(</span>
+            <span class="n">boltzmann_factor</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">next_higher</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+        <span class="n">phi_saha</span> <span class="o">=</span> <span class="n">thermal_phi_lte</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">phi_saha_index</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+        <span class="c1"># Replace zero values in phi_saha to avoid zero division in Saha factor</span>
+        <span class="n">phi_saha</span><span class="p">[</span><span class="n">phi_saha</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">min</span>
+        <span class="n">partition_function</span> <span class="o">=</span> <span class="n">thermal_lte_partition_function</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="n">partition_function_index</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">values</span>
+        <span class="k">return</span> <span class="n">boltzmann_factor</span> <span class="o">/</span> <span class="p">(</span><span class="n">phi_saha</span> <span class="o">*</span> <span class="n">partition_function</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_prepare_boltzmann_factor</span><span class="p">(</span><span class="n">boltzmann_factor</span><span class="p">):</span>
+        <span class="n">atomic_number</span> <span class="o">=</span> <span class="n">boltzmann_factor</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">ion_number</span> <span class="o">=</span> <span class="n">boltzmann_factor</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">selected_ions_mask</span> <span class="o">=</span> <span class="n">atomic_number</span> <span class="o">!=</span> <span class="n">ion_number</span>
+        <span class="k">return</span> <span class="n">boltzmann_factor</span><span class="p">[</span><span class="n">selected_ions_mask</span><span class="p">]</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

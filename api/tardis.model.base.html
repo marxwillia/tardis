@@ -1,0 +1,520 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.model.base module &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tardis.model.density module" href="tardis.model.density.html" />
+    <link rel="prev" title="tardis.model package" href="tardis.model.html" />
+    <link href="../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">tardis</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tardis.html">tardis package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="tardis.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="tardis.io.html">tardis.io package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="tardis.model.html">tardis.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.html">tardis.montecarlo package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.plasma.html">tardis.plasma package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.scripts.html">tardis.scripts package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.simulation.html">tardis.simulation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.stats.html">tardis.stats package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.util.html">tardis.util package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.widgets.html">tardis.widgets package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.html#module-tardis">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">tardis</a> &raquo;</li>
+        
+          <li><a href="tardis.html">tardis package</a> &raquo;</li>
+        
+          <li><a href="tardis.model.html">tardis.model package</a> &raquo;</li>
+        
+      <li>tardis.model.base module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/tardis.model.base.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-tardis.model.base">
+<span id="tardis-model-base-module"></span><h1>tardis.model.base module<a class="headerlink" href="#module-tardis.model.base" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="tardis.model.base.Radial1DModel">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.model.base.</code><code class="sig-name descname">Radial1DModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/model/base.html#Radial1DModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.model.base.Radial1DModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.io.util.html#tardis.io.util.HDFWriterMixin" title="tardis.io.util.HDFWriterMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.io.util.HDFWriterMixin</span></code></a></p>
+<p>An object that hold information about the individual shells.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>velocity</strong><span class="classifier">np.ndarray</span></dt><dd><p>An array with n+1 (for n shells) velocities “cut” to the provided
+boundaries</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To access the entire, “uncut”, velocity array,</p>
+</div>
+<p>use <cite>raw_velocity</cite></p>
+</dd>
+<dt><strong>homologous_density</strong><span class="classifier">HomologousDensity</span></dt><dd></dd>
+<dt><strong>abundance</strong><span class="classifier">pd.DataFrame</span></dt><dd></dd>
+<dt><strong>time_explosion</strong><span class="classifier">astropy.units.Quantity</span></dt><dd><p>Time since explosion</p>
+</dd>
+<dt><strong>t_inner</strong><span class="classifier">astropy.units.Quantity</span></dt><dd></dd>
+<dt><strong>luminosity_requested</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>t_radiative</strong><span class="classifier">astropy.units.Quantity</span></dt><dd><p>Radiative temperature for the shells</p>
+</dd>
+<dt><strong>dilution_factor</strong><span class="classifier">np.ndarray</span></dt><dd><p>If None, the dilution_factor will be initialized with the geometric
+dilution factor.</p>
+</dd>
+<dt><strong>v_boundary_inner</strong><span class="classifier">astropy.units.Quantity</span></dt><dd></dd>
+<dt><strong>v_boundary_outer</strong><span class="classifier">astropy.units.Quantity</span></dt><dd></dd>
+<dt><strong>raw_velocity</strong><span class="classifier">np.ndarray</span></dt><dd><p>The complete array of the velocities, without being cut by
+<cite>v_boundary_inner</cite> and <cite>v_boundary_outer</cite></p>
+</dd>
+<dt><strong>electron_densities</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>w</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>Shortcut for <cite>dilution_factor</cite></p>
+</dd>
+<dt><strong>t_rad</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd><p>Shortcut for <cite>t_radiative</cite></p>
+</dd>
+<dt><strong>radius</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>r_inner</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>r_outer</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>r_middle</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>v_inner</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>v_outer</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>v_middle</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>density</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>volume</strong><span class="classifier">astropy.units.quantity.Quantity</span></dt><dd></dd>
+<dt><strong>no_of_shells</strong><span class="classifier">int</span></dt><dd><p>The number of shells as formed by <cite>v_boundary_inner</cite> and
+<cite>v_boundary_outer</cite></p>
+</dd>
+<dt><strong>no_of_raw_shells</strong><span class="classifier">int</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.abundance">
+<em class="property">property </em><code class="sig-name descname">abundance</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.abundance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.density">
+<em class="property">property </em><code class="sig-name descname">density</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.density" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.dilution_factor">
+<em class="property">property </em><code class="sig-name descname">dilution_factor</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.dilution_factor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.from_config">
+<em class="property">classmethod </em><code class="sig-name descname">from_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/model/base.html#Radial1DModel.from_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.model.base.Radial1DModel.from_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new Radial1DModel instance from a Configuration object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">tardis.io.config_reader.Configuration</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Radial1DModel</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.from_csvy">
+<em class="property">classmethod </em><code class="sig-name descname">from_csvy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/model/base.html#Radial1DModel.from_csvy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.model.base.Radial1DModel.from_csvy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new Radial1DModel instance from a Configuration object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">tardis.io.config_reader.Configuration</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Radial1DModel</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.model.base.Radial1DModel.hdf_name">
+<code class="sig-name descname">hdf_name</code><em class="property"> = 'model'</em><a class="headerlink" href="#tardis.model.base.Radial1DModel.hdf_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.model.base.Radial1DModel.hdf_properties">
+<code class="sig-name descname">hdf_properties</code><em class="property"> = ['t_inner', 'w', 't_radiative', 'v_inner', 'v_outer', 'homologous_density']</em><a class="headerlink" href="#tardis.model.base.Radial1DModel.hdf_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.no_of_raw_shells">
+<em class="property">property </em><code class="sig-name descname">no_of_raw_shells</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.no_of_raw_shells" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.no_of_shells">
+<em class="property">property </em><code class="sig-name descname">no_of_shells</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.no_of_shells" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.r_inner">
+<em class="property">property </em><code class="sig-name descname">r_inner</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.r_inner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.r_middle">
+<em class="property">property </em><code class="sig-name descname">r_middle</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.r_middle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.r_outer">
+<em class="property">property </em><code class="sig-name descname">r_outer</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.r_outer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.radius">
+<em class="property">property </em><code class="sig-name descname">radius</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.radius" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.t_rad">
+<em class="property">property </em><code class="sig-name descname">t_rad</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.t_rad" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.t_radiative">
+<em class="property">property </em><code class="sig-name descname">t_radiative</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.t_radiative" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.v_boundary_inner">
+<em class="property">property </em><code class="sig-name descname">v_boundary_inner</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.v_boundary_inner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.v_boundary_inner_index">
+<em class="property">property </em><code class="sig-name descname">v_boundary_inner_index</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.v_boundary_inner_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.v_boundary_outer">
+<em class="property">property </em><code class="sig-name descname">v_boundary_outer</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.v_boundary_outer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.v_boundary_outer_index">
+<em class="property">property </em><code class="sig-name descname">v_boundary_outer_index</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.v_boundary_outer_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.v_inner">
+<em class="property">property </em><code class="sig-name descname">v_inner</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.v_inner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.v_middle">
+<em class="property">property </em><code class="sig-name descname">v_middle</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.v_middle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.v_outer">
+<em class="property">property </em><code class="sig-name descname">v_outer</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.v_outer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.velocity">
+<em class="property">property </em><code class="sig-name descname">velocity</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.velocity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.volume">
+<em class="property">property </em><code class="sig-name descname">volume</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.volume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.model.base.Radial1DModel.w">
+<em class="property">property </em><code class="sig-name descname">w</code><a class="headerlink" href="#tardis.model.base.Radial1DModel.w" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tardis.model.density.html" class="btn btn-neutral float-right" title="tardis.model.density module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tardis.model.html" class="btn btn-neutral float-left" title="tardis.model package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

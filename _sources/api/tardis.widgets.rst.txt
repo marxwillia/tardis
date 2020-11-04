@@ -1,0 +1,20 @@
+tardis.widgets package
+======================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   tardis.widgets.line_info
+   tardis.widgets.shell_info
+   tardis.widgets.util
+
+Module contents
+---------------
+
+.. automodule:: tardis.widgets
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,658 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.util.base module &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tardis.util.colored_logger module" href="tardis.util.colored_logger.html" />
+    <link rel="prev" title="tardis.util package" href="tardis.util.html" />
+    <link href="../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">tardis</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tardis.html">tardis package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="tardis.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="tardis.io.html">tardis.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.model.html">tardis.model package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.montecarlo.html">tardis.montecarlo package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.plasma.html">tardis.plasma package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.scripts.html">tardis.scripts package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.simulation.html">tardis.simulation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.stats.html">tardis.stats package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="tardis.util.html">tardis.util package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tardis.widgets.html">tardis.widgets package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tardis.html#module-tardis">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">tardis</a> &raquo;</li>
+        
+          <li><a href="tardis.html">tardis package</a> &raquo;</li>
+        
+          <li><a href="tardis.util.html">tardis.util package</a> &raquo;</li>
+        
+      <li>tardis.util.base module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/tardis.util.base.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-tardis.util.base">
+<span id="tardis-util-base-module"></span><h1>tardis.util.base module<a class="headerlink" href="#module-tardis.util.base" title="Permalink to this headline">¶</a></h1>
+<dl class="py exception">
+<dt id="tardis.util.base.MalformedElementSymbolError">
+<em class="property">exception </em><code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">MalformedElementSymbolError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">malformed_element_symbol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#MalformedElementSymbolError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.MalformedElementSymbolError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tardis.util.base.MalformedError" title="tardis.util.base.MalformedError"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.util.base.MalformedError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="tardis.util.base.MalformedError">
+<em class="property">exception </em><code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">MalformedError</code><a class="reference internal" href="../_modules/tardis/util/base.html#MalformedError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.MalformedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="tardis.util.base.MalformedQuantityError">
+<em class="property">exception </em><code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">MalformedQuantityError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">malformed_quantity_string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#MalformedQuantityError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.MalformedQuantityError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tardis.util.base.MalformedError" title="tardis.util.base.MalformedError"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.util.base.MalformedError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="tardis.util.base.MalformedSpeciesError">
+<em class="property">exception </em><code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">MalformedSpeciesError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">malformed_element_symbol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#MalformedSpeciesError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.MalformedSpeciesError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tardis.util.base.MalformedError" title="tardis.util.base.MalformedError"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.util.base.MalformedError</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.atomic_number2element_symbol">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">atomic_number2element_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atomic_number</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#atomic_number2element_symbol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.atomic_number2element_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert atomic number to string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>atomic_number</strong><span class="classifier">int</span></dt><dd><p>Inputted atomic number</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>Returned corresponding element symbol</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.calculate_luminosity">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">calculate_luminosity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spec_fname</span></em>, <em class="sig-param"><span class="n">distance</span></em>, <em class="sig-param"><span class="n">wavelength_column</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">wavelength_unit</span><span class="o">=</span><span class="default_value">Unit('Angstrom')</span></em>, <em class="sig-param"><span class="n">flux_column</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">flux_unit</span><span class="o">=</span><span class="default_value">Unit('erg / (Angstrom cm2 s)')</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#calculate_luminosity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.calculate_luminosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates luminosity of star.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>spec_fname</strong><span class="classifier">file or str</span></dt><dd><p>File or file name to be read</p>
+</dd>
+<dt><strong>distance</strong><span class="classifier">float</span></dt><dd><p>Distance to star</p>
+</dd>
+<dt><strong>wavelength_column</strong><span class="classifier">int, optional(default = 0)</span></dt><dd><p>Column index in which the wavelength is stored</p>
+</dd>
+<dt><strong>wavelength_unit</strong><span class="classifier">float, optional(default = u.angstrom)</span></dt><dd><p>Dictates units used for calculating wavelength.</p>
+</dd>
+<dt><strong>flux_column</strong><span class="classifier">int, optional(default = 1)</span></dt><dd><p>Column index in which the flux is stored</p>
+</dd>
+<dt><strong>flux_unit</strong><span class="classifier">str, optional(default = u.Unit(‘erg / (Angstrom cm2 s)’)</span></dt><dd><p>Dictates units used for flux</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>luminosity.value</strong><span class="classifier">float</span></dt><dd><p>Returned luminosity value of star.</p>
+</dd>
+<dt><strong>wavelength.min()</strong><span class="classifier">float</span></dt><dd><p>Minimum value of wavelength of light</p>
+</dd>
+<dt><strong>wavelength.max()</strong><span class="classifier">float</span></dt><dd><p>Maximum value of wavelength of light</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.convert_abundances_format">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">convert_abundances_format</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">delimiter</span><span class="o">=</span><span class="default_value">'\\s+'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#convert_abundances_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.convert_abundances_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes format of file containing abundances into data frame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fname</strong><span class="classifier">file, str</span></dt><dd><p>File or file name that contains abundance info</p>
+</dd>
+<dt><strong>delimiter</strong><span class="classifier">str, optional(default = ‘s+’)</span></dt><dd><p>Determines the separator for splitting file</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>DataFrame</dt><dd><p>Corresponding data frame</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.create_synpp_yaml">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">create_synpp_yaml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radial1d_mdl</span></em>, <em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">shell_no</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">lines_db</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#create_synpp_yaml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.create_synpp_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a yaml file that is readable from syn++</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>radial1d_mdl</strong><span class="classifier">Radial1DModel</span></dt><dd><p>Inputted object that will be read into YAML file</p>
+</dd>
+<dt><strong>fname</strong><span class="classifier">str</span></dt><dd><p>File name for the synpp yaml</p>
+</dd>
+<dt><strong>shell_no</strong><span class="classifier">int, optional(default = 0)</span></dt><dd><p>Number of shells</p>
+</dd>
+<dt><strong>lines_db</strong><span class="classifier">file, optional(default = None)</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the current dataset does not contain necessary reference files</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.element_symbol2atomic_number">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">element_symbol2atomic_number</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element_string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#element_symbol2atomic_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.element_symbol2atomic_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes an element symbol and returns its corresponding atomic number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>element_string</strong><span class="classifier">str</span></dt><dd><p>Inputted element symbol</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd><p>Returned atomic number</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.int_to_roman">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">int_to_roman</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#int_to_roman"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.int_to_roman" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an integer into its roman numeral representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>i</strong><span class="classifier">int</span></dt><dd><p>Integer to be converted into roman numerals</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>Returns roman numeral representation of i in str format.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.intensity_black_body">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">intensity_black_body</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nu</span></em>, <em class="sig-param"><span class="n">T</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#intensity_black_body"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.intensity_black_body" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Calculate the intensity of a black-body according to the following formula</p>
+<div class="math notranslate nohighlight">
+\[I(\nu, T) = \frac{2h\nu^3}{c^2}\]</div>
+</div></blockquote>
+<dl class="simple">
+<dt>rac{1}</dt><dd><p>{e^{hnu beta_textrm{rad}} - 1}</p>
+</dd>
+</dl>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>nu</strong><span class="classifier">float</span></dt><dd><blockquote>
+<div><p>Frequency of light</p>
+</div></blockquote>
+<dl class="simple">
+<dt>T<span class="classifier">float</span></dt><dd><p>Temperature in kelvin</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>Intensity</strong><span class="classifier">float</span></dt><dd><p>Returns the intensity of the black body</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.parse_quantity">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">parse_quantity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantity_string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#parse_quantity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.parse_quantity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes a string into it’s corresponding astropy.Quantity object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>quantity_string</strong><span class="classifier">str</span></dt><dd><p>String to be converted into astropy.Quantity</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>q</strong><span class="classifier">~u.Quantity</span></dt><dd><p>Corresponding astropy.Quantity object for passed string</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>MalformedQuantityError</dt><dd><p>If string is not properly formatted for Astropy Quantity</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.quantity_linspace">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">quantity_linspace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">stop</span></em>, <em class="sig-param"><span class="n">num</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#quantity_linspace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.quantity_linspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Essentially the same input parameters as linspace, but
+calculated for an astropy quantity start and stop.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>start</strong><span class="classifier">~astropy.Quantity</span></dt><dd><p>Starting value of the sequence</p>
+</dd>
+<dt><strong>stop</strong><span class="classifier">~astropy.Quantity</span></dt><dd><p>End value of the sequence</p>
+</dd>
+<dt><strong>num</strong><span class="classifier">int</span></dt><dd><p>Number of samples to generate</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>~astropy.Quantity</dt><dd><p>Returns num evenly spaced characters of type astropy.Quantity</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If start and stop values have no unit attribute.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.reformat_element_symbol">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">reformat_element_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element_string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#reformat_element_symbol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.reformat_element_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Reformat the string so the first letter is uppercase and all subsequent</dt><dd><p>letters lowercase.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>element_string</strong><span class="classifier">str</span></dt><dd><p>Inputted element symbol</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>Returned reformatted element symbol</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.roman_to_int">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">roman_to_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">roman_string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#roman_to_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.roman_to_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a roman numeral into its corresponding integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>roman_string</strong><span class="classifier">str</span></dt><dd><p>Roman numeral to be converted into an integer</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd><p>Returns integer representation of roman_string</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.species_string_to_tuple">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">species_string_to_tuple</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">species_string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#species_string_to_tuple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.species_string_to_tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a species string to its corresponding tuple representation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>species_string</strong><span class="classifier">str</span></dt><dd><p>String containing species symbol (e.g. Si II, Fe III)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>atomic_number, ion_number</strong><span class="classifier">tuple</span></dt><dd><p>Returns tuple of length 2 indicating atomic number and ion number</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>MalformedSpeciesError</dt><dd><p>If the inputted string does not match the species format</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tardis.util.base.species_tuple_to_string">
+<code class="sig-prename descclassname">tardis.util.base.</code><code class="sig-name descname">species_tuple_to_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">species_tuple</span></em>, <em class="sig-param"><span class="n">roman_numerals</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/util/base.html#species_tuple_to_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.util.base.species_tuple_to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a species tuple to its corresponding string representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>species_tuple</strong><span class="classifier">tuple</span></dt><dd><p>Tuple of 2 values indicated atomic number and number of
+electrons missing</p>
+</dd>
+<dt><strong>roman_numerals</strong><span class="classifier">bool, optional(default = TRUE)</span></dt><dd><p>Indicates whether the returned ion number is in roman numerals</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>element_symbol, roman_ion_number</strong><span class="classifier">str</span></dt><dd><p>Returns corresponding string representation of given tuple</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tardis.util.colored_logger.html" class="btn btn-neutral float-right" title="tardis.util.colored_logger module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tardis.util.html" class="btn btn-neutral float-left" title="tardis.util package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

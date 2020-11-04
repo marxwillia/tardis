@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.model.density &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link href="../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.model.density</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.model.density</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+
+<span class="kn">from</span> <span class="nn">tardis.util.base</span> <span class="kn">import</span> <span class="n">quantity_linspace</span>
+<span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="kn">import</span> <span class="n">HDFWriterMixin</span>
+
+
+<div class="viewcode-block" id="HomologousDensity"><a class="viewcode-back" href="../../../api/tardis.model.density.html#tardis.model.density.HomologousDensity">[docs]</a><span class="k">class</span> <span class="nc">HomologousDensity</span><span class="p">(</span><span class="n">HDFWriterMixin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A class that holds an initial density and time</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    density_0 : astropy.units.Quantity</span>
+<span class="sd">    time_0 : astropy.units.Quantity</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">hdf_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;density_0&#39;</span><span class="p">,</span> <span class="s1">&#39;time_0&#39;</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">density_0</span><span class="p">,</span> <span class="n">time_0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">density_0</span> <span class="o">=</span> <span class="n">density_0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_0</span> <span class="o">=</span> <span class="n">time_0</span>
+
+<div class="viewcode-block" id="HomologousDensity.calculate_density_at_time_of_simulation"><a class="viewcode-back" href="../../../api/tardis.model.density.html#tardis.model.density.HomologousDensity.calculate_density_at_time_of_simulation">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_density_at_time_of_simulation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Scale `density_0` from an `time_0` to the `time_explosion` by ^-3</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_explosion : astropy.units.Quantity</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        astropy.units.Quantity</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">calculate_density_after_time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">density_0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_0</span><span class="p">,</span>
+                                            <span class="n">time_explosion</span><span class="p">)</span><span class="o">.</span><span class="n">cgs</span></div>
+
+<div class="viewcode-block" id="HomologousDensity.from_csvy"><a class="viewcode-back" href="../../../api/tardis.model.density.html#tardis.model.density.HomologousDensity.from_csvy">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_csvy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">csvy_model_config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new HomologousDensity instance from a base</span>
+<span class="sd">        Configuration object and a csvy model Configuration object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        config : tardis.io.config_reader.Configuration</span>
+<span class="sd">        csvy_model_config : tardis.io.config_reader.Configuration</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        HomologousDensity</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span> <span class="s1">&#39;velocity&#39;</span><span class="p">):</span>
+            <span class="n">velocity</span> <span class="o">=</span> <span class="n">quantity_linspace</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                                         <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">stop</span><span class="p">,</span>
+                                         <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">velocity_field_index</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">)</span>
+            <span class="n">velocity_unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">velocity_field_index</span><span class="p">]</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+            <span class="n">velocity</span> <span class="o">=</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="n">velocity_unit</span>
+
+        <span class="n">adjusted_velocity</span> <span class="o">=</span> <span class="n">velocity</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">v_middle</span> <span class="o">=</span> <span class="p">(</span><span class="n">adjusted_velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span>
+                    <span class="n">adjusted_velocity</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">no_of_shells</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">adjusted_velocity</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">time_explosion</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">supernova</span><span class="o">.</span><span class="n">time_explosion</span><span class="o">.</span><span class="n">cgs</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">):</span>
+            <span class="n">d_conf</span> <span class="o">=</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">density</span>
+            <span class="n">density_type</span> <span class="o">=</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">type</span>
+            <span class="k">if</span> <span class="n">density_type</span> <span class="o">==</span> <span class="s1">&#39;branch85_w7&#39;</span><span class="p">:</span>
+                <span class="n">density_0</span> <span class="o">=</span> <span class="n">calculate_power_law_density</span><span class="p">(</span><span class="n">v_middle</span><span class="p">,</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">w7_v_0</span><span class="p">,</span>
+                                                        <span class="n">d_conf</span><span class="o">.</span><span class="n">w7_rho_0</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+                <span class="n">time_0</span> <span class="o">=</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">w7_time_0</span>
+            <span class="k">elif</span> <span class="n">density_type</span> <span class="o">==</span> <span class="s1">&#39;uniform&#39;</span><span class="p">:</span>
+                <span class="n">density_0</span> <span class="o">=</span> <span class="p">(</span><span class="n">d_conf</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;g cm^-3&#39;</span><span class="p">)</span> <span class="o">*</span>
+                             <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">no_of_shells</span><span class="p">))</span>
+                <span class="n">time_0</span> <span class="o">=</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_0&#39;</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">density_type</span> <span class="o">==</span> <span class="s1">&#39;power_law&#39;</span><span class="p">:</span>
+                <span class="n">density_0</span> <span class="o">=</span> <span class="n">calculate_power_law_density</span><span class="p">(</span><span class="n">v_middle</span><span class="p">,</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">v_0</span><span class="p">,</span>
+                                                        <span class="n">d_conf</span><span class="o">.</span><span class="n">rho_0</span><span class="p">,</span>
+                                                        <span class="n">d_conf</span><span class="o">.</span><span class="n">exponent</span><span class="p">)</span>
+                <span class="n">time_0</span> <span class="o">=</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_0&#39;</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">density_type</span> <span class="o">==</span> <span class="s1">&#39;exponential&#39;</span><span class="p">:</span>
+                <span class="n">density_0</span> <span class="o">=</span> <span class="n">calculate_exponential_density</span><span class="p">(</span><span class="n">v_middle</span><span class="p">,</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">v_0</span><span class="p">,</span>
+                                                          <span class="n">d_conf</span><span class="o">.</span><span class="n">rho_0</span><span class="p">)</span>
+                <span class="n">time_0</span> <span class="o">=</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_0&#39;</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unrecognized density type &quot;</span>
+                                 <span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d_conf</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">density_0</span><span class="p">,</span> <span class="n">time_0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HomologousDensity.from_config"><a class="viewcode-back" href="../../../api/tardis.model.density.html#tardis.model.density.HomologousDensity.from_config">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new HomologousDensity instance from a Configuration object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        config : tardis.io.config_reader.Configuration</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        HomologousDensity</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">d_conf</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">density</span>
+        <span class="n">velocity</span> <span class="o">=</span> <span class="n">quantity_linspace</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                                     <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">stop</span><span class="p">,</span>
+                                     <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cgs</span>
+
+        <span class="n">adjusted_velocity</span> <span class="o">=</span> <span class="n">velocity</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">v_middle</span> <span class="o">=</span> <span class="p">(</span><span class="n">adjusted_velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span>
+                    <span class="n">adjusted_velocity</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">no_of_shells</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">adjusted_velocity</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">time_explosion</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">supernova</span><span class="o">.</span><span class="n">time_explosion</span><span class="o">.</span><span class="n">cgs</span>
+
+        <span class="k">if</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;branch85_w7&#39;</span><span class="p">:</span>
+            <span class="n">density_0</span> <span class="o">=</span> <span class="n">calculate_power_law_density</span><span class="p">(</span><span class="n">v_middle</span><span class="p">,</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">w7_v_0</span><span class="p">,</span>
+                                                    <span class="n">d_conf</span><span class="o">.</span><span class="n">w7_rho_0</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+            <span class="n">time_0</span> <span class="o">=</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">w7_time_0</span>
+        <span class="k">elif</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;uniform&#39;</span><span class="p">:</span>
+            <span class="n">density_0</span> <span class="o">=</span> <span class="p">(</span><span class="n">d_conf</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;g cm^-3&#39;</span><span class="p">)</span> <span class="o">*</span>
+                         <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">no_of_shells</span><span class="p">))</span>
+            <span class="n">time_0</span> <span class="o">=</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_0&#39;</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;power_law&#39;</span><span class="p">:</span>
+            <span class="n">density_0</span> <span class="o">=</span> <span class="n">calculate_power_law_density</span><span class="p">(</span><span class="n">v_middle</span><span class="p">,</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">v_0</span><span class="p">,</span>
+                                                    <span class="n">d_conf</span><span class="o">.</span><span class="n">rho_0</span><span class="p">,</span>
+                                                    <span class="n">d_conf</span><span class="o">.</span><span class="n">exponent</span><span class="p">)</span>
+            <span class="n">time_0</span> <span class="o">=</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_0&#39;</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;exponential&#39;</span><span class="p">:</span>
+            <span class="n">density_0</span> <span class="o">=</span> <span class="n">calculate_exponential_density</span><span class="p">(</span><span class="n">v_middle</span><span class="p">,</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">v_0</span><span class="p">,</span>
+                                                      <span class="n">d_conf</span><span class="o">.</span><span class="n">rho_0</span><span class="p">)</span>
+            <span class="n">time_0</span> <span class="o">=</span> <span class="n">d_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time_0&#39;</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unrecognized density type &quot;</span>
+                             <span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d_conf</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">density_0</span><span class="p">,</span> <span class="n">time_0</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="calculate_power_law_density"><a class="viewcode-back" href="../../../api/tardis.model.density.html#tardis.model.density.calculate_power_law_density">[docs]</a><span class="k">def</span> <span class="nf">calculate_power_law_density</span><span class="p">(</span><span class="n">velocities</span><span class="p">,</span> <span class="n">velocity_0</span><span class="p">,</span> <span class="n">rho_0</span><span class="p">,</span> <span class="n">exponent</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    This function computes a descret exponential density profile.</span>
+<span class="sd">    :math:`\\rho = \\rho_0 \\times \\left( \\frac{v}{v_0} \\right)^n`</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    velocities : ~astropy.Quantity</span>
+<span class="sd">        Array like velocity profile</span>
+<span class="sd">    velocity_0 : ~astropy.Quantity</span>
+<span class="sd">        reference velocity</span>
+<span class="sd">    rho_0 : ~astropy.Quantity</span>
+<span class="sd">        reference density</span>
+<span class="sd">    exponent : ~float</span>
+<span class="sd">        exponent used in the powerlaw</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    densities : ~astropy.Quantity</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">densities</span> <span class="o">=</span> <span class="n">rho_0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="n">velocities</span> <span class="o">/</span> <span class="n">velocity_0</span><span class="p">),</span> <span class="n">exponent</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">densities</span></div>
+
+
+<div class="viewcode-block" id="calculate_exponential_density"><a class="viewcode-back" href="../../../api/tardis.model.density.html#tardis.model.density.calculate_exponential_density">[docs]</a><span class="k">def</span> <span class="nf">calculate_exponential_density</span><span class="p">(</span><span class="n">velocities</span><span class="p">,</span> <span class="n">velocity_0</span><span class="p">,</span> <span class="n">rho_0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function computes the exponential density profile.</span>
+<span class="sd">    :math:`\\rho = \\rho_0 \\times \\exp \\left( -\\frac{v}{v_0} \\right)`</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    velocities : ~astropy.Quantity</span>
+<span class="sd">        Array like velocity profile</span>
+<span class="sd">    velocity_0 : ~astropy.Quantity</span>
+<span class="sd">        reference velocity</span>
+<span class="sd">    rho_0 : ~astropy.Quantity</span>
+<span class="sd">        reference density</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    densities : ~astropy.Quantity</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">densities</span> <span class="o">=</span> <span class="n">rho_0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">velocities</span> <span class="o">/</span> <span class="n">velocity_0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">densities</span></div>
+
+
+<div class="viewcode-block" id="calculate_density_after_time"><a class="viewcode-back" href="../../../api/tardis.model.density.html#tardis.model.density.calculate_density_after_time">[docs]</a><span class="k">def</span> <span class="nf">calculate_density_after_time</span><span class="p">(</span><span class="n">densities</span><span class="p">,</span> <span class="n">time_0</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    scale the density from an initial time of the model to the</span>
+<span class="sd">    time of the explosion by ^-3</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    -----------</span>
+
+<span class="sd">    densities: ~astropy.units.Quantity</span>
+<span class="sd">        densities</span>
+
+<span class="sd">    time_0: ~astropy.units.Quantity</span>
+<span class="sd">        time of the model</span>
+
+<span class="sd">    time_explosion: ~astropy.units.Quantity</span>
+<span class="sd">        time to be scaled to</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    scaled_density</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">densities</span> <span class="o">*</span> <span class="p">(</span><span class="n">time_explosion</span> <span class="o">/</span> <span class="n">time_0</span><span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mi">3</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

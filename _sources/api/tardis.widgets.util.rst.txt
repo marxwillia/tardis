@@ -1,0 +1,7 @@
+tardis.widgets.util module
+==========================
+
+.. automodule:: tardis.widgets.util
+   :members:
+   :undoc-members:
+   :show-inheritance:

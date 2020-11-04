@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Procedure to update the reference data &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Continuous Integration" href="continuous_integration.html" />
+    <link rel="prev" title="General Workflow to add a new feature" href="git_workflow.html" />
+    <link href="../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Workflow</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="running_tests.html">Running tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_workflow.html">General Workflow to add a new feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_workflow.html#preparation-and-working-with-git">Preparation and Working with Git</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Procedure to update the reference data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="continuous_integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matterbridge.html">Matterbridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_faq.html">Developer FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Developer Workflow</a> &raquo;</li>
+        
+      <li>Procedure to update the reference data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/development/update_refdata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="procedure-to-update-the-reference-data">
+<h1>Procedure to update the reference data<a class="headerlink" href="#procedure-to-update-the-reference-data" title="Permalink to this headline">¶</a></h1>
+<p>We assume that you have added the necessary changes to TARDIS and have an open pull request.</p>
+<ol class="arabic">
+<li><p>Fork the <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> repository as described in <a class="reference internal" href="git_workflow.html#development-workflow"><span class="std std-ref">General Workflow to add a new feature</span></a>.</p></li>
+<li><p>Clone <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> to your computer. Then make a new branch named the same as your new TARDIS feature branch. Make sure to have correctly set up the <code class="docutils literal notranslate"><span class="pre">upstream</span></code> remote as explained in <a class="reference internal" href="git_workflow.html#reviewing-and-helping-with-pr"><span class="std std-ref">Reviewing and helping others with Pull Requests</span></a>.</p></li>
+<li><p>Activate your <code class="docutils literal notranslate"><span class="pre">tardis</span></code> conda environment.</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>conda activate tardis
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Navigate to your <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> directory and type:</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>git lfs install
+git lfs fetch upstream
+git lfs pull
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Go to your <code class="docutils literal notranslate"><span class="pre">tardis</span></code> directory. Make sure you are working on the correct branch and generate new reference data using:</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo on the right branch&gt; --generate-reference&quot;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Re-run the tests to make sure it does not fail using:</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>python setup.py test --args=&quot;--tardis-refdata=&lt;path to refdata repo on the right branch&gt;&quot;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Go back to your <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> folder, and run a Jupyter Notebook session inside the <code class="docutils literal notranslate"><span class="pre">notebook</span></code> folder.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">ref_data_compare.ipynb</span></code> file notebook and look for the cell with the following code:</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>comparer = ReferenceComparer(ref2_hash=&#39;upstream/pr/24&#39;)
+</pre></div>
+</div>
+</div></blockquote>
+<p>Replace ‘24’ for the number of the last merged pull request showed <a class="reference external" href="https://github.com/tardis-sn/tardis-refdata/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+is%3Aclosed">here</a>.</p>
+</li>
+<li><p>Run all cells and check if there are any unexpected changes in the updated reference data respect the previous one.</p></li>
+<li><p>Commit the changes made to the reference data and open a PR on <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code>.</p></li>
+<li><p>Switch back to the <code class="docutils literal notranslate"><span class="pre">tardis</span></code> directory. Open the <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> file and change the following lines:</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>- if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git fetch origin pull/&lt;your tardis-refdata PR number; not the TARDIS PR number&gt;/head:&lt;some descriptive name&gt;; fi
+- if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git checkout &lt;some descriptive name&gt;; fi```
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Commit the <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> to your pull request.</p></li>
+<li><p>Make sure that your TARDIS pull request now passes all tests on Travis-CI.</p></li>
+<li><p>Ask for review for your PR on <code class="docutils literal notranslate"><span class="pre">tardis-refdata</span></code> and wait for merge.</p></li>
+<li><p>Then change the <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code> in <code class="docutils literal notranslate"><span class="pre">tardis</span></code> directory to:</p>
+<blockquote>
+<div><div class="highlight-None notranslate"><div class="highlight"><pre><span></span>- if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git fetch origin; fi
+- if [[ $TEST_MODE == &#39;spectrum&#39; ]]; then git checkout origin/master; fi```
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Ensure TARDIS pull request passes Travis-CI again and ping someone to merge your PR to the TARDIS master branch.</p></li>
+</ol>
+<p>Congratulations! You have updated TARDIS to be better. Have a beer and steak (or Tofu if you are vegetarian/vegan).</p>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Unable to generate reference data</dt><dd><ul>
+<li><p>If generating fails due to an inability to open <code class="docutils literal notranslate"><span class="pre">chianti_He.h5</span></code>, make sure that you have activated your <cite>tardis</cite> conda environment and that <code class="docutils literal notranslate"><span class="pre">git-lfs</span></code> is installed. Fetch and pull the files from GitHub as explained in step 4.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Error when running <code class="docutils literal notranslate"><span class="pre">comparer</span> <span class="pre">=</span> <span class="pre">ReferenceComparer(ref2_hash='upstream/pr/XX')</span></code> on the comparer notebook: <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory:</span> <span class="pre">'.../unit_test_data.h5'</span></code></dt><dd><ul>
+<li><p>If notebook file is unable to find the file <code class="docutils literal notranslate"><span class="pre">unit_test_data.h5</span></code>, make sure you have correctly set your upstream as explained in <a class="reference internal" href="git_workflow.html#reviewing-and-helping-with-pr"><span class="std std-ref">Reviewing and helping others with Pull Requests</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="continuous_integration.html" class="btn btn-neutral float-right" title="Continuous Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="git_workflow.html" class="btn btn-neutral float-left" title="General Workflow to add a new feature" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

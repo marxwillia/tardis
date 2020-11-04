@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.plasma.base &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link href="../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.plasma.base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.plasma.base</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">fileinput</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">tardis.plasma.exceptions</span> <span class="kn">import</span> <span class="n">PlasmaMissingModule</span><span class="p">,</span> <span class="n">NotInitializedModule</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.properties.base</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="kn">import</span> <span class="n">PlasmaWriterMixin</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BasePlasma"><a class="viewcode-back" href="../../../api/tardis.plasma.base.html#tardis.plasma.base.BasePlasma">[docs]</a><span class="k">class</span> <span class="nc">BasePlasma</span><span class="p">(</span><span class="n">PlasmaWriterMixin</span><span class="p">):</span>
+
+    <span class="n">outputs_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">hdf_name</span> <span class="o">=</span> <span class="s2">&quot;plasma&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plasma_properties</span><span class="p">,</span> <span class="n">property_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_properties</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_properties</span><span class="p">(</span>
+            <span class="n">plasma_properties</span><span class="p">,</span> <span class="n">property_kwargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_build_graph</span><span class="p">()</span>
+        <span class="c1">#        self.write_to_tex(&#39;Plasma_Graph&#39;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">BasePlasma</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="s2">&quot;module_dict&quot;</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+                <span class="s2">&quot;Plasma inputs can only be updated using &quot;</span> <span class="s2">&quot;the &#39;update&#39; method&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">BasePlasma</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)]</span>
+        <span class="n">attrs</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__dict__</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">attrs</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">attrs</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">plasma_properties_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties</span><span class="p">}</span>
+
+<div class="viewcode-block" id="BasePlasma.get_value"><a class="viewcode-back" href="../../../api/tardis.plasma.base.html#tardis.plasma.base.BasePlasma.get_value">[docs]</a>    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="n">item</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_build_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builds the directed Graph using network X</span>
+
+<span class="sd">        :param plasma_modules:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+        <span class="c1">## Adding all nodes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="p">(</span><span class="n">plasma_property</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="k">for</span> <span class="n">plasma_property</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Flagging all input modules</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_properties</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">item</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">plasma_property</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties</span><span class="p">:</span>
+            <span class="c1"># Skipping any module that is an input module</span>
+            <span class="k">if</span> <span class="n">plasma_property</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_properties</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="k">for</span> <span class="nb">input</span> <span class="ow">in</span> <span class="n">plasma_property</span><span class="o">.</span><span class="n">inputs</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">input</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">PlasmaMissingModule</span><span class="p">(</span>
+                        <span class="s2">&quot;Module </span><span class="si">{0}</span><span class="s2"> requires input &quot;</span>
+                        <span class="s2">&quot;</span><span class="si">{1}</span><span class="s2"> which has not been added&quot;</span>
+                        <span class="s2">&quot; to this plasma&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plasma_property</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">input</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="nb">input</span><span class="p">]</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="nb">input</span><span class="p">]</span><span class="o">.</span><span class="n">latex_name</span><span class="p">[</span><span class="n">position</span><span class="p">]</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;$&quot;</span> <span class="o">+</span> <span class="n">label</span> <span class="o">+</span> <span class="s2">&quot;$&quot;</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\\\</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="nb">input</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                    <span class="n">plasma_property</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
+                <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_init_properties</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">plasma_properties</span><span class="p">,</span> <span class="n">property_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builds a dictionary with the plasma module names as keys</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        plasma_modules: ~list</span>
+<span class="sd">            list of Plasma properties</span>
+<span class="sd">        property_kwargs: ~dict</span>
+<span class="sd">            dict of plasma module : kwargs pairs. kwargs should be a dict</span>
+<span class="sd">            of arguments that will be passed to the __init__ method of</span>
+<span class="sd">            the respective plasma module.</span>
+<span class="sd">        kwargs: dictionary</span>
+<span class="sd">            input values for input properties. For example, t_rad=[5000, 6000,],</span>
+<span class="sd">            j_blues=[..]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">property_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">property_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">plasma_property_objects</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">previous_iteration_properties</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">plasma_property</span> <span class="ow">in</span> <span class="n">plasma_properties</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">plasma_property</span><span class="p">,</span> <span class="n">PreviousIterationProperty</span><span class="p">):</span>
+                <span class="n">current_property_object</span> <span class="o">=</span> <span class="n">plasma_property</span><span class="p">(</span>
+                    <span class="o">**</span><span class="n">property_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">plasma_property</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="p">)</span>
+                <span class="n">current_property_object</span><span class="o">.</span><span class="n">set_initial_value</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">previous_iteration_properties</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">current_property_object</span>
+                <span class="p">)</span>
+
+            <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">plasma_property</span><span class="p">,</span> <span class="n">Input</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">plasma_property</span><span class="o">.</span><span class="n">outputs</span><span class="p">):</span>
+                    <span class="n">missing_input_values</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">plasma_property</span><span class="o">.</span><span class="n">outputs</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span>
+                        <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+                    <span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">NotInitializedModule</span><span class="p">(</span>
+                        <span class="s2">&quot;Input </span><span class="si">{0}</span><span class="s2"> required for &quot;</span>
+                        <span class="s2">&quot;plasma but not given when &quot;</span>
+                        <span class="s2">&quot;instantiating the &quot;</span>
+                        <span class="s2">&quot;plasma&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">missing_input_values</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="n">current_property_object</span> <span class="o">=</span> <span class="n">plasma_property</span><span class="p">(</span>
+                    <span class="o">**</span><span class="n">property_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">plasma_property</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current_property_object</span> <span class="o">=</span> <span class="n">plasma_property</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">property_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">plasma_property</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="p">)</span>
+            <span class="k">for</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">plasma_property</span><span class="o">.</span><span class="n">outputs</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="n">output</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_property_object</span>
+                <span class="n">plasma_property_objects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_property_object</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">plasma_property_objects</span>
+
+<div class="viewcode-block" id="BasePlasma.store_previous_properties"><a class="viewcode-back" href="../../../api/tardis.plasma.base.html#tardis.plasma.base.BasePlasma.store_previous_properties">[docs]</a>    <span class="k">def</span> <span class="nf">store_previous_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="nb">property</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">previous_iteration_properties</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="nb">property</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^previous_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="BasePlasma.update"><a class="viewcode-back" href="../../../api/tardis.plasma.base.html#tardis.plasma.base.BasePlasma.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">PlasmaMissingModule</span><span class="p">(</span>
+                    <span class="s2">&quot;Trying to update property </span><span class="si">{0}</span><span class="s2">&quot;</span>
+                    <span class="s2">&quot; that is unavailable&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">module_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_update_list</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties_dict</span><span class="p">[</span><span class="n">module_name</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">_update_module_type_str</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">_update_type_str</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_update_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">changed_properties</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a list of all plasma models which are affected by the</span>
+<span class="sd">        changed_modules due to there dependency in the</span>
+<span class="sd">        the plasma_graph.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        changed_modules: ~list</span>
+<span class="sd">            all modules changed in the plasma</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+
+<span class="sd">            : ~list</span>
+<span class="sd">            all affected modules.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">descendants_ob</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">plasma_property</span> <span class="ow">in</span> <span class="n">changed_properties</span><span class="p">:</span>
+            <span class="n">node_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="n">plasma_property</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">descendants_ob</span> <span class="o">+=</span> <span class="n">nx</span><span class="o">.</span><span class="n">descendants</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">,</span> <span class="n">node_name</span><span class="p">)</span>
+
+        <span class="n">descendants_ob</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">descendants_ob</span><span class="p">))</span>
+        <span class="n">sort_order</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">topological_sort</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">))</span>
+
+        <span class="n">descendants_ob</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">val</span><span class="p">:</span> <span class="n">sort_order</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="s2">&quot;Updating modules in the following order: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="s2">&quot;-&gt;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">descendants_ob</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">descendants_ob</span>
+
+<div class="viewcode-block" id="BasePlasma.write_to_dot"><a class="viewcode-back" href="../../../api/tardis.plasma.base.html#tardis.plasma.base.BasePlasma.write_to_dot">[docs]</a>    <span class="k">def</span> <span class="nf">write_to_dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">latex_label</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="c1">#        self._update_module_type_str()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">pygraphviz</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;pygraphviz missing. Plasma graph will not be &quot;</span> <span class="s2">&quot;generated.&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">print_graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">print_graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_hidden_properties</span><span class="p">(</span><span class="n">print_graph</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">print_graph</span><span class="p">:</span>
+            <span class="n">print_graph</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">)][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties_dict</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="s2">&quot;latex_formula&quot;</span><span class="p">):</span>
+                <span class="n">formulae</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties_dict</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">latex_formula</span>
+                <span class="k">for</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">formulae</span><span class="p">)):</span>
+                    <span class="n">formula</span> <span class="o">=</span> <span class="n">formulae</span><span class="p">[</span><span class="n">output</span><span class="p">]</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="n">formula</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\\\</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">print_graph</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">)][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n$&quot;</span>
+                    <span class="n">print_graph</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">)][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">label</span>
+                    <span class="n">print_graph</span><span class="o">.</span><span class="n">node</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="p">)][</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">&quot;$&quot;</span>
+
+        <span class="n">nx</span><span class="o">.</span><span class="n">drawing</span><span class="o">.</span><span class="n">nx_agraph</span><span class="o">.</span><span class="n">write_dot</span><span class="p">(</span><span class="n">print_graph</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BasePlasma.write_to_tex"><a class="viewcode-back" href="../../../api/tardis.plasma.base.html#tardis.plasma.base.BasePlasma.write_to_tex">[docs]</a>    <span class="k">def</span> <span class="nf">write_to_tex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname_graph</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">dot2tex</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+                <span class="s2">&quot;dot2tex missing. Plasma graph will not be &quot;</span> <span class="s2">&quot;generated.&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">temp_fname</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_to_dot</span><span class="p">(</span><span class="n">temp_fname</span><span class="p">)</span>
+
+        <span class="n">dot_string</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">temp_fname</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="nb">open</span><span class="p">(</span><span class="n">fname_graph</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dot2tex</span><span class="o">.</span><span class="n">dot2tex</span><span class="p">(</span><span class="n">dot_string</span><span class="p">,</span> <span class="n">texmode</span><span class="o">=</span><span class="s2">&quot;raw&quot;</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">fname_graph</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                    <span class="sa">r</span><span class="s2">&quot;\documentclass</span><span class="si">{article}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="sa">r</span><span class="s2">&quot;\documentclass[class=minimal,border=20pt]</span><span class="si">{standalone}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">fname_graph</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\enlargethispage</span><span class="si">{100cm}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BasePlasma.remove_hidden_properties"><a class="viewcode-back" href="../../../api/tardis.plasma.base.html#tardis.plasma.base.BasePlasma.remove_hidden_properties">[docs]</a>    <span class="k">def</span> <span class="nf">remove_hidden_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">print_graph</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties_dict</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span>
+            <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">HiddenPlasmaProperty</span><span class="p">):</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">getattr</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties_dict</span><span class="p">[</span><span class="n">value</span><span class="p">],</span> <span class="s2">&quot;inputs&quot;</span><span class="p">,</span> <span class="p">[]</span>
+                    <span class="p">):</span>
+                        <span class="k">for</span> <span class="nb">input</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">plasma_properties_dict</span><span class="p">[</span>
+                            <span class="n">item</span><span class="o">.</span><span class="n">name</span>
+                        <span class="p">]</span><span class="o">.</span><span class="n">inputs</span><span class="p">:</span>
+                            <span class="k">try</span><span class="p">:</span>
+                                <span class="n">position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span>
+                                    <span class="nb">input</span>
+                                <span class="p">]</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+                                <span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="nb">input</span><span class="p">]</span><span class="o">.</span><span class="n">latex_name</span><span class="p">[</span>
+                                    <span class="n">position</span>
+                                <span class="p">]</span>
+                                <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;$&quot;</span> <span class="o">+</span> <span class="n">label</span> <span class="o">+</span> <span class="s2">&quot;$&quot;</span>
+                                <span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\\\</span><span class="s2">&quot;</span><span class="p">)</span>
+                            <span class="k">except</span><span class="p">:</span>
+                                <span class="n">label</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">outputs_dict</span><span class="p">[</span><span class="nb">input</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                                <span class="n">value</span><span class="p">,</span>
+                                <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
+                            <span class="p">)</span>
+                <span class="n">print_graph</span><span class="o">.</span><span class="n">remove_node</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">print_graph</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

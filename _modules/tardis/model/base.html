@@ -1,0 +1,871 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.model.base &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link href="../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.model.base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.model.base</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">tardis</span> <span class="kn">import</span> <span class="n">constants</span>
+
+<span class="kn">from</span> <span class="nn">tardis.util.base</span> <span class="kn">import</span> <span class="n">quantity_linspace</span>
+<span class="kn">from</span> <span class="nn">tardis.io.parsers.csvy</span> <span class="kn">import</span> <span class="n">load_csvy</span>
+<span class="kn">from</span> <span class="nn">tardis.io.model_reader</span> <span class="kn">import</span> <span class="n">read_density_file</span><span class="p">,</span> \
+    <span class="n">read_abundances_file</span><span class="p">,</span> <span class="n">read_uniform_abundances</span><span class="p">,</span> <span class="n">parse_csv_abundances</span>
+<span class="kn">from</span> <span class="nn">tardis.io.config_validator</span> <span class="kn">import</span> <span class="n">validate_dict</span>
+<span class="kn">from</span> <span class="nn">tardis.io.config_reader</span> <span class="kn">import</span> <span class="n">Configuration</span>
+<span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="kn">import</span> <span class="n">HDFWriterMixin</span>
+<span class="kn">from</span> <span class="nn">tardis.io.decay</span> <span class="kn">import</span> <span class="n">IsotopeAbundances</span>
+<span class="kn">from</span> <span class="nn">tardis.model.density</span> <span class="kn">import</span> <span class="n">HomologousDensity</span>
+<span class="kn">from</span> <span class="nn">pyne</span> <span class="kn">import</span> <span class="n">nucname</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Radial1DModel"><a class="viewcode-back" href="../../../api/tardis.model.base.html#tardis.model.base.Radial1DModel">[docs]</a><span class="k">class</span> <span class="nc">Radial1DModel</span><span class="p">(</span><span class="n">HDFWriterMixin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An object that hold information about the individual shells.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    velocity : np.ndarray</span>
+<span class="sd">        An array with n+1 (for n shells) velocities &quot;cut&quot; to the provided</span>
+<span class="sd">        boundaries</span>
+
+<span class="sd">        .. note:: To access the entire, &quot;uncut&quot;, velocity array,</span>
+<span class="sd">        use `raw_velocity`</span>
+<span class="sd">    homologous_density : HomologousDensity</span>
+<span class="sd">    abundance : pd.DataFrame</span>
+<span class="sd">    time_explosion : astropy.units.Quantity</span>
+<span class="sd">        Time since explosion</span>
+<span class="sd">    t_inner : astropy.units.Quantity</span>
+<span class="sd">    luminosity_requested : astropy.units.quantity.Quantity</span>
+<span class="sd">    t_radiative : astropy.units.Quantity</span>
+<span class="sd">        Radiative temperature for the shells</span>
+<span class="sd">    dilution_factor : np.ndarray</span>
+<span class="sd">        If None, the dilution_factor will be initialized with the geometric</span>
+<span class="sd">        dilution factor.</span>
+<span class="sd">    v_boundary_inner : astropy.units.Quantity</span>
+<span class="sd">    v_boundary_outer : astropy.units.Quantity</span>
+<span class="sd">    raw_velocity : np.ndarray</span>
+<span class="sd">        The complete array of the velocities, without being cut by</span>
+<span class="sd">        `v_boundary_inner` and `v_boundary_outer`</span>
+<span class="sd">    electron_densities : astropy.units.quantity.Quantity</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    </span>
+<span class="sd">    w : numpy.ndarray</span>
+<span class="sd">        Shortcut for `dilution_factor`</span>
+<span class="sd">    t_rad : astropy.units.quantity.Quantity</span>
+<span class="sd">        Shortcut for `t_radiative`</span>
+<span class="sd">    radius : astropy.units.quantity.Quantity</span>
+<span class="sd">    r_inner : astropy.units.quantity.Quantity</span>
+<span class="sd">    r_outer : astropy.units.quantity.Quantity</span>
+<span class="sd">    r_middle : astropy.units.quantity.Quantity</span>
+<span class="sd">    v_inner : astropy.units.quantity.Quantity</span>
+<span class="sd">    v_outer : astropy.units.quantity.Quantity</span>
+<span class="sd">    v_middle : astropy.units.quantity.Quantity</span>
+<span class="sd">    density : astropy.units.quantity.Quantity</span>
+<span class="sd">    volume : astropy.units.quantity.Quantity</span>
+<span class="sd">    no_of_shells : int</span>
+<span class="sd">        The number of shells as formed by `v_boundary_inner` and</span>
+<span class="sd">        `v_boundary_outer`</span>
+<span class="sd">    no_of_raw_shells : int</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">hdf_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;t_inner&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;t_radiative&#39;</span><span class="p">,</span> <span class="s1">&#39;v_inner&#39;</span><span class="p">,</span> <span class="s1">&#39;v_outer&#39;</span><span class="p">,</span> <span class="s1">&#39;homologous_density&#39;</span><span class="p">]</span>
+    <span class="n">hdf_name</span> <span class="o">=</span> <span class="s1">&#39;model&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">homologous_density</span><span class="p">,</span> <span class="n">abundance</span><span class="p">,</span> <span class="n">isotope_abundance</span><span class="p">,</span>
+                 <span class="n">time_explosion</span><span class="p">,</span> <span class="n">t_inner</span><span class="p">,</span> <span class="n">luminosity_requested</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t_radiative</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">dilution_factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_boundary_inner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">v_boundary_outer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">electron_densities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_inner</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_outer</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span> <span class="o">=</span> <span class="n">velocity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner</span> <span class="o">=</span> <span class="n">v_boundary_inner</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer</span> <span class="o">=</span> <span class="n">v_boundary_outer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">homologous_density</span> <span class="o">=</span> <span class="n">homologous_density</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_abundance</span> <span class="o">=</span> <span class="n">abundance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_explosion</span> <span class="o">=</span> <span class="n">time_explosion</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_electron_densities</span> <span class="o">=</span> <span class="n">electron_densities</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">raw_abundance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abundance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">raw_isotope_abundance</span> <span class="o">=</span> <span class="n">isotope_abundance</span> 
+
+        <span class="k">if</span> <span class="n">t_inner</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">luminosity_requested</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">t_inner</span> <span class="o">=</span> <span class="p">((</span><span class="n">luminosity_requested</span> <span class="o">/</span>
+                                <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_inner</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span>
+                                 <span class="n">constants</span><span class="o">.</span><span class="n">sigma_sb</span><span class="p">))</span> <span class="o">**</span> <span class="o">.</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Both t_inner and luminosity_requested cannot &#39;</span>
+                                 <span class="s1">&#39;be None.&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">t_inner</span> <span class="o">=</span> <span class="n">t_inner</span>
+
+        <span class="k">if</span> <span class="n">t_radiative</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">lambda_wien_inner</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">b_wien</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_inner</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_t_radiative</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">b_wien</span> <span class="o">/</span> <span class="p">(</span><span class="n">lambda_wien_inner</span> <span class="o">*</span> <span class="p">(</span>
+                <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">v_middle</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner</span><span class="p">)</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">c</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#self._t_radiative = t_radiative[self.v_boundary_inner_index + 1:self.v_boundary_outer_index]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_t_radiative</span> <span class="o">=</span> <span class="n">t_radiative</span>
+
+        <span class="k">if</span> <span class="n">dilution_factor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dilution_factor</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r_inner</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_middle</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#self.dilution_factor = dilution_factor[self.v_boundary_inner_index + 1:self.v_boundary_outer_index]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dilution_factor</span> <span class="o">=</span> <span class="n">dilution_factor</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">w</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dilution_factor</span>
+
+    <span class="nd">@w</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">w</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dilution_factor</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">t_rad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_radiative</span>
+
+    <span class="nd">@t_rad</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">t_rad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t_radiative</span> <span class="o">=</span> <span class="n">value</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dilution_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dilution_factor</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">no_of_shells</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dilution_factor</span>
+
+<span class="c1">#        if self.v_boundary_inner in self.raw_velocity:</span>
+<span class="c1">#            v_inner_ind = np.argwhere(self.raw_velocity == self.v_boundary_inner)[0][0]</span>
+<span class="c1">#        else:</span>
+<span class="c1">#            v_inner_ind = np.searchsorted(self.raw_velocity, self.v_boundary_inner) - 1</span>
+<span class="c1">#        if self.v_boundary_outer in self.raw_velocity:</span>
+<span class="c1">#            v_outer_ind = np.argwhere(self.raw_velocity == self.v_boundary_outer)[0][0]</span>
+<span class="c1">#        else:</span>
+<span class="c1">#            v_outer_ind = np.searchsorted(self.raw_velocity, self.v_boundary_outer)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dilution_factor</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@dilution_factor</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">dilution_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dilution_factor</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dilution_factor</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">no_of_shells</span><span class="p">:</span>
+<span class="c1">#            if self.v_boundary_inner in self.raw_velocity:</span>
+<span class="c1">#                v_inner_ind = np.argwhere(self.raw_velocity == self.v_boundary_inner)[0][0]</span>
+<span class="c1">#            else:</span>
+<span class="c1">#                v_inner_ind = np.searchsorted(self.raw_velocity, self.v_boundary_inner) - 1</span>
+<span class="c1">#            if self.v_boundary_outer in self.raw_velocity:</span>
+<span class="c1">#                v_outer_ind = np.argwhere(self.raw_velocity == self.v_boundary_outer)[0][0]</span>
+<span class="c1">#            else:</span>
+<span class="c1">#                v_outer_ind = np.searchsorted(self.raw_velocity, self.v_boundary_outer)</span>
+<span class="c1">#            assert v_outer_ind - v_inner_ind == self.no_of_shells, &quot;trad shape different from number of shells&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dilution_factor</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Trying to set dilution_factor for unmatching number&quot;</span>
+                             <span class="s2">&quot;of shells.&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">t_radiative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_t_radiative</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">no_of_shells</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_radiative</span>
+
+<span class="c1">#        if self.v_boundary_inner in self.raw_velocity:</span>
+<span class="c1">#            v_inner_ind = np.argwhere(self.raw_velocity == self.v_boundary_inner)[0][0]</span>
+<span class="c1">#        else:</span>
+<span class="c1">#            v_inner_ind = np.searchsorted(self.raw_velocity, self.v_boundary_inner) - 1</span>
+<span class="c1">#        if self.v_boundary_outer in self.raw_velocity:</span>
+<span class="c1">#            v_outer_ind = np.argwhere(self.raw_velocity == self.v_boundary_outer)[0][0]</span>
+<span class="c1">#        else:</span>
+<span class="c1">#            v_outer_ind = np.searchsorted(self.raw_velocity, self.v_boundary_outer)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_radiative</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@t_radiative</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">t_radiative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_t_radiative</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_t_radiative</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">no_of_shells</span><span class="p">:</span>
+<span class="c1">#            if self.v_boundary_inner in self.raw_velocity:</span>
+<span class="c1">#                v_inner_ind = np.argwhere(self.raw_velocity == self.v_boundary_inner)[0][0]</span>
+<span class="c1">#            else:</span>
+<span class="c1">#                v_inner_ind = np.searchsorted(self.raw_velocity, self.v_boundary_inner) - 1</span>
+<span class="c1">#            if self.v_boundary_outer in self.raw_velocity:</span>
+<span class="c1">#                v_outer_ind = np.argwhere(self.raw_velocity == self.v_boundary_outer)[0][0]</span>
+<span class="c1">#            else:</span>
+<span class="c1">#                v_outer_ind = np.searchsorted(self.raw_velocity, self.v_boundary_outer)</span>
+<span class="c1">#            assert v_outer_ind - v_inner_ind == self.no_of_shells, &quot;trad shape different from number of shells&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_t_radiative</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Trying to set t_radiative for unmatching number&quot;</span>
+                             <span class="s2">&quot;of shells.&quot;</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">radius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_explosion</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">velocity</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">r_inner</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_explosion</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_inner</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">r_outer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_explosion</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_outer</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">r_middle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_inner</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_outer</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">velocity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">v_inner</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">velocity</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">v_outer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">velocity</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">v_middle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_inner</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_outer</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">density</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">density</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">homologous_density</span><span class="o">.</span><span class="n">calculate_density_at_time_of_simulation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_explosion</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">density</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">abundance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_isotope_abundance</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_abundance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_isotope_abundance</span><span class="o">.</span><span class="n">decay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_explosion</span><span class="p">)</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw_abundance</span><span class="p">)</span>
+        <span class="n">abundance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_abundance</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner_index</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">abundance</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">abundance</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">abundance</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">((</span><span class="mf">4.</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r_outer</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_inner</span> <span class="o">**</span> <span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">cgs</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">no_of_shells</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">velocity</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">no_of_raw_shells</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">v_boundary_inner</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_inner</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_inner</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_inner</span>
+
+    <span class="nd">@v_boundary_inner</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">v_boundary_inner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;v_boundary_inner must not be higher than &#39;</span>
+                                     <span class="s1">&#39;v_boundary_outer.&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;v_boundary_inner is outside of &#39;</span>
+                                     <span class="s1">&#39;the model range.&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;v_boundary_inner is lower than the lowest shell in the model.&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_inner</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="c1"># Invalidate the cached cut-down velocity array</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">v_boundary_outer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_outer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_outer</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_outer</span>
+
+    <span class="nd">@v_boundary_outer</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">v_boundary_outer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;v_boundary_outer must not be smaller than &#39;</span>
+                                     <span class="s1">&#39;v_boundary_inner.&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;v_boundary_outer is outside of &#39;</span>
+                                     <span class="s1">&#39;the model range.&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;v_boundary_outer is larger than the largest shell in the model.&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_v_boundary_outer</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="c1"># Invalidate the cached cut-down velocity array</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_velocity</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">v_boundary_inner_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">:</span>
+            <span class="n">v_inner_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">v_inner_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_inner</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">v_inner_ind</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">v_boundary_outer_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">:</span>
+            <span class="n">v_outer_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">v_outer_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw_velocity</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">v_boundary_outer</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">v_outer_ind</span>
+
+
+<span class="c1">#    @property</span>
+<span class="c1">#    def v_boundary_inner_index(self):</span>
+<span class="c1">#        if self.v_boundary_inner &lt;= self.raw_velocity[0]:</span>
+<span class="c1">#            return 0</span>
+<span class="c1">#        else:</span>
+<span class="c1">#            idx = max(0,</span>
+<span class="c1">#                      self.raw_velocity.searchsorted(self.v_boundary_inner) - 1)</span>
+<span class="c1">#            # check for zero volume of designated first cell</span>
+<span class="c1">#            if np.isclose(self.v_boundary_inner, self.raw_velocity[idx + 1],</span>
+<span class="c1">#                          atol=1e-8 * u.km / u.s) and (self.v_boundary_inner &lt;=</span>
+<span class="c1">#                                                           self.raw_velocity[idx + 1]):</span>
+<span class="c1">#                idx += 1</span>
+<span class="c1">#            return idx</span>
+<span class="c1">#</span>
+<span class="c1">#    @property</span>
+<span class="c1">#    def v_boundary_outer_index(self):</span>
+<span class="c1">#        if self.v_boundary_outer &gt;= self.raw_velocity[-1]:</span>
+<span class="c1">#            return None</span>
+<span class="c1">#        return self.raw_velocity.searchsorted(self.v_boundary_outer) + 1</span>
+
+<div class="viewcode-block" id="Radial1DModel.from_config"><a class="viewcode-back" href="../../../api/tardis.model.base.html#tardis.model.base.Radial1DModel.from_config">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new Radial1DModel instance from a Configuration object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        config : tardis.io.config_reader.Configuration</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Radial1DModel</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">time_explosion</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">supernova</span><span class="o">.</span><span class="n">time_explosion</span><span class="o">.</span><span class="n">cgs</span>
+
+        <span class="n">structure</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">structure</span>
+        <span class="n">electron_densities</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">temperature</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">structure</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;specific&#39;</span><span class="p">:</span>
+            <span class="n">velocity</span> <span class="o">=</span> <span class="n">quantity_linspace</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                                         <span class="n">structure</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">stop</span><span class="p">,</span>
+                                         <span class="n">structure</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cgs</span>
+            <span class="n">homologous_density</span> <span class="o">=</span> <span class="n">HomologousDensity</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">structure</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;file&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">filename</span><span class="p">):</span>
+                <span class="n">structure_fname</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">filename</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">structure_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">config_dirname</span><span class="p">,</span>
+                                               <span class="n">structure</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+
+            <span class="n">time_0</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">density_0</span><span class="p">,</span> <span class="n">electron_densities</span><span class="p">,</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">read_density_file</span><span class="p">(</span>
+                <span class="n">structure_fname</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">filetype</span><span class="p">)</span>
+            <span class="n">density_0</span> <span class="o">=</span> <span class="n">density_0</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">homologous_density</span> <span class="o">=</span> <span class="n">HomologousDensity</span><span class="p">(</span><span class="n">density_0</span><span class="p">,</span> <span class="n">time_0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="c1"># Note: This is the number of shells *without* taking in mind the</span>
+        <span class="c1">#       v boundaries.</span>
+        <span class="n">no_of_shells</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">temperature</span><span class="p">:</span>
+            <span class="n">t_radiative</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="k">elif</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_rad</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">:</span>
+            <span class="n">t_radiative</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">no_of_shells</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_rad</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t_radiative</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_inner</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">:</span>
+            <span class="n">luminosity_requested</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">supernova</span><span class="o">.</span><span class="n">luminosity_requested</span>
+            <span class="n">t_inner</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">luminosity_requested</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">t_inner</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_inner</span>
+
+        <span class="n">abundances_section</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">abundances</span>
+        <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">abundances_section</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;uniform&#39;</span><span class="p">:</span>
+            <span class="n">abundance</span><span class="p">,</span> <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">read_uniform_abundances</span><span class="p">(</span>
+                <span class="n">abundances_section</span><span class="p">,</span> <span class="n">no_of_shells</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">abundances_section</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;file&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">abundances_section</span><span class="o">.</span><span class="n">filename</span><span class="p">):</span>
+                <span class="n">abundances_fname</span> <span class="o">=</span> <span class="n">abundances_section</span><span class="o">.</span><span class="n">filename</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">abundances_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">config_dirname</span><span class="p">,</span>
+                                                <span class="n">abundances_section</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+
+            <span class="n">index</span><span class="p">,</span> <span class="n">abundance</span><span class="p">,</span> <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">read_abundances_file</span><span class="p">(</span><span class="n">abundances_fname</span><span class="p">,</span>
+                                                                       <span class="n">abundances_section</span><span class="o">.</span><span class="n">filetype</span><span class="p">)</span>
+
+        <span class="n">abundance</span> <span class="o">=</span> <span class="n">abundance</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">abundance</span> <span class="o">=</span> <span class="n">abundance</span><span class="p">[</span><span class="n">abundance</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">norm_factor</span> <span class="o">=</span> <span class="n">abundance</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">isotope_abundance</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">norm_factor</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-12</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Abundances have not been normalized to 1.&quot;</span>
+                           <span class="s2">&quot; - normalizing&quot;</span><span class="p">)</span>
+            <span class="n">abundance</span> <span class="o">/=</span> <span class="n">norm_factor</span>
+            <span class="n">isotope_abundance</span> <span class="o">/=</span> <span class="n">norm_factor</span>
+
+        <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">IsotopeAbundances</span><span class="p">(</span><span class="n">isotope_abundance</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">velocity</span><span class="o">=</span><span class="n">velocity</span><span class="p">,</span>
+                   <span class="n">homologous_density</span><span class="o">=</span><span class="n">homologous_density</span><span class="p">,</span>
+                   <span class="n">abundance</span><span class="o">=</span><span class="n">abundance</span><span class="p">,</span>
+                   <span class="n">isotope_abundance</span><span class="o">=</span><span class="n">isotope_abundance</span><span class="p">,</span>
+                   <span class="n">time_explosion</span><span class="o">=</span><span class="n">time_explosion</span><span class="p">,</span>
+                   <span class="n">t_radiative</span><span class="o">=</span><span class="n">t_radiative</span><span class="p">,</span>
+                   <span class="n">t_inner</span><span class="o">=</span><span class="n">t_inner</span><span class="p">,</span>
+                   <span class="n">luminosity_requested</span><span class="o">=</span><span class="n">luminosity_requested</span><span class="p">,</span>
+                   <span class="n">dilution_factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                   <span class="n">v_boundary_inner</span><span class="o">=</span><span class="n">structure</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;v_inner_boundary&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+                   <span class="n">v_boundary_outer</span><span class="o">=</span><span class="n">structure</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;v_outer_boundary&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+                   <span class="n">electron_densities</span><span class="o">=</span><span class="n">electron_densities</span><span class="p">)</span></div>
+<div class="viewcode-block" id="Radial1DModel.from_csvy"><a class="viewcode-back" href="../../../api/tardis.model.base.html#tardis.model.base.Radial1DModel.from_csvy">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_csvy</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new Radial1DModel instance from a Configuration object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        config : tardis.io.config_reader.Configuration</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Radial1DModel</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">CSVY_SUPPORTED_COLUMNS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="s1">&#39;t_rad&#39;</span><span class="p">,</span> <span class="s1">&#39;dilution_factor&#39;</span><span class="p">}</span>
+
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">csvy_model</span><span class="p">):</span>
+            <span class="n">csvy_model_fname</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">csvy_model</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">csvy_model_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">config_dirname</span><span class="p">,</span>
+                                            <span class="n">config</span><span class="o">.</span><span class="n">csvy_model</span><span class="p">)</span>
+        <span class="n">csvy_model_config</span><span class="p">,</span> <span class="n">csvy_model_data</span> <span class="o">=</span> <span class="n">load_csvy</span><span class="p">(</span><span class="n">csvy_model_fname</span><span class="p">)</span>
+        <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+        <span class="n">schema_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;io&#39;</span><span class="p">,</span> <span class="s1">&#39;schemas&#39;</span><span class="p">)</span>
+        <span class="n">csvy_schema_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">schema_dir</span><span class="p">,</span> <span class="s1">&#39;csvy_model.yml&#39;</span><span class="p">)</span>
+        <span class="n">csvy_model_config</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">validate_dict</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span>
+                                           <span class="n">schemapath</span><span class="o">=</span><span class="n">csvy_schema_file</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="p">,</span> <span class="s1">&#39;columns&#39;</span><span class="p">):</span>
+            <span class="n">abund_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span>
+                           <span class="k">if</span> <span class="n">nucname</span><span class="o">.</span><span class="n">iselement</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="ow">or</span> <span class="n">nucname</span><span class="o">.</span><span class="n">isnuclide</span><span class="p">(</span><span class="n">name</span><span class="p">)])</span>
+            <span class="n">unsupported_columns</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="n">abund_names</span> <span class="o">-</span> <span class="n">CSVY_SUPPORTED_COLUMNS</span>
+
+            <span class="n">field_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">])</span>
+            <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="n">field_names</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(),</span>\
+                <span class="s1">&#39;CSVY columns exist without field descriptions&#39;</span>
+            <span class="k">assert</span> <span class="n">field_names</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(),</span>\
+                <span class="s1">&#39;CSVY field descriptions exist without corresponding csv data&#39;</span>
+            <span class="k">if</span> <span class="n">unsupported_columns</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">():</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The following columns are specified in the csvy&quot;</span>
+                               <span class="s2">&quot;model file, but are IGNORED by TARDIS: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">unsupported_columns</span><span class="p">)))</span>
+
+        <span class="n">time_explosion</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">supernova</span><span class="o">.</span><span class="n">time_explosion</span><span class="o">.</span><span class="n">cgs</span>
+
+        <span class="n">electron_densities</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">temperature</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1">#if hasattr(csvy_model_config, &#39;v_inner_boundary&#39;):</span>
+        <span class="c1">#    v_boundary_inner = csvy_model_config.v_inner_boundary</span>
+        <span class="c1">#else:</span>
+        <span class="c1">#    v_boundary_inner = None</span>
+
+        <span class="c1">#if hasattr(csvy_model_config, &#39;v_outer_boundary&#39;):</span>
+        <span class="c1">#    v_boundary_outer = csvy_model_config.v_outer_boundary</span>
+        <span class="c1">#else:</span>
+        <span class="c1">#    v_boundary_outer = None</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;v_inner_boundary&#39;</span><span class="p">):</span>
+                <span class="n">v_boundary_inner</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">v_inner_boundary</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">v_boundary_inner</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;v_outer_boundary&#39;</span><span class="p">):</span>
+                <span class="n">v_boundary_outer</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">v_outer_boundary</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">v_boundary_outer</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">v_boundary_inner</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">v_boundary_outer</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span> <span class="s1">&#39;velocity&#39;</span><span class="p">):</span>
+            <span class="n">velocity</span> <span class="o">=</span> <span class="n">quantity_linspace</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                                         <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">stop</span><span class="p">,</span>
+                                         <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">velocity</span><span class="o">.</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">velocity_field_index</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">)</span>
+            <span class="n">velocity_unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">velocity_field_index</span><span class="p">][</span><span class="s1">&#39;unit&#39;</span><span class="p">])</span>
+            <span class="n">velocity</span> <span class="o">=</span> <span class="n">csvy_model_data</span><span class="p">[</span><span class="s1">&#39;velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="n">velocity_unit</span>
+            <span class="n">velocity</span> <span class="o">=</span> <span class="n">velocity</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;cm/s&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">):</span>
+            <span class="n">homologous_density</span> <span class="o">=</span> <span class="n">HomologousDensity</span><span class="o">.</span><span class="n">from_csvy</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">csvy_model_config</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">time_0</span> <span class="o">=</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">model_density_time_0</span>
+            <span class="n">density_field_index</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;density&#39;</span><span class="p">)</span>
+            <span class="n">density_unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">density_field_index</span><span class="p">][</span><span class="s1">&#39;unit&#39;</span><span class="p">])</span>
+            <span class="n">density_0</span> <span class="o">=</span> <span class="n">csvy_model_data</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="n">density_unit</span>
+            <span class="n">density_0</span> <span class="o">=</span> <span class="n">density_0</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;g/cm^3&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="n">density_0</span> <span class="o">=</span> <span class="n">density_0</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">homologous_density</span> <span class="o">=</span> <span class="n">HomologousDensity</span><span class="p">(</span><span class="n">density_0</span><span class="p">,</span> <span class="n">time_0</span><span class="p">)</span>
+
+        <span class="n">no_of_shells</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">velocity</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="c1"># TODO -- implement t_radiative</span>
+        <span class="c1">#t_radiative = None</span>
+        <span class="k">if</span> <span class="n">temperature</span><span class="p">:</span>
+            <span class="n">t_radiative</span> <span class="o">=</span> <span class="n">temperature</span>
+        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="p">,</span> <span class="s1">&#39;columns&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">&#39;t_rad&#39;</span> <span class="ow">in</span> <span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="n">t_rad_field_index</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;t_rad&#39;</span><span class="p">)</span>
+                <span class="n">t_rad_unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="o">.</span><span class="n">datatype</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="n">t_rad_field_index</span><span class="p">][</span><span class="s1">&#39;unit&#39;</span><span class="p">])</span>
+                <span class="n">t_radiative</span> <span class="o">=</span> <span class="n">csvy_model_data</span><span class="p">[</span><span class="s1">&#39;t_rad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="n">t_rad_unit</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">t_radiative</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="n">dilution_factor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="p">,</span> <span class="s1">&#39;columns&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">&#39;dilution_factor&#39;</span> <span class="ow">in</span> <span class="n">csvy_model_data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="n">dilution_factor</span> <span class="o">=</span> <span class="n">csvy_model_data</span><span class="p">[</span><span class="s1">&#39;dilution_factor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+        <span class="k">elif</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_rad</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">:</span>
+            <span class="n">t_radiative</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">no_of_shells</span><span class="p">)</span> <span class="o">*</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_rad</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t_radiative</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_inner</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">K</span><span class="p">:</span>
+            <span class="n">luminosity_requested</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">supernova</span><span class="o">.</span><span class="n">luminosity_requested</span>
+            <span class="n">t_inner</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">luminosity_requested</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">t_inner</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">initial_t_inner</span>
+
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">csvy_model_config</span><span class="p">,</span> <span class="s1">&#39;abundance&#39;</span><span class="p">):</span>
+            <span class="n">abundances_section</span> <span class="o">=</span> <span class="n">csvy_model_config</span><span class="o">.</span><span class="n">abundance</span>
+            <span class="n">abundance</span><span class="p">,</span> <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">read_uniform_abundances</span><span class="p">(</span><span class="n">abundances_section</span><span class="p">,</span> <span class="n">no_of_shells</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">index</span><span class="p">,</span> <span class="n">abundance</span><span class="p">,</span> <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">parse_csv_abundances</span><span class="p">(</span><span class="n">csvy_model_data</span><span class="p">)</span>
+            <span class="n">abundance</span> <span class="o">=</span> <span class="n">abundance</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
+            <span class="n">abundance</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">abundance</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">isotope_abundance</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
+            <span class="n">isotope_abundance</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">isotope_abundance</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+
+        <span class="n">abundance</span> <span class="o">=</span> <span class="n">abundance</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">abundance</span> <span class="o">=</span> <span class="n">abundance</span><span class="p">[</span><span class="n">abundance</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">isotope_abundance</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">isotope_abundance</span><span class="p">[</span><span class="n">isotope_abundance</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm_factor</span> <span class="o">=</span> <span class="n">abundance</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">isotope_abundance</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">norm_factor</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-12</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Abundances have not been normalized to 1.&quot;</span>
+                           <span class="s2">&quot; - normalizing&quot;</span><span class="p">)</span>
+            <span class="n">abundance</span> <span class="o">/=</span> <span class="n">norm_factor</span>
+            <span class="n">isotope_abundance</span> <span class="o">/=</span> <span class="n">norm_factor</span>
+
+        <span class="c1">#isotope_abundance = IsotopeAbundances(isotope_abundance)</span>
+        <span class="n">isotope_abundance</span> <span class="o">=</span> <span class="n">IsotopeAbundances</span><span class="p">(</span><span class="n">isotope_abundance</span><span class="p">,</span> <span class="n">time_0</span><span class="o">=</span><span class="n">csvy_model_config</span><span class="o">.</span><span class="n">model_isotope_time_0</span><span class="p">)</span>
+        <span class="c1">#isotope_abundance.time_0 = csvy_model_config.model_isotope_time_0</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">velocity</span><span class="o">=</span><span class="n">velocity</span><span class="p">,</span>
+                   <span class="n">homologous_density</span><span class="o">=</span><span class="n">homologous_density</span><span class="p">,</span>
+                   <span class="n">abundance</span><span class="o">=</span><span class="n">abundance</span><span class="p">,</span>
+                   <span class="n">isotope_abundance</span><span class="o">=</span><span class="n">isotope_abundance</span><span class="p">,</span>
+                   <span class="n">time_explosion</span><span class="o">=</span><span class="n">time_explosion</span><span class="p">,</span>
+                   <span class="n">t_radiative</span><span class="o">=</span><span class="n">t_radiative</span><span class="p">,</span>
+                   <span class="n">t_inner</span><span class="o">=</span><span class="n">t_inner</span><span class="p">,</span>
+                   <span class="n">luminosity_requested</span><span class="o">=</span><span class="n">luminosity_requested</span><span class="p">,</span>
+                   <span class="n">dilution_factor</span><span class="o">=</span><span class="n">dilution_factor</span><span class="p">,</span>
+                   <span class="n">v_boundary_inner</span><span class="o">=</span><span class="n">v_boundary_inner</span><span class="p">,</span>
+                   <span class="n">v_boundary_outer</span><span class="o">=</span><span class="n">v_boundary_outer</span><span class="p">,</span>
+                   <span class="n">electron_densities</span><span class="o">=</span><span class="n">electron_densities</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

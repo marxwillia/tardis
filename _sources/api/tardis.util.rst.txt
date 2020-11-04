@@ -1,0 +1,19 @@
+tardis.util package
+===================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   tardis.util.base
+   tardis.util.colored_logger
+
+Module contents
+---------------
+
+.. automodule:: tardis.util
+   :members:
+   :undoc-members:
+   :show-inheritance:

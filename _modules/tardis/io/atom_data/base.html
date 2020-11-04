@@ -1,0 +1,850 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.io.atom_data.base &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href="../../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.io.atom_data.base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.io.atom_data.base</h1><div class="highlight"><pre>
+<span></span><span class="c1"># atomic model</span>
+
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">tardis</span> <span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
+<span class="kn">from</span> <span class="nn">astropy.units</span> <span class="kn">import</span> <span class="n">Quantity</span>
+<span class="kn">from</span> <span class="nn">tardis.io.atom_data.util</span> <span class="kn">import</span> <span class="n">resolve_atom_data_fname</span>
+
+
+<div class="viewcode-block" id="AtomDataNotPreparedError"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.base.html#tardis.io.atom_data.base.AtomDataNotPreparedError">[docs]</a><span class="k">class</span> <span class="nc">AtomDataNotPreparedError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="AtomDataMissingError"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.base.html#tardis.io.atom_data.base.AtomDataMissingError">[docs]</a><span class="k">class</span> <span class="nc">AtomDataMissingError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="AtomData"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.base.html#tardis.io.atom_data.base.AtomData">[docs]</a><span class="k">class</span> <span class="nc">AtomData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for storing atomic data</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atom_data: pandas.DataFrame</span>
+<span class="sd">        A DataFrame containing the *basic atomic data* with:</span>
+<span class="sd">            index: atomic_number;</span>
+<span class="sd">            columns: symbol, name, mass[u].</span>
+
+<span class="sd">    ionization_data: pandas.DataFrame</span>
+<span class="sd">        A DataFrame containing the *ionization data* with:</span>
+<span class="sd">            index: atomic_number, ion_number;</span>
+<span class="sd">            columns: ionization_energy[eV].</span>
+
+<span class="sd">       It is important to note here is that `ion_number` describes the *final ion state*</span>
+<span class="sd">            e.g. H I - H II is described with ion=1</span>
+
+<span class="sd">    levels: pandas.DataFrame</span>
+<span class="sd">        A DataFrame containing the *levels data* with:</span>
+<span class="sd">            index: numerical index;</span>
+<span class="sd">            columns: atomic_number, ion_number, level_number, energy[eV], g[1], metastable.</span>
+
+<span class="sd">    lines: pandas.DataFrame</span>
+<span class="sd">        A DataFrame containing the *lines data* with:</span>
+<span class="sd">            index: numerical index;</span>
+<span class="sd">            columns: line_id, atomic_number, ion_number, level_number_lower, level_number_upper,</span>
+<span class="sd">                wavelength[angstrom], nu[Hz], f_lu[1], f_ul[1], B_ul[?], B_ul[?], A_ul[1/s].</span>
+
+<span class="sd">    macro_atom_data:</span>
+<span class="sd">        A DataFrame containing the *macro atom data* with:</span>
+<span class="sd">            index: numerical index;</span>
+<span class="sd">            columns: atomic_number, ion_number, source_level_number, destination_level_number,</span>
+<span class="sd">                transition_line_id, transition_type, transition_probability;</span>
+
+<span class="sd">    macro_atom_references:</span>
+<span class="sd">        A DataFrame containing  the *macro atom references* with:</span>
+<span class="sd">            index: numerical index;</span>
+<span class="sd">            columns: atomic_number, ion_number, source_level_number, count_down, count_up, count_total.</span>
+
+<span class="sd">        Refer to the docs: http://tardis.readthedocs.io/en/latest/physics/plasma/macroatom.html</span>
+
+<span class="sd">    collision_data: (pandas.DataFrame, np.array)</span>
+<span class="sd">        A DataFrame containing the *electron collisions data* with:</span>
+<span class="sd">            index: atomic_number, ion_number, level_number_lower, level_number_upper;</span>
+<span class="sd">            columns: e_col_id, delta_e, g_ratio, c_ul;</span>
+
+<span class="sd">    collision_data_temperatures: np.array</span>
+<span class="sd">        An array with the collision temperatures.</span>
+
+<span class="sd">    zeta_data:</span>
+<span class="sd">        A DataFrame containing the *zeta data* for the</span>
+<span class="sd">        nebular ionization calculation</span>
+<span class="sd">        (i.e., the fraction of recombinations that go directly to the</span>
+<span class="sd">        ground state) with:</span>
+<span class="sd">            index: atomic_number, ion_charge;</span>
+<span class="sd">            columns: temperatures[K]</span>
+
+<span class="sd">    synpp_refs: ?</span>
+
+<span class="sd">    photoionization_data: pandas.DataFrame</span>
+<span class="sd">        A DataFrame containing the *photoionization data* with:</span>
+<span class="sd">            index: numerical index;</span>
+<span class="sd">            columns: atomic_number, ion_number, level_number, nu[Hz], x_sect[cm^2]</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    -------------</span>
+<span class="sd">    prepared: bool</span>
+
+<span class="sd">    atom_data: pandas.DataFrame</span>
+<span class="sd">    ionization_data: pandas.DataFrame</span>
+<span class="sd">    macro_atom_data_all: pandas.DataFrame</span>
+<span class="sd">    macro_atom_references_all: pandas.DataFrame</span>
+<span class="sd">    collision_data: pandas.DataFrame</span>
+<span class="sd">    collision_data_temperatures: numpy.array</span>
+<span class="sd">    zeta_data: pandas.DataFrame</span>
+<span class="sd">    synpp_refs: pandas.DataFrame</span>
+<span class="sd">    symbol2atomic_number: OrderedDict</span>
+<span class="sd">    atomic_number2symbol OrderedDict</span>
+<span class="sd">    photoionization_data: pandas.DataFrame</span>
+
+<span class="sd">    Methods</span>
+<span class="sd">    --------</span>
+<span class="sd">    from_hdf</span>
+<span class="sd">    prepare_atom_data</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    ------</span>
+<span class="sd">    1. The units of some columns are given in the square brackets. They are **NOT** the parts of columns&#39; names!</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">hdf_names</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;atom_data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ionization_data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;levels&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lines&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;macro_atom_data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;macro_atom_references&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;zeta_data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;collision_data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;collision_data_temperatures&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;synpp_refs&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;photoionization_data&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># List of tuples of the related dataframes.</span>
+    <span class="c1"># Either all or none of the related dataframes must be given</span>
+    <span class="n">related_groups</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;macro_atom_data_all&quot;</span><span class="p">,</span> <span class="s2">&quot;macro_atom_references_all&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;collision_data&quot;</span><span class="p">,</span> <span class="s2">&quot;collision_data_temperatures&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+
+<div class="viewcode-block" id="AtomData.from_hdf"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.base.html#tardis.io.atom_data.base.AtomData.from_hdf">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_hdf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function to read the atom data from a TARDIS atom HDF Store</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        fname: str, optional</span>
+<span class="sd">            Path to the HDFStore file or name of known atom data file</span>
+<span class="sd">            (default: None)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">dataframes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">nonavailable</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+        <span class="n">fname</span> <span class="o">=</span> <span class="n">resolve_atom_data_fname</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">store</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">hdf_names</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dataframes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">store</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="n">nonavailable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+            <span class="n">atom_data</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">dataframes</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">atom_data</span><span class="o">.</span><span class="n">uuid1</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">_v_attrs</span><span class="p">[</span><span class="s2">&quot;uuid1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="n">atom_data</span><span class="o">.</span><span class="n">uuid1</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">atom_data</span><span class="o">.</span><span class="n">md5</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">_v_attrs</span><span class="p">[</span><span class="s2">&quot;md5&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="n">atom_data</span><span class="o">.</span><span class="n">md5</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">atom_data</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">_v_attrs</span><span class="p">[</span><span class="s2">&quot;database_version&quot;</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="n">atom_data</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="c1"># ToDo: strore data sources as attributes in carsus</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;Read Atom Data with UUID=</span><span class="si">{0}</span><span class="s2"> and MD5=</span><span class="si">{1}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">atom_data</span><span class="o">.</span><span class="n">uuid1</span><span class="p">,</span> <span class="n">atom_data</span><span class="o">.</span><span class="n">md5</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">nonavailable</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="s2">&quot;Non provided atomic data: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nonavailable</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">atom_data</span></div>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">atom_data</span><span class="p">,</span>
+        <span class="n">ionization_data</span><span class="p">,</span>
+        <span class="n">levels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">lines</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">macro_atom_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">macro_atom_references</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">zeta_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">collision_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">collision_data_temperatures</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">synpp_refs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">photoionization_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepared</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># CONVERT VALUES TO CGS UNITS</span>
+
+        <span class="c1"># Convert atomic masses to CGS</span>
+        <span class="c1"># We have to use constants.u because astropy uses</span>
+        <span class="c1"># different values for the unit u and the constant.</span>
+        <span class="c1"># This is changed in later versions of astropy (</span>
+        <span class="c1"># the value of constants.u is used in all cases)</span>
+        <span class="k">if</span> <span class="n">u</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">cgs</span> <span class="o">==</span> <span class="n">const</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">cgs</span><span class="p">:</span>
+            <span class="n">atom_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;mass&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Quantity</span><span class="p">(</span>
+                <span class="n">atom_data</span><span class="p">[</span><span class="s2">&quot;mass&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s2">&quot;u&quot;</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">atom_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;mass&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">atom_data</span><span class="p">[</span><span class="s2">&quot;mass&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="n">const</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">cgs</span>
+
+        <span class="c1"># Convert ionization energies to CGS</span>
+        <span class="n">ionization_data</span> <span class="o">=</span> <span class="n">ionization_data</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+        <span class="n">ionization_data</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">Quantity</span><span class="p">(</span><span class="n">ionization_data</span><span class="p">[:],</span> <span class="s2">&quot;eV&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cgs</span>
+
+        <span class="c1"># Convert energy to CGS</span>
+        <span class="n">levels</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Quantity</span><span class="p">(</span><span class="n">levels</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s2">&quot;eV&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cgs</span>
+
+        <span class="c1"># Create a new columns with wavelengths in the CGS units</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;wavelength_cm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Quantity</span><span class="p">(</span>
+            <span class="n">lines</span><span class="p">[</span><span class="s2">&quot;wavelength&quot;</span><span class="p">],</span> <span class="s2">&quot;angstrom&quot;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">cgs</span>
+
+        <span class="c1"># SET ATTRIBUTES</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span> <span class="o">=</span> <span class="n">atom_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ionization_data</span> <span class="o">=</span> <span class="n">ionization_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levels</span> <span class="o">=</span> <span class="n">levels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">lines</span>
+
+        <span class="c1"># Rename these (drop &quot;_all&quot;) when `prepare_atom_data` is removed!</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data_all</span> <span class="o">=</span> <span class="n">macro_atom_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references_all</span> <span class="o">=</span> <span class="n">macro_atom_references</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">zeta_data</span> <span class="o">=</span> <span class="n">zeta_data</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">collision_data</span> <span class="o">=</span> <span class="n">collision_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">collision_data_temperatures</span> <span class="o">=</span> <span class="n">collision_data_temperatures</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">synpp_refs</span> <span class="o">=</span> <span class="n">synpp_refs</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">photoionization_data</span> <span class="o">=</span> <span class="n">photoionization_data</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_related</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">symbol2atomic_number</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="p">[</span><span class="s2">&quot;symbol&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atomic_number2symbol</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+            <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="p">[</span><span class="s2">&quot;symbol&quot;</span><span class="p">])</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_check_related</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check that either all or none of the related dataframes are given.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">related_groups</span><span class="p">:</span>
+            <span class="n">check_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">group</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">check_list</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">check_list</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">group</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">AtomDataMissingError</span><span class="p">(</span>
+                    <span class="s2">&quot;The following dataframes from the related group [</span><span class="si">{0}</span><span class="s2">] &quot;</span>
+                    <span class="s2">&quot;were not given: </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">group</span><span class="p">),</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">check_list</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+<div class="viewcode-block" id="AtomData.prepare_atom_data"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.base.html#tardis.io.atom_data.base.AtomData.prepare_atom_data">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_atom_data</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">selected_atomic_numbers</span><span class="p">,</span>
+        <span class="n">line_interaction_type</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span>
+        <span class="n">nlte_species</span><span class="o">=</span><span class="p">[],</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Prepares the atom data to set the lines, levels and if requested macro</span>
+<span class="sd">        atom data.  This function mainly cuts the `levels` and `lines` by</span>
+<span class="sd">        discarding any data that is not needed (any data for atoms that are not</span>
+<span class="sd">        needed</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        selected_atoms : `~set`</span>
+<span class="sd">            set of selected atom numbers, e.g. set([14, 26])</span>
+
+<span class="sd">        line_interaction_type : `~str`</span>
+<span class="sd">            can be &#39;scatter&#39;, &#39;downbranch&#39; or &#39;macroatom&#39;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepared</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prepared</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AtomDataNotPreparedError</span><span class="p">(</span><span class="s2">&quot;AtomData was already prepared&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">selected_atomic_numbers</span> <span class="o">=</span> <span class="n">selected_atomic_numbers</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_selected_atomic_numbers</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nlte_species</span> <span class="o">=</span> <span class="n">nlte_species</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">levels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">selected_atomic_numbers</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;atomic_number&quot;</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">levels_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="o">.</span><span class="n">index</span>
+        <span class="p">)</span>
+
+        <span class="c1"># cutting levels_lines</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">selected_atomic_numbers</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;atomic_number&quot;</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">),</span>
+            <span class="n">index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;line_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">tmp_lines_lower2level_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span>
+            <span class="s2">&quot;level_number_upper&quot;</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines_lower2level_idx</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">levels_index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp_lines_lower2level_idx</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">values</span>
+        <span class="p">)</span>
+
+        <span class="n">tmp_lines_upper2level_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span>
+            <span class="s2">&quot;level_number_lower&quot;</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines_upper2level_idx</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">levels_index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tmp_lines_upper2level_idx</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">values</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data_all</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="ow">not</span> <span class="n">line_interaction_type</span> <span class="o">==</span> <span class="s2">&quot;scatter&quot;</span>
+        <span class="p">):</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data_all</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data_all</span><span class="p">[</span><span class="s2">&quot;atomic_number&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">selected_atomic_numbers</span>
+                <span class="p">)</span>
+            <span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references_all</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references_all</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">selected_atomic_numbers</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;atomic_number&quot;</span>
+                <span class="p">)</span>
+            <span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">line_interaction_type</span> <span class="o">==</span> <span class="s2">&quot;downbranch&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="p">[</span><span class="s2">&quot;transition_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+                <span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="p">[</span><span class="s2">&quot;count_down&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+                <span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                    <span class="p">:,</span> <span class="s2">&quot;count_total&quot;</span>
+                <span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="p">[</span><span class="s2">&quot;count_down&quot;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                    <span class="p">:,</span> <span class="s2">&quot;block_references&quot;</span>
+                <span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
+                    <span class="p">(</span>
+                        <span class="mi">0</span><span class="p">,</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="p">[</span><span class="s2">&quot;count_down&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="p">),</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">line_interaction_type</span> <span class="o">==</span> <span class="s2">&quot;macroatom&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                    <span class="p">:,</span> <span class="s2">&quot;block_references&quot;</span>
+                <span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
+                    <span class="p">(</span>
+                        <span class="mi">0</span><span class="p">,</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="p">[</span><span class="s2">&quot;count_total&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span>
+                                <span class="p">:</span><span class="o">-</span><span class="mi">1</span>
+                            <span class="p">]</span>
+                        <span class="p">),</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;references_idx&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span>
+                <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;lines_idx&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines_index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="p">[</span><span class="s2">&quot;transition_line_id&quot;</span><span class="p">]</span>
+            <span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">lines_upper2macro_reference_idx</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                    <span class="n">tmp_lines_upper2level_idx</span><span class="p">,</span> <span class="s2">&quot;references_idx&quot;</span>
+                <span class="p">]</span>
+                <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">values</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">line_interaction_type</span> <span class="o">==</span> <span class="s2">&quot;macroatom&quot;</span><span class="p">:</span>
+                <span class="c1"># Sets all</span>
+                <span class="n">tmp_macro_destination_level_idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="p">[</span><span class="s2">&quot;atomic_number&quot;</span><span class="p">],</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="p">[</span><span class="s2">&quot;ion_number&quot;</span><span class="p">],</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="p">[</span><span class="s2">&quot;destination_level_number&quot;</span><span class="p">],</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+
+                <span class="n">tmp_macro_source_level_idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="p">[</span><span class="s2">&quot;atomic_number&quot;</span><span class="p">],</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="p">[</span><span class="s2">&quot;ion_number&quot;</span><span class="p">],</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="p">[</span><span class="s2">&quot;source_level_number&quot;</span><span class="p">],</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;destination_level_idx&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                        <span class="n">tmp_macro_destination_level_idx</span><span class="p">,</span> <span class="s2">&quot;references_idx&quot;</span>
+                    <span class="p">]</span>
+                    <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">values</span>
+                <span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;source_level_idx&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_references</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                        <span class="n">tmp_macro_source_level_idx</span><span class="p">,</span> <span class="s2">&quot;references_idx&quot;</span>
+                    <span class="p">]</span>
+                    <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">values</span>
+                <span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">line_interaction_type</span> <span class="o">==</span> <span class="s2">&quot;downbranch&quot;</span><span class="p">:</span>
+                <span class="c1"># Sets all the destination levels to -1 to indicate that they</span>
+                <span class="c1"># are not used in downbranch calculations</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">macro_atom_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;destination_level_idx&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nlte_data</span> <span class="o">=</span> <span class="n">NLTEData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nlte_species</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_check_selected_atomic_numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">selected_atomic_numbers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_atomic_numbers</span>
+        <span class="n">available_atomic_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ionization_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">atomic_number_check</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+            <span class="n">selected_atomic_numbers</span><span class="p">,</span> <span class="n">available_atomic_numbers</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">atomic_number_check</span><span class="p">):</span>
+            <span class="n">missing_atom_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">atomic_number_check</span><span class="p">)</span>
+            <span class="n">missing_atomic_numbers</span> <span class="o">=</span> <span class="n">selected_atomic_numbers</span><span class="p">[</span><span class="n">missing_atom_mask</span><span class="p">]</span>
+            <span class="n">missing_numbers_str</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing_atomic_numbers</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;str&quot;</span><span class="p">))</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;For atomic numbers </span><span class="si">{}</span><span class="s2"> there is no atomic data.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">missing_numbers_str</span>
+            <span class="p">)</span>
+            <span class="k">raise</span> <span class="n">AtomDataMissingError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;&lt;Atomic Data UUID=</span><span class="si">{}</span><span class="s2"> MD5=</span><span class="si">{}</span><span class="s2"> Lines=</span><span class="si">{:d}</span><span class="s2"> Levels=</span><span class="si">{:d}</span><span class="s2">&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uuid1</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">md5</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">line_id</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="o">.</span><span class="n">energy</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NLTEData"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.base.html#tardis.io.atom_data.base.NLTEData">[docs]</a><span class="k">class</span> <span class="nc">NLTEData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom_data</span><span class="p">,</span> <span class="n">nlte_species</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span> <span class="o">=</span> <span class="n">atom_data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">atom_data</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nlte_species</span> <span class="o">=</span> <span class="n">nlte_species</span>
+
+        <span class="k">if</span> <span class="n">nlte_species</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Preparing the NLTE data&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_init_indices</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">atom_data</span><span class="o">.</span><span class="n">collision_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_create_collision_coefficient_matrix</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_init_indices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines_idx</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines_level_number_lower</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines_level_number_upper</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A_uls</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B_uls</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B_lus</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nlte_species</span><span class="p">:</span>
+            <span class="n">lines_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">atomic_number</span> <span class="o">==</span> <span class="n">species</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="o">&amp;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">ion_number</span> <span class="o">==</span> <span class="n">species</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lines_idx</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="n">lines_idx</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lines_level_number_lower</span><span class="p">[</span>
+                <span class="n">species</span>
+            <span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">level_number_lower</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">lines_idx</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lines_level_number_upper</span><span class="p">[</span>
+                <span class="n">species</span>
+            <span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">level_number_upper</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">lines_idx</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">A_uls</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">A_ul</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">lines_idx</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">B_uls</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">B_ul</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">lines_idx</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">B_lus</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">B_lu</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">lines_idx</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_create_collision_coefficient_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">C_ul_interpolator</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delta_E_matrices</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">g_ratio_matrices</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">collision_group</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">collision_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+            <span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;atomic_number&quot;</span><span class="p">,</span> <span class="s2">&quot;ion_number&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nlte_species</span><span class="p">:</span>
+            <span class="n">no_of_levels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">levels</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">species</span><span class="p">]</span><span class="o">.</span><span class="n">energy</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+            <span class="n">C_ul_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">no_of_levels</span><span class="p">,</span>
+                    <span class="n">no_of_levels</span><span class="p">,</span>
+                    <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">collision_data_temperatures</span><span class="p">),</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">delta_E_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">no_of_levels</span><span class="p">,</span> <span class="n">no_of_levels</span><span class="p">))</span>
+            <span class="n">g_ratio_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">no_of_levels</span><span class="p">,</span> <span class="n">no_of_levels</span><span class="p">))</span>
+
+            <span class="k">for</span> <span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">atomic_number</span><span class="p">,</span>
+                    <span class="n">ion_number</span><span class="p">,</span>
+                    <span class="n">level_number_lower</span><span class="p">,</span>
+                    <span class="n">level_number_upper</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">line</span><span class="p">,</span>
+            <span class="p">)</span> <span class="ow">in</span> <span class="n">collision_group</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="n">species</span><span class="p">)</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+                <span class="c1"># line.columns : delta_e, g_ratio, temperatures ...</span>
+                <span class="n">C_ul_matrix</span><span class="p">[</span>
+                    <span class="n">level_number_lower</span><span class="p">,</span> <span class="n">level_number_upper</span><span class="p">,</span> <span class="p">:</span>
+                <span class="p">]</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+                <span class="n">delta_E_matrix</span><span class="p">[</span><span class="n">level_number_lower</span><span class="p">,</span> <span class="n">level_number_upper</span><span class="p">]</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span>
+                    <span class="s2">&quot;delta_e&quot;</span>
+                <span class="p">]</span>
+                <span class="c1"># TODO TARDISATOMIC fix change the g_ratio to be the otherway round - I flip them now here.</span>
+                <span class="n">g_ratio_matrix</span><span class="p">[</span><span class="n">level_number_lower</span><span class="p">,</span> <span class="n">level_number_upper</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="mi">1</span> <span class="o">/</span> <span class="n">line</span><span class="p">[</span><span class="s2">&quot;g_ratio&quot;</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">C_ul_interpolator</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">atom_data</span><span class="o">.</span><span class="n">collision_data_temperatures</span><span class="p">,</span> <span class="n">C_ul_matrix</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">delta_E_matrices</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="n">delta_E_matrix</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">g_ratio_matrices</span><span class="p">[</span><span class="n">species</span><span class="p">]</span> <span class="o">=</span> <span class="n">g_ratio_matrix</span>
+
+<div class="viewcode-block" id="NLTEData.get_collision_matrix"><a class="viewcode-back" href="../../../../api/tardis.io.atom_data.base.html#tardis.io.atom_data.base.NLTEData.get_collision_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">get_collision_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">t_electrons</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creat collision matrix by interpolating the C_ul values for</span>
+<span class="sd">        the desired temperatures.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">c_ul_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">C_ul_interpolator</span><span class="p">[</span><span class="n">species</span><span class="p">](</span><span class="n">t_electrons</span><span class="p">)</span>
+        <span class="n">no_of_levels</span> <span class="o">=</span> <span class="n">c_ul_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">c_ul_matrix</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">c_ul_matrix</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># TODO in tardisatomic the g_ratio is the other way round - here I&#39;ll flip it in prepare_collision matrix</span>
+
+        <span class="n">c_lu_matrix</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">c_ul_matrix</span>
+            <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+                <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">delta_E_matrices</span><span class="p">[</span><span class="n">species</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+                    <span class="p">(</span><span class="n">no_of_levels</span><span class="p">,</span> <span class="n">no_of_levels</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="o">/</span> <span class="n">t_electrons</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">t_electrons</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+            <span class="p">)</span>
+            <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">g_ratio_matrices</span><span class="p">[</span><span class="n">species</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">no_of_levels</span><span class="p">,</span> <span class="n">no_of_levels</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">c_ul_matrix</span> <span class="o">+</span> <span class="n">c_lu_matrix</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

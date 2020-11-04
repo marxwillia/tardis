@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.version &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link href="../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.version</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.version</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Autogenerated by Astropy-affiliated package tardis&#39;s setup.py on 2020-11-04 16:32:25 UTC</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+
+<span class="kn">import</span> <span class="nn">locale</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+
+<span class="k">def</span> <span class="nf">_decode_stdio</span><span class="p">(</span><span class="n">stream</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">stdio_encoding</span> <span class="o">=</span> <span class="n">locale</span><span class="o">.</span><span class="n">getdefaultlocale</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="s1">&#39;utf-8&#39;</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="n">stdio_encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">stdio_encoding</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+        <span class="c1"># Final fallback</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">text</span>
+
+
+<div class="viewcode-block" id="update_git_devstr"><a class="viewcode-back" href="../../api/tardis.version.html#tardis.version.update_git_devstr">[docs]</a><span class="k">def</span> <span class="nf">update_git_devstr</span><span class="p">(</span><span class="n">version</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Updates the git revision string if and only if the path is being imported</span>
+<span class="sd">    directly from a git working copy.  This ensures that the revision number in</span>
+<span class="sd">    the version string is accurate.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Quick way to determine if we&#39;re in git or not - returns &#39;&#39; if not</span>
+        <span class="n">devstr</span> <span class="o">=</span> <span class="n">get_git_devstr</span><span class="p">(</span><span class="n">sha</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_warning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">version</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">devstr</span><span class="p">:</span>
+        <span class="c1"># Probably not in git so just pass silently</span>
+        <span class="k">return</span> <span class="n">version</span>
+
+    <span class="k">if</span> <span class="s1">&#39;dev&#39;</span> <span class="ow">in</span> <span class="n">version</span><span class="p">:</span>  <span class="c1"># update to the current git revision</span>
+        <span class="n">version_base</span> <span class="o">=</span> <span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.dev&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">devstr</span> <span class="o">=</span> <span class="n">get_git_devstr</span><span class="p">(</span><span class="n">sha</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_warning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">version_base</span> <span class="o">+</span> <span class="s1">&#39;.dev&#39;</span> <span class="o">+</span> <span class="n">devstr</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># otherwise it&#39;s already the true/release version</span>
+        <span class="k">return</span> <span class="n">version</span></div>
+
+
+<div class="viewcode-block" id="get_git_devstr"><a class="viewcode-back" href="../../api/tardis.version.html#tardis.version.get_git_devstr">[docs]</a><span class="k">def</span> <span class="nf">get_git_devstr</span><span class="p">(</span><span class="n">sha</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_warning</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Determines the number of revisions in this repository.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sha : bool</span>
+<span class="sd">        If True, the full SHA1 hash will be returned. Otherwise, the total</span>
+<span class="sd">        count of commits in the repository will be used as a &quot;revision</span>
+<span class="sd">        number&quot;.</span>
+
+<span class="sd">    show_warning : bool</span>
+<span class="sd">        If True, issue a warning if git returns an error code, otherwise errors</span>
+<span class="sd">        pass silently.</span>
+
+<span class="sd">    path : str or None</span>
+<span class="sd">        If a string, specifies the directory to look in to find the git</span>
+<span class="sd">        repository.  If `None`, the current working directory is used, and must</span>
+<span class="sd">        be the root of the git repository.</span>
+<span class="sd">        If given a filename it uses the directory containing that file.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    devversion : str</span>
+<span class="sd">        Either a string with the revision number (if `sha` is False), the</span>
+<span class="sd">        SHA1 hash of the current commit (if `sha` is True), or an empty string</span>
+<span class="sd">        if git version info could not be identified.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">sha</span><span class="p">:</span>
+        <span class="c1"># Faster for getting just the hash of HEAD</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rev-parse&#39;</span><span class="p">,</span> <span class="s1">&#39;HEAD&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rev-list&#39;</span><span class="p">,</span> <span class="s1">&#39;--count&#39;</span><span class="p">,</span> <span class="s1">&#39;HEAD&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">run_git</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;git&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+                                 <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+                                 <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+                                 <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+            <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">show_warning</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Error running git: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="k">return</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">==</span> <span class="mi">128</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">show_warning</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;No git repository present at </span><span class="si">{0!r}</span><span class="s1">! Using &#39;</span>
+                              <span class="s1">&#39;default dev version.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">==</span> <span class="mi">129</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">show_warning</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Your git looks old (does it support </span><span class="si">{0}</span><span class="s1">?); &#39;</span>
+                              <span class="s1">&#39;consider upgrading to v1.7.2 or &#39;</span>
+                              <span class="s1">&#39;later.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">show_warning</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Git failed while determining revision &#39;</span>
+                              <span class="s1">&#39;count: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">_decode_stdio</span><span class="p">(</span><span class="n">stderr</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span>
+
+    <span class="n">returncode</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">run_git</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">sha</span> <span class="ow">and</span> <span class="n">returncode</span> <span class="o">==</span> <span class="mi">128</span><span class="p">:</span>
+        <span class="c1"># git returns 128 if the command is not run from within a git</span>
+        <span class="c1"># repository tree. In this case, a warning is produced above but we</span>
+        <span class="c1"># return the default dev version of &#39;0&#39;.</span>
+        <span class="k">return</span> <span class="s1">&#39;0&#39;</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">sha</span> <span class="ow">and</span> <span class="n">returncode</span> <span class="o">==</span> <span class="mi">129</span><span class="p">:</span>
+        <span class="c1"># git returns 129 if a command option failed to parse; in</span>
+        <span class="c1"># particular this could happen in git versions older than 1.7.2</span>
+        <span class="c1"># where the --count option is not supported</span>
+        <span class="c1"># Also use --abbrev-commit and --abbrev=0 to display the minimum</span>
+        <span class="c1"># number of characters needed per-commit (rather than the full hash)</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rev-list&#39;</span><span class="p">,</span> <span class="s1">&#39;--abbrev-commit&#39;</span><span class="p">,</span> <span class="s1">&#39;--abbrev=0&#39;</span><span class="p">,</span> <span class="s1">&#39;HEAD&#39;</span><span class="p">]</span>
+        <span class="n">returncode</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">run_git</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        <span class="c1"># Fall back on the old method of getting all revisions and counting</span>
+        <span class="c1"># the lines</span>
+        <span class="k">if</span> <span class="n">returncode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">stdout</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">elif</span> <span class="n">sha</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_decode_stdio</span><span class="p">(</span><span class="n">stdout</span><span class="p">)[:</span><span class="mi">40</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_decode_stdio</span><span class="p">(</span><span class="n">stdout</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+<span class="c1"># This function is tested but it is only ever executed within a subprocess when</span>
+<span class="c1"># creating a fake package, so it doesn&#39;t get picked up by coverage metrics.</span>
+<span class="k">def</span> <span class="nf">_get_repo_path</span><span class="p">(</span><span class="n">pathname</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given a file or directory name, determine the root of the git repository</span>
+<span class="sd">    this path is under.  If given, this won&#39;t look any higher than ``levels``</span>
+<span class="sd">    (that is, if ``levels=0`` then the given path must be the root of the git</span>
+<span class="sd">    repository and is returned if so.</span>
+
+<span class="sd">    Returns `None` if the given path could not be determined to belong to a git</span>
+<span class="sd">    repo.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">pathname</span><span class="p">):</span>
+        <span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">pathname</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">pathname</span><span class="p">):</span>
+        <span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">pathname</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">current_level</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="n">levels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">current_level</span> <span class="o">&lt;=</span> <span class="n">levels</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_dir</span><span class="p">,</span> <span class="s1">&#39;.git&#39;</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">current_dir</span>
+
+        <span class="n">current_level</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">current_dir</span> <span class="o">==</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">current_dir</span><span class="p">):</span>
+            <span class="k">break</span>
+
+        <span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">current_dir</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="n">_packagename</span> <span class="o">=</span> <span class="s2">&quot;tardis&quot;</span>
+<span class="n">_last_generated_version</span> <span class="o">=</span> <span class="s2">&quot;3.0.dev1&quot;</span>
+<span class="n">_last_githash</span> <span class="o">=</span> <span class="s2">&quot;b32359093d964ebb1d84779c1f3a1a48a0efa2f1&quot;</span>
+
+<span class="c1"># Determine where the source code for this module</span>
+<span class="c1"># lives.  If __file__ is not a filesystem path then</span>
+<span class="c1"># it is assumed not to live in a git repo at all.</span>
+<span class="k">if</span> <span class="n">_get_repo_path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">_packagename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))):</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">update_git_devstr</span><span class="p">(</span><span class="n">_last_generated_version</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="vm">__file__</span><span class="p">)</span>
+    <span class="n">githash</span> <span class="o">=</span> <span class="n">get_git_devstr</span><span class="p">(</span><span class="n">sha</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_warning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                             <span class="n">path</span><span class="o">=</span><span class="vm">__file__</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_last_githash</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># The file does not appear to live in a git repo so don&#39;t bother</span>
+    <span class="c1"># invoking git</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">_last_generated_version</span>
+    <span class="n">githash</span> <span class="o">=</span> <span class="n">_last_githash</span>
+
+
+<span class="n">major</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">minor</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">bugfix</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">version_info</span> <span class="o">=</span> <span class="p">(</span><span class="n">major</span><span class="p">,</span> <span class="n">minor</span><span class="p">,</span> <span class="n">bugfix</span><span class="p">)</span>
+
+<span class="n">release</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">astropy_helpers_version</span> <span class="o">=</span> <span class="s2">&quot;3.1&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">._compiler</span> <span class="kn">import</span> <span class="n">compiler</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">compiler</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.cython_version</span> <span class="kn">import</span> <span class="n">cython_version</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">cython_version</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

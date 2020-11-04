@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Model &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ejecta Model Configuration" href="examples/modelconfig.html" />
+    <link rel="prev" title="Running TARDIS" href="../running/index.html" />
+    <link href="../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../running/index.html">Running TARDIS</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#csvy-model">CSVY Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-csvy-model">Example CSVY Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-config-model">Using the Config Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="examples/modelconfig.html">Ejecta Model Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/densityexp.html">Using an exponential density profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/densitypow.html">Using a power law density profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/densitycust.html">Using a custom density profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/abundanceuni.html">Using a uniform composition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/abundancecust.html">Using a custom stratified composition</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../atomic/atomic_data.html">Atomic Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/commandline.html">Running TARDIS in the commandline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/interaction/index.html">Interacting with TARDIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/custom_source.html">Running TARDIS with a custom packet source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/tardis_widgets/index.html">TARDIS Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../running/converters/index.html">Converters</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../running/index.html">Running TARDIS</a> &raquo;</li>
+        
+      <li>Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/models/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="model">
+<h1>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h1>
+<p>TARDIS requires a model of the homologously expanding ejecta in order to run a simulation.
+A model will include information like the velocity shell structure, abundances, density, etc.
+TARDIS offers two ways of specifying the model: either directly in the configuration YAML file
+or separately in a model.csvy file. See <a class="reference external" href="https://csvy.org/">here</a> for an explanation of
+the CSVY file format and <span class="xref std std-ref">here</span> for a link to the csvy_model schema.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We highly recommend using the cleaner CSVY format.</p>
+</div>
+<div class="section" id="csvy-model">
+<h2>CSVY Model<a class="headerlink" href="#csvy-model" title="Permalink to this headline">¶</a></h2>
+<p>The TARDIS YAML delimiter for CSVY files is <code class="docutils literal notranslate"><span class="pre">---</span></code>. This means that each CSVY model
+file has the following structure: The first line of the file is the YAML delimiter,
+followed by the YAML portion of the CSVY model. A line consisting of only the YAML
+delimiter separates the YAML portion of the CSVY file from the CSV part. The YAML part
+of the CSVY file is for setting model parameters like <strong>v_inner_boundary</strong> or
+<strong>model_density_time_0</strong>, while the CSV part of the file is for setting profiles of
+physical parameters of the model (e.g. abundances, radiative temperature, dilution factor, etc).
+If you use the CSVY model, then you will need to specify the path to the CSVY model file
+in the main TARDIS configuration file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">csvy_model</span><span class="p">:</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">model</span><span class="o">.</span><span class="n">csvy</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-csvy-model">
+<h2>Example CSVY Model<a class="headerlink" href="#example-csvy-model" title="Permalink to this headline">¶</a></h2>
+<p>Below we provide an example model.csvy file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">name</span><span class="p">:</span> <span class="n">csvy_full</span>
+<span class="n">model_density_time_0</span><span class="p">:</span> <span class="mi">1</span> <span class="n">day</span>
+<span class="n">description</span><span class="p">:</span> <span class="n">Example</span> <span class="n">csvy</span> <span class="n">config</span> <span class="n">file</span> <span class="k">for</span> <span class="n">TARDIS</span><span class="o">.</span>
+<span class="n">tardis_model_config_version</span><span class="p">:</span> <span class="n">v1</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">datatype</span><span class="p">:</span>
+  <span class="n">fields</span><span class="p">:</span>
+    <span class="o">-</span>  <span class="n">name</span><span class="p">:</span> <span class="n">velocity</span>
+       <span class="n">unit</span><span class="p">:</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span>
+       <span class="n">desc</span><span class="p">:</span> <span class="n">velocities</span> <span class="n">of</span> <span class="n">shell</span> <span class="n">outer</span> <span class="n">bounderies</span><span class="o">.</span>
+    <span class="o">-</span>  <span class="n">name</span><span class="p">:</span> <span class="n">density</span>
+       <span class="n">unit</span><span class="p">:</span> <span class="n">g</span><span class="o">/</span><span class="n">cm</span><span class="o">^</span><span class="mi">3</span>
+       <span class="n">desc</span><span class="p">:</span> <span class="n">density</span> <span class="n">of</span> <span class="n">shell</span><span class="o">.</span>
+    <span class="o">-</span>  <span class="n">name</span><span class="p">:</span> <span class="n">t_rad</span>
+       <span class="n">unit</span><span class="p">:</span> <span class="n">K</span>
+       <span class="n">desc</span><span class="p">:</span> <span class="n">radiative</span> <span class="n">temperature</span><span class="o">.</span>
+    <span class="o">-</span>  <span class="n">name</span><span class="p">:</span> <span class="n">H</span>
+       <span class="n">desc</span><span class="p">:</span> <span class="n">fractional</span> <span class="n">H</span> <span class="n">abundance</span>
+    <span class="o">-</span>  <span class="n">name</span><span class="p">:</span> <span class="n">He</span>
+       <span class="n">desc</span><span class="p">:</span> <span class="n">fractional</span> <span class="n">He</span> <span class="n">abundance</span>
+    <span class="o">-</span>  <span class="n">name</span><span class="p">:</span> <span class="n">Ni56</span>
+       <span class="n">desc</span><span class="p">:</span> <span class="n">fractional</span> <span class="n">Ni56</span> <span class="n">abundance</span>
+
+<span class="n">v_inner_boundary</span><span class="p">:</span> <span class="mi">9000</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span>
+<span class="n">v_outer_boundary</span><span class="p">:</span> <span class="mi">12000</span> <span class="n">km</span><span class="o">/</span><span class="n">s</span>
+<span class="o">---</span>
+<span class="n">velocity</span><span class="p">,</span><span class="n">density</span><span class="p">,</span><span class="n">t_rad</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">He</span><span class="p">,</span><span class="n">Ni56</span>
+<span class="mi">9000</span><span class="p">,</span> <span class="mf">5e-10</span><span class="p">,</span> <span class="mi">7000</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span>
+<span class="mi">10500</span><span class="p">,</span> <span class="mf">2.0e-10</span><span class="p">,</span> <span class="mi">7000</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.01</span>
+<span class="mi">12000</span><span class="p">,</span> <span class="mf">9e-11</span><span class="p">,</span> <span class="mi">7000</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.58</span><span class="p">,</span> <span class="mf">0.02</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-config-model">
+<h2>Using the Config Model<a class="headerlink" href="#using-the-config-model" title="Permalink to this headline">¶</a></h2>
+<p>Although we strongly recommend using the CSVY Model, TARDIS also allows the user
+to define custom density and abundance profiles in separate files and reference
+these files directly in the main TARDIS configuration file. For further details,
+see the following links:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/modelconfig.html">Ejecta Model Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/densityexp.html">Using an exponential density profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/densitypow.html">Using a power law density profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/densitycust.html">Using a custom density profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/abundanceuni.html">Using a uniform composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/abundancecust.html">Using a custom stratified composition</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples/modelconfig.html" class="btn btn-neutral float-right" title="Ejecta Model Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../running/index.html" class="btn btn-neutral float-left" title="Running TARDIS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

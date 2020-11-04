@@ -1,0 +1,2124 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>STELLA Files to TARDIS &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Convert CMFGEN files to TARDIS file format" href="cmfgen.html" />
+    <link rel="prev" title="Converters" href="index.html" />
+    <link href="../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Running TARDIS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../models/index.html">Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration/index.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../atomic/atomic_data.html">Atomic Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline.html">Running TARDIS in the commandline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gui.html">Graphical User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interaction/index.html">Interacting with TARDIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom_source.html">Running TARDIS with a custom packet source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tardis_widgets/index.html">TARDIS Widgets</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Converters</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">STELLA Files to TARDIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cmfgen.html">Convert CMFGEN files to TARDIS file format</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Running TARDIS</a> &raquo;</li>
+        
+          <li><a href="index.html">Converters</a> &raquo;</li>
+        
+      <li>STELLA Files to TARDIS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/running/converters/stella_to_tardis.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<p>This notebook is available at
+<a class="reference external" href="https://github.com/tardis-sn/tardis/tree/master/docs/running/converters/stella_to_tardis.ipynb">https://github.com/tardis-sn/tardis/tree/master/docs/running/converters/stella_to_tardis.ipynb</a>
+—-</p>
+<div class="section" id="STELLA-Files-to-TARDIS">
+<h1>STELLA Files to TARDIS<a class="headerlink" href="#STELLA-Files-to-TARDIS" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">tardis.io.parsers</span> <span class="kn">import</span> <span class="n">stella</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data</span> <span class="o">=</span> <span class="n">stella</span><span class="o">.</span><span class="n">read_stella_data</span><span class="p">(</span><span class="s1">&#39;mesa.stella.dat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mass_of_cell</th>
+      <th>cell_center_m</th>
+      <th>cell_center_R</th>
+      <th>cell_center_v</th>
+      <th>avg_density</th>
+      <th>radiation_pressure</th>
+      <th>avg_temperature</th>
+      <th>radiation_temperature</th>
+      <th>avg_opacity</th>
+      <th>tau</th>
+      <th>...</th>
+      <th>cr48</th>
+      <th>cr60</th>
+      <th>fe52</th>
+      <th>fe54</th>
+      <th>fe56</th>
+      <th>co56</th>
+      <th>ni56</th>
+      <th>luminosity</th>
+      <th>n_bar</th>
+      <th>n_e</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>6.006769e+29</td>
+      <td>5.190243e+33</td>
+      <td>2.517209e+13</td>
+      <td>3.930633e+06</td>
+      <td>1.005529e-11</td>
+      <td>11237.954506</td>
+      <td>45943.453023</td>
+      <td>45943.453023</td>
+      <td>0.162712</td>
+      <td>5403.504881</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079500e-03</td>
+      <td>7.648868e+38</td>
+      <td>6.055413e+12</td>
+      <td>2.412188e+12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.262406e+30</td>
+      <td>5.191506e+33</td>
+      <td>2.970626e+13</td>
+      <td>5.050403e+06</td>
+      <td>2.928088e-11</td>
+      <td>11236.544022</td>
+      <td>45942.182229</td>
+      <td>45942.182229</td>
+      <td>0.164412</td>
+      <td>5381.678444</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079500e-03</td>
+      <td>9.609214e+38</td>
+      <td>1.762304e+13</td>
+      <td>6.969790e+12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.264624e+30</td>
+      <td>5.192771e+33</td>
+      <td>3.198879e+13</td>
+      <td>5.680288e+06</td>
+      <td>4.619659e-11</td>
+      <td>11133.526767</td>
+      <td>45836.518142</td>
+      <td>45836.518142</td>
+      <td>0.165012</td>
+      <td>5364.280084</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079500e-03</td>
+      <td>1.050921e+39</td>
+      <td>2.783916e+13</td>
+      <td>1.091728e+13</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.263067e+30</td>
+      <td>5.194034e+33</td>
+      <td>3.357130e+13</td>
+      <td>6.135230e+06</td>
+      <td>5.896887e-11</td>
+      <td>11133.526767</td>
+      <td>45836.518142</td>
+      <td>45836.518142</td>
+      <td>0.165310</td>
+      <td>5348.854704</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079500e-03</td>
+      <td>1.100921e+39</td>
+      <td>3.545183e+13</td>
+      <td>1.392188e+13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.259387e+30</td>
+      <td>5.195293e+33</td>
+      <td>3.480638e+13</td>
+      <td>6.495173e+06</td>
+      <td>6.912717e-11</td>
+      <td>11032.838720</td>
+      <td>45732.362031</td>
+      <td>45732.362031</td>
+      <td>0.165510</td>
+      <td>5334.724893</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079500e-03</td>
+      <td>1.140921e+39</td>
+      <td>4.166219e+13</td>
+      <td>1.632649e+13</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.258091e+30</td>
+      <td>5.196550e+33</td>
+      <td>3.583450e+13</td>
+      <td>6.805058e+06</td>
+      <td>7.774308e-11</td>
+      <td>11031.453980</td>
+      <td>45731.097076</td>
+      <td>45731.097076</td>
+      <td>0.165709</td>
+      <td>5321.480960</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079500e-03</td>
+      <td>1.180921e+39</td>
+      <td>4.687026e+13</td>
+      <td>1.832995e+13</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.256430e+30</td>
+      <td>5.197807e+33</td>
+      <td>3.672346e+13</td>
+      <td>7.075000e+06</td>
+      <td>8.524104e-11</td>
+      <td>11031.453980</td>
+      <td>45731.097076</td>
+      <td>45731.097076</td>
+      <td>0.165809</td>
+      <td>5308.917604</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079500e-03</td>
+      <td>1.210921e+39</td>
+      <td>5.127832e+13</td>
+      <td>2.013225e+13</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.253971e+30</td>
+      <td>5.199061e+33</td>
+      <td>3.751183e+13</td>
+      <td>7.310000e+06</td>
+      <td>9.155072e-11</td>
+      <td>11031.453980</td>
+      <td>45731.097076</td>
+      <td>45731.097076</td>
+      <td>0.165820</td>
+      <td>5296.950388</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079500e-03</td>
+      <td>1.240806e+39</td>
+      <td>5.518408e+13</td>
+      <td>2.153570e+13</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.253773e+30</td>
+      <td>5.200314e+33</td>
+      <td>3.822537e+13</td>
+      <td>7.520000e+06</td>
+      <td>9.719899e-11</td>
+      <td>10930.317002</td>
+      <td>45625.918471</td>
+      <td>45625.918471</td>
+      <td>0.165936</td>
+      <td>5285.442617</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079500e-03</td>
+      <td>1.260806e+39</td>
+      <td>5.848984e+13</td>
+      <td>2.283801e+13</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1.252728e+30</td>
+      <td>5.201567e+33</td>
+      <td>3.888202e+13</td>
+      <td>7.715000e+06</td>
+      <td>1.017798e-10</td>
+      <td>10930.317002</td>
+      <td>45625.918471</td>
+      <td>45625.918471</td>
+      <td>0.166444</td>
+      <td>5274.319278</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079380e-03</td>
+      <td>1.290806e+39</td>
+      <td>6.129444e+13</td>
+      <td>2.403916e+13</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.251315e+30</td>
+      <td>5.202818e+33</td>
+      <td>3.949364e+13</td>
+      <td>7.899942e+06</td>
+      <td>1.056026e-10</td>
+      <td>10930.317002</td>
+      <td>45625.918471</td>
+      <td>45625.918471</td>
+      <td>0.167443</td>
+      <td>5263.504963</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.310806e+39</td>
+      <td>6.359790e+13</td>
+      <td>2.504031e+13</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.248465e+30</td>
+      <td>5.204067e+33</td>
+      <td>4.006494e+13</td>
+      <td>8.069885e+06</td>
+      <td>1.095625e-10</td>
+      <td>10930.317002</td>
+      <td>45625.918471</td>
+      <td>45625.918471</td>
+      <td>0.168344</td>
+      <td>5252.968552</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.330806e+39</td>
+      <td>6.600135e+13</td>
+      <td>2.594261e+13</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1.243739e+30</td>
+      <td>5.205311e+33</td>
+      <td>4.060165e+13</td>
+      <td>8.224885e+06</td>
+      <td>1.128950e-10</td>
+      <td>10830.107253</td>
+      <td>45520.981771</td>
+      <td>45520.981771</td>
+      <td>0.169143</td>
+      <td>5242.720455</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.350806e+39</td>
+      <td>6.810366e+13</td>
+      <td>2.674377e+13</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1.243959e+30</td>
+      <td>5.206554e+33</td>
+      <td>4.111083e+13</td>
+      <td>8.374827e+06</td>
+      <td>1.160579e-10</td>
+      <td>10830.107253</td>
+      <td>45520.981771</td>
+      <td>45520.981771</td>
+      <td>0.169941</td>
+      <td>5232.678533</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.380691e+39</td>
+      <td>6.990711e+13</td>
+      <td>2.744492e+13</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1.245057e+30</td>
+      <td>5.207799e+33</td>
+      <td>4.159658e+13</td>
+      <td>8.514827e+06</td>
+      <td>1.190315e-10</td>
+      <td>10830.107253</td>
+      <td>45520.981771</td>
+      <td>45520.981771</td>
+      <td>0.170541</td>
+      <td>5222.818389</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.400691e+39</td>
+      <td>7.160942e+13</td>
+      <td>2.814492e+13</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1.231934e+30</td>
+      <td>5.209033e+33</td>
+      <td>4.205671e+13</td>
+      <td>8.644827e+06</td>
+      <td>1.215239e-10</td>
+      <td>10830.107253</td>
+      <td>45520.981771</td>
+      <td>45520.981771</td>
+      <td>0.171141</td>
+      <td>5213.249350</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.420806e+39</td>
+      <td>7.311172e+13</td>
+      <td>2.864722e+13</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1.216115e+30</td>
+      <td>5.210248e+33</td>
+      <td>4.249330e+13</td>
+      <td>8.769770e+06</td>
+      <td>1.237832e-10</td>
+      <td>10730.816233</td>
+      <td>45416.286418</td>
+      <td>45416.286418</td>
+      <td>0.172941</td>
+      <td>5203.903812</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.440806e+39</td>
+      <td>7.451402e+13</td>
+      <td>2.924722e+13</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1.218289e+30</td>
+      <td>5.211465e+33</td>
+      <td>4.291475e+13</td>
+      <td>8.889770e+06</td>
+      <td>1.257945e-10</td>
+      <td>10730.816233</td>
+      <td>45416.286418</td>
+      <td>45416.286418</td>
+      <td>0.173441</td>
+      <td>5194.709058</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.470691e+39</td>
+      <td>7.571633e+13</td>
+      <td>2.974837e+13</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1.220635e+30</td>
+      <td>5.212687e+33</td>
+      <td>4.332273e+13</td>
+      <td>9.009712e+06</td>
+      <td>1.275483e-10</td>
+      <td>10730.816233</td>
+      <td>45416.286418</td>
+      <td>45416.286418</td>
+      <td>0.173841</td>
+      <td>5185.663371</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.490691e+39</td>
+      <td>7.691748e+13</td>
+      <td>3.014953e+13</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1.218599e+30</td>
+      <td>5.213906e+33</td>
+      <td>4.371717e+13</td>
+      <td>9.119712e+06</td>
+      <td>1.293227e-10</td>
+      <td>10730.816233</td>
+      <td>45416.286418</td>
+      <td>45416.286418</td>
+      <td>0.174240</td>
+      <td>5176.775982</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.510691e+39</td>
+      <td>7.791978e+13</td>
+      <td>3.054953e+13</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1.218527e+30</td>
+      <td>5.215123e+33</td>
+      <td>4.409991e+13</td>
+      <td>9.224712e+06</td>
+      <td>1.311178e-10</td>
+      <td>10730.816233</td>
+      <td>45416.286418</td>
+      <td>45416.286418</td>
+      <td>0.174541</td>
+      <td>5168.017132</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.530691e+39</td>
+      <td>7.891978e+13</td>
+      <td>3.094953e+13</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1.216195e+30</td>
+      <td>5.216341e+33</td>
+      <td>4.447132e+13</td>
+      <td>9.329654e+06</td>
+      <td>1.323350e-10</td>
+      <td>10632.435519</td>
+      <td>45311.831858</td>
+      <td>45311.831858</td>
+      <td>0.174840</td>
+      <td>5159.424248</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.560576e+39</td>
+      <td>7.982093e+13</td>
+      <td>3.125068e+13</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1.213956e+30</td>
+      <td>5.217554e+33</td>
+      <td>4.483239e+13</td>
+      <td>9.429654e+06</td>
+      <td>1.338634e-10</td>
+      <td>10632.435519</td>
+      <td>45311.831858</td>
+      <td>45311.831858</td>
+      <td>0.175140</td>
+      <td>5150.959409</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.580691e+39</td>
+      <td>8.062209e+13</td>
+      <td>3.155183e+13</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1.214388e+30</td>
+      <td>5.218768e+33</td>
+      <td>4.518466e+13</td>
+      <td>9.524654e+06</td>
+      <td>1.351020e-10</td>
+      <td>10632.435519</td>
+      <td>45311.831858</td>
+      <td>45311.831858</td>
+      <td>0.175440</td>
+      <td>5142.610227</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.600691e+39</td>
+      <td>8.132324e+13</td>
+      <td>3.185183e+13</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1.212675e+30</td>
+      <td>5.219981e+33</td>
+      <td>4.552823e+13</td>
+      <td>9.619654e+06</td>
+      <td>1.360385e-10</td>
+      <td>10632.435519</td>
+      <td>45311.831858</td>
+      <td>45311.831858</td>
+      <td>0.175640</td>
+      <td>5134.401425</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079205e-03</td>
+      <td>1.630576e+39</td>
+      <td>8.202439e+13</td>
+      <td>3.215183e+13</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1.210647e+30</td>
+      <td>5.221192e+33</td>
+      <td>4.586395e+13</td>
+      <td>9.714654e+06</td>
+      <td>1.369815e-10</td>
+      <td>10632.435519</td>
+      <td>45311.831858</td>
+      <td>45311.831858</td>
+      <td>0.175839</td>
+      <td>5126.315470</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.079156e-03</td>
+      <td>1.650576e+39</td>
+      <td>8.252554e+13</td>
+      <td>3.235183e+13</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1.209411e+30</td>
+      <td>5.222402e+33</td>
+      <td>4.619471e+13</td>
+      <td>9.799654e+06</td>
+      <td>1.369815e-10</td>
+      <td>10631.113103</td>
+      <td>45310.581383</td>
+      <td>45310.581383</td>
+      <td>0.175839</td>
+      <td>5118.349189</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.078789e-03</td>
+      <td>1.670691e+39</td>
+      <td>8.242554e+13</td>
+      <td>3.255183e+13</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1.204720e+30</td>
+      <td>5.223605e+33</td>
+      <td>4.651757e+13</td>
+      <td>9.884654e+06</td>
+      <td>1.379268e-10</td>
+      <td>10534.956764</td>
+      <td>45207.617536</td>
+      <td>45207.617536</td>
+      <td>0.175940</td>
+      <td>5110.514635</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.078789e-03</td>
+      <td>1.690691e+39</td>
+      <td>8.292669e+13</td>
+      <td>3.275183e+13</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1.203253e+30</td>
+      <td>5.224809e+33</td>
+      <td>4.683392e+13</td>
+      <td>9.969654e+06</td>
+      <td>1.385676e-10</td>
+      <td>10534.956764</td>
+      <td>45207.617536</td>
+      <td>45207.617536</td>
+      <td>0.176139</td>
+      <td>5102.793922</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.078789e-03</td>
+      <td>1.720576e+39</td>
+      <td>8.342669e+13</td>
+      <td>3.285298e+13</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1.204574e+30</td>
+      <td>5.226014e+33</td>
+      <td>4.714483e+13</td>
+      <td>1.005460e+07</td>
+      <td>1.392072e-10</td>
+      <td>10534.956764</td>
+      <td>45207.617536</td>
+      <td>45207.617536</td>
+      <td>0.176240</td>
+      <td>5095.166450</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000021</td>
+      <td>0.0</td>
+      <td>4.078789e-03</td>
+      <td>1.740576e+39</td>
+      <td>8.382669e+13</td>
+      <td>3.305298e+13</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>370</th>
+      <td>1.503278e+31</td>
+      <td>2.573607e+34</td>
+      <td>1.104475e+15</td>
+      <td>2.429600e+08</td>
+      <td>9.175628e-14</td>
+      <td>0.300826</td>
+      <td>3954.619710</td>
+      <td>3304.761442</td>
+      <td>0.000273</td>
+      <td>0.007314</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.769424e+41</td>
+      <td>5.528062e+10</td>
+      <td>1.237947e+07</td>
+    </tr>
+    <tr>
+      <th>371</th>
+      <td>1.503744e+31</td>
+      <td>2.575109e+34</td>
+      <td>1.115499e+15</td>
+      <td>2.454950e+08</td>
+      <td>8.803103e-14</td>
+      <td>0.295301</td>
+      <td>3936.449883</td>
+      <td>3289.487890</td>
+      <td>0.000275</td>
+      <td>0.007047</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.769424e+41</td>
+      <td>5.307717e+10</td>
+      <td>1.117371e+07</td>
+    </tr>
+    <tr>
+      <th>372</th>
+      <td>1.504194e+31</td>
+      <td>2.576615e+34</td>
+      <td>1.126760e+15</td>
+      <td>2.480850e+08</td>
+      <td>8.464919e-14</td>
+      <td>0.287253</td>
+      <td>3918.469727</td>
+      <td>3266.843215</td>
+      <td>0.000278</td>
+      <td>0.006782</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.769424e+41</td>
+      <td>5.097371e+10</td>
+      <td>1.016680e+07</td>
+    </tr>
+    <tr>
+      <th>373</th>
+      <td>1.504628e+31</td>
+      <td>2.578119e+34</td>
+      <td>1.138255e+15</td>
+      <td>2.507250e+08</td>
+      <td>8.121491e-14</td>
+      <td>0.279425</td>
+      <td>3900.465994</td>
+      <td>3244.354424</td>
+      <td>0.000281</td>
+      <td>0.006520</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.769424e+41</td>
+      <td>4.887141e+10</td>
+      <td>9.161043e+06</td>
+    </tr>
+    <tr>
+      <th>374</th>
+      <td>1.505049e+31</td>
+      <td>2.579624e+34</td>
+      <td>1.149979e+15</td>
+      <td>2.534200e+08</td>
+      <td>7.809493e-14</td>
+      <td>0.269286</td>
+      <td>3864.706307</td>
+      <td>3214.522692</td>
+      <td>0.000282</td>
+      <td>0.006262</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.759539e+41</td>
+      <td>4.696911e+10</td>
+      <td>7.638489e+06</td>
+    </tr>
+    <tr>
+      <th>375</th>
+      <td>1.505456e+31</td>
+      <td>2.581128e+34</td>
+      <td>1.161939e+15</td>
+      <td>2.561650e+08</td>
+      <td>7.492656e-14</td>
+      <td>0.264341</td>
+      <td>3846.949594</td>
+      <td>3199.666590</td>
+      <td>0.000284</td>
+      <td>0.006008</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.759539e+41</td>
+      <td>4.516565e+10</td>
+      <td>6.863536e+06</td>
+    </tr>
+    <tr>
+      <th>376</th>
+      <td>1.505850e+31</td>
+      <td>2.582634e+34</td>
+      <td>1.174137e+15</td>
+      <td>2.589650e+08</td>
+      <td>7.204815e-14</td>
+      <td>0.257137</td>
+      <td>3829.170696</td>
+      <td>3177.640241</td>
+      <td>0.000287</td>
+      <td>0.005755</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.759539e+41</td>
+      <td>4.336335e+10</td>
+      <td>6.169275e+06</td>
+    </tr>
+    <tr>
+      <th>377</th>
+      <td>1.506231e+31</td>
+      <td>2.584142e+34</td>
+      <td>1.186582e+15</td>
+      <td>2.618250e+08</td>
+      <td>6.912510e-14</td>
+      <td>0.250129</td>
+      <td>3811.577254</td>
+      <td>3155.765519</td>
+      <td>0.000290</td>
+      <td>0.005506</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.759539e+41</td>
+      <td>4.165989e+10</td>
+      <td>5.535128e+06</td>
+    </tr>
+    <tr>
+      <th>378</th>
+      <td>1.506601e+31</td>
+      <td>2.585648e+34</td>
+      <td>1.199285e+15</td>
+      <td>2.647400e+08</td>
+      <td>6.631867e-14</td>
+      <td>0.243340</td>
+      <td>3794.064648</td>
+      <td>3134.126315</td>
+      <td>0.000293</td>
+      <td>0.005259</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.759539e+41</td>
+      <td>3.995759e+10</td>
+      <td>4.971328e+06</td>
+    </tr>
+    <tr>
+      <th>379</th>
+      <td>1.506960e+31</td>
+      <td>2.587156e+34</td>
+      <td>1.212262e+15</td>
+      <td>2.677200e+08</td>
+      <td>6.362427e-14</td>
+      <td>0.236709</td>
+      <td>3768.048602</td>
+      <td>3112.551141</td>
+      <td>0.000296</td>
+      <td>0.005015</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.759539e+41</td>
+      <td>3.825528e+10</td>
+      <td>4.457872e+06</td>
+    </tr>
+    <tr>
+      <th>380</th>
+      <td>1.507308e+31</td>
+      <td>2.588661e+34</td>
+      <td>1.225533e+15</td>
+      <td>2.707700e+08</td>
+      <td>6.090078e-14</td>
+      <td>0.230258</td>
+      <td>3750.735991</td>
+      <td>3091.124490</td>
+      <td>0.000299</td>
+      <td>0.004773</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.759539e+41</td>
+      <td>3.665298e+10</td>
+      <td>3.994763e+06</td>
+    </tr>
+    <tr>
+      <th>381</th>
+      <td>1.507645e+31</td>
+      <td>2.590169e+34</td>
+      <td>1.239120e+15</td>
+      <td>2.738900e+08</td>
+      <td>5.816152e-14</td>
+      <td>0.223982</td>
+      <td>3733.502925</td>
+      <td>3069.845338</td>
+      <td>0.000302</td>
+      <td>0.004534</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.759424e+41</td>
+      <td>3.505068e+10</td>
+      <td>3.581883e+06</td>
+    </tr>
+    <tr>
+      <th>382</th>
+      <td>1.507973e+31</td>
+      <td>2.591677e+34</td>
+      <td>1.253046e+15</td>
+      <td>2.770850e+08</td>
+      <td>5.554217e-14</td>
+      <td>0.219869</td>
+      <td>3707.801671</td>
+      <td>3055.657872</td>
+      <td>0.000306</td>
+      <td>0.004298</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.759424e+41</td>
+      <td>3.344837e+10</td>
+      <td>3.209349e+06</td>
+    </tr>
+    <tr>
+      <th>383</th>
+      <td>1.508291e+31</td>
+      <td>2.593187e+34</td>
+      <td>1.267340e+15</td>
+      <td>2.803650e+08</td>
+      <td>5.292036e-14</td>
+      <td>0.211916</td>
+      <td>3682.277344</td>
+      <td>3027.643432</td>
+      <td>0.000309</td>
+      <td>0.004064</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.749539e+41</td>
+      <td>3.184607e+10</td>
+      <td>2.765894e+06</td>
+    </tr>
+    <tr>
+      <th>384</th>
+      <td>1.508601e+31</td>
+      <td>2.594695e+34</td>
+      <td>1.282036e+15</td>
+      <td>2.837450e+08</td>
+      <td>5.030635e-14</td>
+      <td>0.206141</td>
+      <td>3656.928725</td>
+      <td>3006.801281</td>
+      <td>0.000312</td>
+      <td>0.003833</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.749539e+41</td>
+      <td>3.024492e+10</td>
+      <td>2.463821e+06</td>
+    </tr>
+    <tr>
+      <th>385</th>
+      <td>1.508902e+31</td>
+      <td>2.596204e+34</td>
+      <td>1.297177e+15</td>
+      <td>2.872300e+08</td>
+      <td>4.771147e-14</td>
+      <td>0.200523</td>
+      <td>3640.028019</td>
+      <td>2986.102607</td>
+      <td>0.000316</td>
+      <td>0.003605</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.749539e+41</td>
+      <td>2.874146e+10</td>
+      <td>2.201978e+06</td>
+    </tr>
+    <tr>
+      <th>386</th>
+      <td>1.509194e+31</td>
+      <td>2.597712e+34</td>
+      <td>1.312826e+15</td>
+      <td>2.908350e+08</td>
+      <td>4.504388e-14</td>
+      <td>0.195058</td>
+      <td>3615.068208</td>
+      <td>2965.546421</td>
+      <td>0.000321</td>
+      <td>0.003379</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.749539e+41</td>
+      <td>2.713916e+10</td>
+      <td>1.960251e+06</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>1.509479e+31</td>
+      <td>2.599222e+34</td>
+      <td>1.329057e+15</td>
+      <td>2.945800e+08</td>
+      <td>4.242636e-14</td>
+      <td>0.189742</td>
+      <td>3590.182254</td>
+      <td>2945.131743</td>
+      <td>0.000326</td>
+      <td>0.003154</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.749539e+41</td>
+      <td>2.553686e+10</td>
+      <td>1.738753e+06</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>1.509756e+31</td>
+      <td>2.600732e+34</td>
+      <td>1.345972e+15</td>
+      <td>2.984900e+08</td>
+      <td>3.968586e-14</td>
+      <td>0.184571</td>
+      <td>3565.467613</td>
+      <td>2924.857599</td>
+      <td>0.000332</td>
+      <td>0.002932</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.749539e+41</td>
+      <td>2.393455e+10</td>
+      <td>1.537486e+06</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>1.510025e+31</td>
+      <td>2.602242e+34</td>
+      <td>1.363690e+15</td>
+      <td>3.025900e+08</td>
+      <td>3.695182e-14</td>
+      <td>0.177895</td>
+      <td>3540.923106</td>
+      <td>2898.042343</td>
+      <td>0.000338</td>
+      <td>0.002710</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.739654e+41</td>
+      <td>2.223225e+10</td>
+      <td>1.366104e+06</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>1.510288e+31</td>
+      <td>2.603751e+34</td>
+      <td>1.382340e+15</td>
+      <td>3.069150e+08</td>
+      <td>3.416928e-14</td>
+      <td>0.173047</td>
+      <td>3508.555024</td>
+      <td>2878.092360</td>
+      <td>0.000345</td>
+      <td>0.002490</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.739654e+41</td>
+      <td>2.062995e+10</td>
+      <td>1.205068e+06</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>1.510544e+31</td>
+      <td>2.605263e+34</td>
+      <td>1.402096e+15</td>
+      <td>3.115150e+08</td>
+      <td>3.137876e-14</td>
+      <td>0.166788</td>
+      <td>3468.392927</td>
+      <td>2851.705850</td>
+      <td>0.000352</td>
+      <td>0.002272</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.739654e+41</td>
+      <td>1.892764e+10</td>
+      <td>1.033916e+06</td>
+    </tr>
+    <tr>
+      <th>392</th>
+      <td>1.510793e+31</td>
+      <td>2.606773e+34</td>
+      <td>1.423208e+15</td>
+      <td>3.164600e+08</td>
+      <td>2.855110e-14</td>
+      <td>0.160755</td>
+      <td>3436.594510</td>
+      <td>2825.561254</td>
+      <td>0.000361</td>
+      <td>0.002054</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.739539e+41</td>
+      <td>1.722419e+10</td>
+      <td>9.080521e+05</td>
+    </tr>
+    <tr>
+      <th>393</th>
+      <td>1.511037e+31</td>
+      <td>2.608285e+34</td>
+      <td>1.446057e+15</td>
+      <td>3.218649e+08</td>
+      <td>2.556441e-14</td>
+      <td>0.154940</td>
+      <td>3405.087622</td>
+      <td>2799.656353</td>
+      <td>0.000372</td>
+      <td>0.001837</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.739539e+41</td>
+      <td>1.542188e+10</td>
+      <td>7.863841e+05</td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>1.511274e+31</td>
+      <td>2.609797e+34</td>
+      <td>1.471245e+15</td>
+      <td>3.279099e+08</td>
+      <td>2.242001e-14</td>
+      <td>0.149336</td>
+      <td>3366.109906</td>
+      <td>2773.988949</td>
+      <td>0.000386</td>
+      <td>0.001619</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.729654e+41</td>
+      <td>1.351958e+10</td>
+      <td>6.707967e+05</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>1.511505e+31</td>
+      <td>2.611308e+34</td>
+      <td>1.499835e+15</td>
+      <td>3.349250e+08</td>
+      <td>1.908195e-14</td>
+      <td>0.143918</td>
+      <td>3319.925147</td>
+      <td>2748.482551</td>
+      <td>0.000405</td>
+      <td>0.001398</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.729654e+41</td>
+      <td>1.151612e+10</td>
+      <td>5.573015e+05</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>1.511731e+31</td>
+      <td>2.612818e+34</td>
+      <td>1.533756e+15</td>
+      <td>3.435050e+08</td>
+      <td>1.540408e-14</td>
+      <td>0.136196</td>
+      <td>3259.329684</td>
+      <td>2710.845252</td>
+      <td>0.000430</td>
+      <td>0.001173</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.729654e+41</td>
+      <td>9.283015e+09</td>
+      <td>4.408753e+05</td>
+    </tr>
+    <tr>
+      <th>397</th>
+      <td>1.511951e+31</td>
+      <td>2.614332e+34</td>
+      <td>1.576303e+15</td>
+      <td>3.545750e+08</td>
+      <td>1.168519e-14</td>
+      <td>0.128874</td>
+      <td>3192.480784</td>
+      <td>2673.651060</td>
+      <td>0.000467</td>
+      <td>0.000941</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.719770e+41</td>
+      <td>7.040251e+09</td>
+      <td>3.305759e+05</td>
+    </tr>
+    <tr>
+      <th>398</th>
+      <td>1.512167e+31</td>
+      <td>2.615844e+34</td>
+      <td>1.632356e+15</td>
+      <td>3.682800e+08</td>
+      <td>8.348776e-15</td>
+      <td>0.119719</td>
+      <td>3126.918024</td>
+      <td>2624.851429</td>
+      <td>0.000525</td>
+      <td>0.000695</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.719654e+41</td>
+      <td>5.027256e+09</td>
+      <td>2.333801e+05</td>
+    </tr>
+    <tr>
+      <th>399</th>
+      <td>1.512377e+31</td>
+      <td>2.617356e+34</td>
+      <td>1.698066e+15</td>
+      <td>4.244850e+08</td>
+      <td>6.601396e-15</td>
+      <td>0.110183</td>
+      <td>3055.657872</td>
+      <td>2570.946173</td>
+      <td>0.000569</td>
+      <td>0.000448</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000017</td>
+      <td>0.0</td>
+      <td>1.108306e-14</td>
+      <td>3.709770e+41</td>
+      <td>3.975759e+09</td>
+      <td>1.842764e+05</td>
+    </tr>
+  </tbody>
+</table>
+<p>399 rows × 36 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># extract outer radius boundaries</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;outer_edge_r&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">cm</span>
+
+<span class="c1"># calculate t_expl_s</span>
+<span class="n">t_expl</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">day</span> <span class="c1">#days</span>
+
+<span class="c1"># calculate outer velocities of each zone assuming homologous expansion (d =v*t)</span>
+
+<span class="n">vel</span> <span class="o">=</span> <span class="p">(</span><span class="n">radius</span><span class="o">/</span><span class="n">t_expl</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+
+<span class="c1"># create a new column of our velocities (OPTIONAL)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;velocity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vel</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">density_dat</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;avg_density&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">density_dat</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;density_parse.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># import all elements and isotopes and export to TARDIS</span>
+
+<span class="n">data_elements</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">33</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">abund</span> <span class="o">=</span> <span class="n">data_elements</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;abund_parse.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cmfgen.html" class="btn btn-neutral float-right" title="Convert CMFGEN files to TARDIS file format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Converters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
