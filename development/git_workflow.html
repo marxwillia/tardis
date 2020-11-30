@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Procedure to update the reference data" href="update_refdata.html" />
-    <link rel="prev" title="Reporting Issues" href="issues.html" />
+    <link rel="prev" title="Debugging numba_montecarlo" href="debug_numba.html" />
     <link href="../_static/tardis.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -123,8 +123,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing to TARDIS</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Workflow</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="running_tests.html">Running tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug_numba.html">Debugging numba_montecarlo</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">General Workflow to add a new feature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#preparation-and-working-with-git">Preparation and Working with Git</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#creating-a-fork">Creating a fork</a></li>
@@ -415,16 +415,16 @@ branch” (<a class="reference external" href="http://mail.scipy.org/pipermail/i
 <li><p>If you can possibly avoid it, don’t merge the trunk or any other branches into
 your feature branch while you are working.</p></li>
 <li><p>If you do find yourself merging from the trunk, consider
-<a class="reference external" href="https://matplotlib.org/devel/gitwash/development_workflow.html#rebase-on-trunk" title="(in Matplotlib v3.3.2)"><span>Rebasing on trunk</span></a></p></li>
+<a class="reference external" href="https://matplotlib.org/devel/gitwash/development_workflow.html#rebase-on-trunk" title="(in Matplotlib v3.3.3)"><span>Rebasing on trunk</span></a></p></li>
 <li><p>Ask on the <a class="reference external" href="https://groups.google.com/forum/#!forum/tardis-sn-dev">tardis-sn-dev mailing list</a> if you get stuck.</p></li>
 <li><p>Once your code is nearing completion, run the test suite to ensure
 you have not accidentally caused regressions, and add new tests to ensure
 your contribution behaves correctly (see <a class="reference external" href="https://numpy.org/doc/stable/reference/testing.html#testing-guidelines" title="(in NumPy v1.19)"><span>Testing Guidelines</span></a>).</p></li>
 <li><p>Issue a pull request on GitHub!</p></li>
 <li><p>As the code is converging to a final state, ensure your
-documentation follows the guidelines (see <a class="reference external" href="https://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v4.1)"><span>Writing Documentation</span></a>).</p></li>
+documentation follows the guidelines (see <a class="reference external" href="https://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v4.2)"><span>Writing Documentation</span></a>).</p></li>
 <li><p>Once your code is ready to be accepted, please add an entry to the changelog
-(see <a class="reference external" href="https://docs.astropy.org/en/stable/development/workflow/maintainer_workflow.html#changelog-format" title="(in Astropy v4.1)"><span>Updating and Maintaining the Changelog</span></a>).  If you’re sure where to put this, please at
+(see <a class="reference external" href="https://docs.astropy.org/en/stable/development/workflow/maintainer_workflow.html#changelog-format" title="(in Astropy v4.2)"><span>Updating and Maintaining the Changelog</span></a>).  If you’re sure where to put this, please at
 least suggest a brief (one or two sentence) description of your change so
 that another developer can add it to the changelog.</p></li>
 </ul>
@@ -510,7 +510,7 @@ builds and looks correct:</p>
 </div>
 <p>The last line should just state <code class="docutils literal notranslate"><span class="pre">build</span> <span class="pre">succeeded</span></code>, and should not mention
 any warnings.  (For more details, see the Astropy
-<a class="reference external" href="https://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v4.1)"><span>Writing Documentation</span></a> we follow.)</p>
+<a class="reference external" href="https://docs.astropy.org/en/stable/development/docguide.html#documentation-guidelines" title="(in Astropy v4.2)"><span>Writing Documentation</span></a> we follow.)</p>
 </li>
 <li><p>See which files have changed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> (see <a class="reference external" href="http://schacon.github.com/git/git-status.html">git status</a>).
 You’ll see a listing like this one:</p>
@@ -745,7 +745,7 @@ implement your work.</p>
         <a href="update_refdata.html" class="btn btn-neutral float-right" title="Procedure to update the reference data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="issues.html" class="btn btn-neutral float-left" title="Reporting Issues" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="debug_numba.html" class="btn btn-neutral float-left" title="Debugging numba_montecarlo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

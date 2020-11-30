@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.montecarlo.montecarlo_numba.vpacket &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href="../../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.montecarlo.montecarlo_numba.vpacket</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.montecarlo.montecarlo_numba.vpacket</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">float64</span><span class="p">,</span> <span class="n">int64</span><span class="p">,</span> <span class="n">boolean</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span><span class="p">,</span> <span class="n">gdb</span>
+<span class="kn">from</span> <span class="nn">numba.experimental</span> <span class="kn">import</span> <span class="n">jitclass</span>
+
+<span class="kn">from</span> <span class="nn">tardis.montecarlo.montecarlo_numba</span> <span class="kn">import</span> <span class="n">njit_dict</span>
+<span class="kn">from</span> <span class="nn">tardis.montecarlo</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">montecarlo_configuration</span> <span class="k">as</span> <span class="n">montecarlo_configuration</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">tardis.montecarlo.montecarlo_numba.r_packet</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">calculate_distance_boundary</span><span class="p">,</span>
+    <span class="n">get_doppler_factor</span><span class="p">,</span>
+    <span class="n">calculate_distance_line</span><span class="p">,</span>
+    <span class="n">calculate_tau_electron</span><span class="p">,</span>
+    <span class="n">PacketStatus</span><span class="p">,</span>
+    <span class="n">move_packet_across_shell_boundary</span><span class="p">,</span>
+    <span class="n">angle_aberration_LF_to_CMF</span><span class="p">,</span>
+    <span class="n">angle_aberration_CMF_to_LF</span><span class="p">,</span>
+    <span class="n">test_for_close_line</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">vpacket_spec</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">float64</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">float64</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;nu&quot;</span><span class="p">,</span> <span class="n">float64</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;energy&quot;</span><span class="p">,</span> <span class="n">float64</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;next_line_id&quot;</span><span class="p">,</span> <span class="n">int64</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;current_shell_id&quot;</span><span class="p">,</span> <span class="n">int64</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="n">int64</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">int64</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;is_close_line&quot;</span><span class="p">,</span> <span class="n">boolean</span><span class="p">),</span>
+<span class="p">]</span>
+
+
+<span class="nd">@jitclass</span><span class="p">(</span><span class="n">vpacket_spec</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">VPacket</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">r</span><span class="p">,</span>
+        <span class="n">mu</span><span class="p">,</span>
+        <span class="n">nu</span><span class="p">,</span>
+        <span class="n">energy</span><span class="p">,</span>
+        <span class="n">current_shell_id</span><span class="p">,</span>
+        <span class="n">next_line_id</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">is_close_line</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mu</span> <span class="o">=</span> <span class="n">mu</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nu</span> <span class="o">=</span> <span class="n">nu</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">energy</span> <span class="o">=</span> <span class="n">energy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_shell_id</span> <span class="o">=</span> <span class="n">current_shell_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_line_id</span> <span class="o">=</span> <span class="n">next_line_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">PacketStatus</span><span class="o">.</span><span class="n">IN_PROCESS</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">index</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_close_line</span> <span class="o">=</span> <span class="n">is_close_line</span>
+
+
+<div class="viewcode-block" id="trace_vpacket_within_shell"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.vpacket.html#tardis.montecarlo.montecarlo_numba.vpacket.trace_vpacket_within_shell">[docs]</a><span class="nd">@njit</span><span class="p">(</span><span class="o">**</span><span class="n">njit_dict</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">trace_vpacket_within_shell</span><span class="p">(</span><span class="n">v_packet</span><span class="p">,</span> <span class="n">numba_model</span><span class="p">,</span> <span class="n">numba_plasma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Trace VPacket within one shell (relatively simple operation)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">r_inner</span> <span class="o">=</span> <span class="n">numba_model</span><span class="o">.</span><span class="n">r_inner</span><span class="p">[</span><span class="n">v_packet</span><span class="o">.</span><span class="n">current_shell_id</span><span class="p">]</span>
+    <span class="n">r_outer</span> <span class="o">=</span> <span class="n">numba_model</span><span class="o">.</span><span class="n">r_outer</span><span class="p">[</span><span class="n">v_packet</span><span class="o">.</span><span class="n">current_shell_id</span><span class="p">]</span>
+
+    <span class="n">distance_boundary</span><span class="p">,</span> <span class="n">delta_shell</span> <span class="o">=</span> <span class="n">calculate_distance_boundary</span><span class="p">(</span>
+        <span class="n">v_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="n">r_inner</span><span class="p">,</span> <span class="n">r_outer</span>
+    <span class="p">)</span>
+    <span class="c1"># defining start for line interaction</span>
+    <span class="n">start_line_id</span> <span class="o">=</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">next_line_id</span>
+
+    <span class="c1"># e scattering initialization</span>
+
+    <span class="n">cur_electron_density</span> <span class="o">=</span> <span class="n">numba_plasma</span><span class="o">.</span><span class="n">electron_density</span><span class="p">[</span>
+        <span class="n">v_packet</span><span class="o">.</span><span class="n">current_shell_id</span>
+    <span class="p">]</span>
+    <span class="n">tau_electron</span> <span class="o">=</span> <span class="n">calculate_tau_electron</span><span class="p">(</span>
+        <span class="n">cur_electron_density</span><span class="p">,</span> <span class="n">distance_boundary</span>
+    <span class="p">)</span>
+    <span class="n">tau_trace_combined</span> <span class="o">=</span> <span class="n">tau_electron</span>
+
+    <span class="c1"># Calculating doppler factor</span>
+    <span class="n">doppler_factor</span> <span class="o">=</span> <span class="n">get_doppler_factor</span><span class="p">(</span>
+        <span class="n">v_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="n">numba_model</span><span class="o">.</span><span class="n">time_explosion</span>
+    <span class="p">)</span>
+    <span class="n">comov_nu</span> <span class="o">=</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">nu</span> <span class="o">*</span> <span class="n">doppler_factor</span>
+    <span class="n">cur_line_id</span> <span class="o">=</span> <span class="n">start_line_id</span>
+
+    <span class="k">for</span> <span class="n">cur_line_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_line_id</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">)):</span>
+        <span class="c1"># if tau_trace_combined &gt; 10: ### FIXME ?????</span>
+        <span class="c1">#    break</span>
+
+        <span class="n">nu_line</span> <span class="o">=</span> <span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">[</span><span class="n">cur_line_id</span><span class="p">]</span>
+        <span class="c1"># TODO: Check if this is what the C code does</span>
+
+        <span class="n">tau_trace_line</span> <span class="o">=</span> <span class="n">numba_plasma</span><span class="o">.</span><span class="n">tau_sobolev</span><span class="p">[</span>
+            <span class="n">cur_line_id</span><span class="p">,</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">current_shell_id</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">cur_line_id</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">is_last_line</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">is_last_line</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">distance_trace_line</span> <span class="o">=</span> <span class="n">calculate_distance_line</span><span class="p">(</span>
+            <span class="n">v_packet</span><span class="p">,</span>
+            <span class="n">comov_nu</span><span class="p">,</span>
+            <span class="n">is_last_line</span><span class="p">,</span>
+            <span class="n">nu_line</span><span class="p">,</span>
+            <span class="n">numba_model</span><span class="o">.</span><span class="n">time_explosion</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">cur_line_id</span> <span class="o">!=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_for_close_line</span><span class="p">(</span>
+                <span class="n">v_packet</span><span class="p">,</span>
+                <span class="n">cur_line_id</span><span class="p">,</span>
+                <span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">[</span><span class="n">cur_line_id</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
+                <span class="n">numba_plasma</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">distance_boundary</span> <span class="o">&lt;=</span> <span class="n">distance_trace_line</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="n">tau_trace_combined</span> <span class="o">+=</span> <span class="n">tau_trace_line</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cur_line_id</span> <span class="o">==</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">cur_line_id</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">v_packet</span><span class="o">.</span><span class="n">next_line_id</span> <span class="o">=</span> <span class="n">cur_line_id</span>
+
+    <span class="k">return</span> <span class="n">tau_trace_combined</span><span class="p">,</span> <span class="n">distance_boundary</span><span class="p">,</span> <span class="n">delta_shell</span></div>
+
+
+<div class="viewcode-block" id="trace_vpacket"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.vpacket.html#tardis.montecarlo.montecarlo_numba.vpacket.trace_vpacket">[docs]</a><span class="nd">@njit</span><span class="p">(</span><span class="o">**</span><span class="n">njit_dict</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">trace_vpacket</span><span class="p">(</span><span class="n">v_packet</span><span class="p">,</span> <span class="n">numba_model</span><span class="p">,</span> <span class="n">numba_plasma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Trace single vpacket.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    v_packet</span>
+<span class="sd">    numba_model</span>
+<span class="sd">    numba_plasma</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">tau_trace_combined</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="p">(</span>
+            <span class="n">tau_trace_combined_shell</span><span class="p">,</span>
+            <span class="n">distance_boundary</span><span class="p">,</span>
+            <span class="n">delta_shell</span><span class="p">,</span>
+        <span class="p">)</span> <span class="o">=</span> <span class="n">trace_vpacket_within_shell</span><span class="p">(</span><span class="n">v_packet</span><span class="p">,</span> <span class="n">numba_model</span><span class="p">,</span> <span class="n">numba_plasma</span><span class="p">)</span>
+        <span class="n">tau_trace_combined</span> <span class="o">+=</span> <span class="n">tau_trace_combined_shell</span>
+
+        <span class="n">move_packet_across_shell_boundary</span><span class="p">(</span>
+            <span class="n">v_packet</span><span class="p">,</span> <span class="n">delta_shell</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">numba_model</span><span class="o">.</span><span class="n">r_inner</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">tau_trace_combined</span> <span class="o">&gt;</span> <span class="n">montecarlo_configuration</span><span class="o">.</span><span class="n">tau_russian</span><span class="p">:</span>
+            <span class="n">event_random</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">event_random</span> <span class="o">&gt;</span> <span class="n">montecarlo_configuration</span><span class="o">.</span><span class="n">survival_probability</span><span class="p">:</span>
+                <span class="n">v_packet</span><span class="o">.</span><span class="n">energy</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="n">v_packet</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">PacketStatus</span><span class="o">.</span><span class="n">EMITTED</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">v_packet</span><span class="o">.</span><span class="n">energy</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">v_packet</span><span class="o">.</span><span class="n">energy</span>
+                    <span class="o">/</span> <span class="n">montecarlo_configuration</span><span class="o">.</span><span class="n">survival_probability</span>
+                    <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">tau_trace_combined</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">tau_trace_combined</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># Moving the v_packet</span>
+        <span class="n">new_r</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+            <span class="n">v_packet</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">r</span>
+            <span class="o">+</span> <span class="n">distance_boundary</span> <span class="o">*</span> <span class="n">distance_boundary</span>
+            <span class="o">+</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="n">distance_boundary</span> <span class="o">*</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">mu</span>
+        <span class="p">)</span>
+        <span class="n">v_packet</span><span class="o">.</span><span class="n">mu</span> <span class="o">=</span> <span class="p">(</span><span class="n">v_packet</span><span class="o">.</span><span class="n">mu</span> <span class="o">*</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">r</span> <span class="o">+</span> <span class="n">distance_boundary</span><span class="p">)</span> <span class="o">/</span> <span class="n">new_r</span>
+        <span class="n">v_packet</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">new_r</span>
+
+        <span class="k">if</span> <span class="n">v_packet</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">PacketStatus</span><span class="o">.</span><span class="n">EMITTED</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">return</span> <span class="n">tau_trace_combined</span></div>
+
+
+<div class="viewcode-block" id="trace_vpacket_volley"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.vpacket.html#tardis.montecarlo.montecarlo_numba.vpacket.trace_vpacket_volley">[docs]</a><span class="nd">@njit</span><span class="p">(</span><span class="o">**</span><span class="n">njit_dict</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">trace_vpacket_volley</span><span class="p">(</span>
+    <span class="n">r_packet</span><span class="p">,</span> <span class="n">vpacket_collection</span><span class="p">,</span> <span class="n">numba_model</span><span class="p">,</span> <span class="n">numba_plasma</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Shoot a volley of vpackets (the vpacket collection specifies how many)</span>
+<span class="sd">    from the current position of the rpacket.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    r_packet : [type]</span>
+<span class="sd">        [description]</span>
+<span class="sd">    vpacket_collection : [type]</span>
+<span class="sd">        [description]</span>
+<span class="sd">    numba_model : [type]</span>
+<span class="sd">        [description]</span>
+<span class="sd">    numba_plasma : [type]</span>
+<span class="sd">        [description]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">r_packet</span><span class="o">.</span><span class="n">nu</span> <span class="o">&lt;</span> <span class="n">vpacket_collection</span><span class="o">.</span><span class="n">v_packet_spawn_start_frequency</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+        <span class="n">r_packet</span><span class="o">.</span><span class="n">nu</span> <span class="o">&gt;</span> <span class="n">vpacket_collection</span><span class="o">.</span><span class="n">v_packet_spawn_end_frequency</span>
+    <span class="p">):</span>
+
+        <span class="k">return</span>
+
+    <span class="n">no_of_vpackets</span> <span class="o">=</span> <span class="n">vpacket_collection</span><span class="o">.</span><span class="n">number_of_vpackets</span>
+    <span class="k">if</span> <span class="n">no_of_vpackets</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="c1">### TODO theoretical check for r_packet nu within vpackets bins - is done somewhere else I think</span>
+    <span class="k">if</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span> <span class="o">&gt;</span> <span class="n">numba_model</span><span class="o">.</span><span class="n">r_inner</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>  <span class="c1"># not on inner_boundary</span>
+        <span class="n">r_inner_over_r</span> <span class="o">=</span> <span class="n">numba_model</span><span class="o">.</span><span class="n">r_inner</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span>
+        <span class="n">mu_min</span> <span class="o">=</span> <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r_inner_over_r</span> <span class="o">*</span> <span class="n">r_inner_over_r</span><span class="p">)</span>
+        <span class="n">v_packet_on_inner_boundary</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">montecarlo_configuration</span><span class="o">.</span><span class="n">full_relativity</span><span class="p">:</span>
+            <span class="n">mu_min</span> <span class="o">=</span> <span class="n">angle_aberration_LF_to_CMF</span><span class="p">(</span>
+                <span class="n">r_packet</span><span class="p">,</span> <span class="n">numba_model</span><span class="o">.</span><span class="n">time_explosion</span><span class="p">,</span> <span class="n">mu_min</span>
+            <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">v_packet_on_inner_boundary</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">mu_min</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="n">mu_bin</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">mu_min</span><span class="p">)</span> <span class="o">/</span> <span class="n">no_of_vpackets</span>
+    <span class="n">r_packet_doppler_factor</span> <span class="o">=</span> <span class="n">get_doppler_factor</span><span class="p">(</span>
+        <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="n">numba_model</span><span class="o">.</span><span class="n">time_explosion</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">no_of_vpackets</span><span class="p">):</span>
+        <span class="n">v_packet_mu</span> <span class="o">=</span> <span class="n">mu_min</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">mu_bin</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">mu_bin</span>
+
+        <span class="k">if</span> <span class="n">v_packet_on_inner_boundary</span><span class="p">:</span>  <span class="c1"># The weights are described in K&amp;S 2014</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v_packet_mu</span> <span class="o">/</span> <span class="n">no_of_vpackets</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mu_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">no_of_vpackets</span><span class="p">)</span>
+
+        <span class="c1"># C code: next line, angle_aberration_CMF_to_LF( &amp; virt_packet, storage);</span>
+        <span class="k">if</span> <span class="n">montecarlo_configuration</span><span class="o">.</span><span class="n">full_relativity</span><span class="p">:</span>
+            <span class="n">v_packet_mu</span> <span class="o">=</span> <span class="n">angle_aberration_CMF_to_LF</span><span class="p">(</span>
+                <span class="n">r_packet</span><span class="p">,</span> <span class="n">numba_model</span><span class="o">.</span><span class="n">time_explosion</span><span class="p">,</span> <span class="n">v_packet_mu</span>
+            <span class="p">)</span>
+        <span class="n">v_packet_doppler_factor</span> <span class="o">=</span> <span class="n">get_doppler_factor</span><span class="p">(</span>
+            <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">v_packet_mu</span><span class="p">,</span> <span class="n">numba_model</span><span class="o">.</span><span class="n">time_explosion</span>
+        <span class="p">)</span>
+
+        <span class="c1"># transform between r_packet mu and v_packet_mu</span>
+
+        <span class="n">doppler_factor_ratio</span> <span class="o">=</span> <span class="n">r_packet_doppler_factor</span> <span class="o">/</span> <span class="n">v_packet_doppler_factor</span>
+
+        <span class="n">v_packet_nu</span> <span class="o">=</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">nu</span> <span class="o">*</span> <span class="n">doppler_factor_ratio</span>
+        <span class="n">v_packet_energy</span> <span class="o">=</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">energy</span> <span class="o">*</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">doppler_factor_ratio</span>
+
+        <span class="n">v_packet</span> <span class="o">=</span> <span class="n">VPacket</span><span class="p">(</span>
+            <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span>
+            <span class="n">v_packet_mu</span><span class="p">,</span>
+            <span class="n">v_packet_nu</span><span class="p">,</span>
+            <span class="n">v_packet_energy</span><span class="p">,</span>
+            <span class="n">r_packet</span><span class="o">.</span><span class="n">current_shell_id</span><span class="p">,</span>
+            <span class="n">r_packet</span><span class="o">.</span><span class="n">next_line_id</span><span class="p">,</span>
+            <span class="n">i</span><span class="p">,</span>
+            <span class="n">r_packet</span><span class="o">.</span><span class="n">is_close_line</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">next_line_id</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_for_close_line</span><span class="p">(</span>
+                <span class="n">v_packet</span><span class="p">,</span>
+                <span class="n">r_packet</span><span class="o">.</span><span class="n">next_line_id</span><span class="p">,</span>
+                <span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">[</span><span class="n">r_packet</span><span class="o">.</span><span class="n">next_line_id</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
+                <span class="n">numba_plasma</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="n">tau_vpacket</span> <span class="o">=</span> <span class="n">trace_vpacket</span><span class="p">(</span><span class="n">v_packet</span><span class="p">,</span> <span class="n">numba_model</span><span class="p">,</span> <span class="n">numba_plasma</span><span class="p">)</span>
+
+        <span class="n">v_packet</span><span class="o">.</span><span class="n">energy</span> <span class="o">*=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">tau_vpacket</span><span class="p">)</span>
+
+        <span class="n">vpacket_collection</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span>
+            <span class="n">v_packet</span><span class="o">.</span><span class="n">nu</span><span class="p">,</span>
+            <span class="n">v_packet</span><span class="o">.</span><span class="n">energy</span><span class="p">,</span>
+            <span class="n">r_packet</span><span class="o">.</span><span class="n">nu</span><span class="p">,</span>
+            <span class="n">r_packet</span><span class="o">.</span><span class="n">last_interaction_type</span><span class="p">,</span>
+            <span class="n">r_packet</span><span class="o">.</span><span class="n">next_line_id</span><span class="p">,</span>
+            <span class="n">r_packet</span><span class="o">.</span><span class="n">last_line_interaction_out_id</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

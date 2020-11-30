@@ -573,127 +573,88 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn — b
 <td colspan="2"><p>False</p></td>
 </tr>
 <tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>disable_line_scattering</p></li>
+</ul>
+</td>
+<td colspan="3"><p>disable line scattering process in montecarlo part - non-physical only for tests</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p><strong>ionization</strong></p></li>
 </ul>
 </td>
 <td colspan="3"><p>ionization treatment mode</p></td>
 </tr>
-<tr class="row-odd"><td><p>type</p></td>
+<tr class="row-even"><td><p>type</p></td>
 <td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-even"><td><p>enum</p></td>
+<tr class="row-odd"><td><p>enum</p></td>
 <td colspan="2"><p>nebular, lte</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<tr class="row-even"><td rowspan="3"><ul class="simple">
 <li><p><strong>excitation</strong></p></li>
 </ul>
 </td>
 <td colspan="3"><p>excitation treatment mode</p></td>
 </tr>
-<tr class="row-even"><td><p>type</p></td>
+<tr class="row-odd"><td><p>type</p></td>
 <td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td><p>enum</p></td>
+<tr class="row-even"><td><p>enum</p></td>
 <td colspan="2"><p>lte, dilute-lte</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p><strong>radiative_rates_type</strong></p></li>
 </ul>
 </td>
 <td colspan="3"><p>radiative rates treatment mode</p></td>
 </tr>
-<tr class="row-odd"><td><p>type</p></td>
+<tr class="row-even"><td><p>type</p></td>
 <td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-even"><td><p>enum</p></td>
+<tr class="row-odd"><td><p>enum</p></td>
 <td colspan="2"><p>dilute-blackbody, detailed, blackbody</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<tr class="row-even"><td rowspan="3"><ul class="simple">
 <li><p><strong>line_interaction_type</strong></p></li>
 </ul>
 </td>
 <td colspan="3"><p>line interaction mode</p></td>
 </tr>
-<tr class="row-even"><td><p>type</p></td>
+<tr class="row-odd"><td><p>type</p></td>
 <td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td><p>enum</p></td>
+<tr class="row-even"><td><p>enum</p></td>
 <td colspan="2"><p>scatter, downbranch, macroatom</p></td>
 </tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
 <li><p>w_epsilon</p></li>
 </ul>
 </td>
 <td colspan="3"><p>w to use when j_blues get numerically 0. - avoids numerical complications</p></td>
 </tr>
-<tr class="row-odd"><td><p>type</p></td>
+<tr class="row-even"><td><p>type</p></td>
 <td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-even"><td><p>default</p></td>
+<tr class="row-odd"><td><p>default</p></td>
 <td colspan="2"><p>1e-10</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<tr class="row-even"><td rowspan="2"><ul class="simple">
 <li><p>delta_treatment</p></li>
 </ul>
 </td>
 <td colspan="3"><p>In the saha calculation set delta equals to the number given in this configuration item. if set to None (default), normal delta treatment (as described in Mazzali &amp; Lucy 1993) will be applied</p></td>
 </tr>
-<tr class="row-even"><td><p>type</p></td>
+<tr class="row-odd"><td><p>type</p></td>
 <td colspan="2"><p><em>number</em></p></td>
 </tr>
-<tr class="row-odd"><td rowspan="13"><ul class="simple">
+<tr class="row-even"><td rowspan="13"><ul class="simple">
 <li><p>nlte</p></li>
-</ul>
-</td>
-<td><p>type</p></td>
-<td colspan="2"><p><em>object</em></p></td>
-</tr>
-<tr class="row-even"><td><p>default</p></td>
-<td colspan="2"></td>
-</tr>
-<tr class="row-odd"><td colspan="3"><p>properties</p></td>
-</tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
-<li><p>species</p></li>
-</ul>
-</td>
-<td colspan="2"><p>Species that are requested to be NLTE treated in the format  [‘Si 2’, ‘Ca 1’, etc.]</p></td>
-</tr>
-<tr class="row-odd"><td><p>type</p></td>
-<td><p><em>array</em></p></td>
-</tr>
-<tr class="row-even"><td><p>default</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td rowspan="3"><ul class="simple">
-<li><p>coronal_approximation</p></li>
-</ul>
-</td>
-<td colspan="2"><p>set all jblues=0.0</p></td>
-</tr>
-<tr class="row-even"><td><p>type</p></td>
-<td><p><em>boolean</em></p></td>
-</tr>
-<tr class="row-odd"><td><p>default</p></td>
-<td><p>False</p></td>
-</tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
-<li><p>classical_nebular</p></li>
-</ul>
-</td>
-<td colspan="2"><p>sets all beta_sobolevs to 1</p></td>
-</tr>
-<tr class="row-odd"><td><p>type</p></td>
-<td><p><em>boolean</em></p></td>
-</tr>
-<tr class="row-even"><td><p>default</p></td>
-<td><p>False</p></td>
-</tr>
-<tr class="row-odd"><td><p>additionalProperties</p></td>
-<td colspan="2"><p>False</p></td>
-</tr>
-<tr class="row-even"><td rowspan="7"><ul class="simple">
-<li><p>continuum_interaction</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
@@ -708,7 +669,7 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn — b
 <li><p>species</p></li>
 </ul>
 </td>
-<td colspan="2"><p>Species that are requested to be treated with continuum interactios (radiative/collisional ionization and recombination) in the format [‘Si II’, ‘Ca I’, etc.]</p></td>
+<td colspan="2"><p>Species that are requested to be NLTE treated in the format  [‘Si 2’, ‘Ca 1’, etc.]</p></td>
 </tr>
 <tr class="row-even"><td><p>type</p></td>
 <td><p><em>array</em></p></td>
@@ -716,37 +677,88 @@ relative abundance fraction. If it does not add up to 1., TARDIS will warn — b
 <tr class="row-odd"><td><p>default</p></td>
 <td></td>
 </tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>coronal_approximation</p></li>
+</ul>
+</td>
+<td colspan="2"><p>set all jblues=0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>classical_nebular</p></li>
+</ul>
+</td>
+<td colspan="2"><p>sets all beta_sobolevs to 1</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>False</p></td>
+</tr>
 <tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="4"><ul class="simple">
+<tr class="row-odd"><td rowspan="7"><ul class="simple">
+<li><p>continuum_interaction</p></li>
+</ul>
+</td>
+<td><p>type</p></td>
+<td colspan="2"><p><em>object</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>species</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Species that are requested to be treated with continuum interactios (radiative/collisional ionization and recombination) in the format [‘Si II’, ‘Ca I’, etc.]</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>array</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>additionalProperties</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><ul class="simple">
 <li><p>helium_treatment</p></li>
 </ul>
 </td>
 <td colspan="3"><p>none to treat He as the other elements. recomb-nlte to treat with NLTE approximation.</p></td>
 </tr>
-<tr class="row-even"><td><p>type</p></td>
+<tr class="row-odd"><td><p>type</p></td>
 <td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td><p>enum</p></td>
+<tr class="row-even"><td><p>enum</p></td>
 <td colspan="2"><p>none, recomb-nlte, numerical-nlte</p></td>
 </tr>
-<tr class="row-even"><td><p>default</p></td>
+<tr class="row-odd"><td><p>default</p></td>
 <td colspan="2"><p>none</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<tr class="row-even"><td rowspan="3"><ul class="simple">
 <li><p>heating_rate_data_file</p></li>
 </ul>
 </td>
 <td colspan="3"><p>Path to file containing heating rate/light curve data.</p></td>
 </tr>
-<tr class="row-even"><td><p>type</p></td>
+<tr class="row-odd"><td><p>type</p></td>
 <td colspan="2"><p><em>string</em></p></td>
 </tr>
-<tr class="row-odd"><td><p>default</p></td>
+<tr class="row-even"><td><p>default</p></td>
 <td colspan="2"><p>none</p></td>
 </tr>
-<tr class="row-even"><td><p>additionalProperties</p></td>
+<tr class="row-odd"><td><p>additionalProperties</p></td>
 <td colspan="3"><p>False</p></td>
 </tr>
 </tbody>
@@ -882,11 +894,11 @@ normal operations.</p>
 <tr class="row-even"><td><p>default</p></td>
 <td colspan="2"><p>0</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="11"><ul class="simple">
-<li><p>virtual_spectrum_range</p></li>
+<tr class="row-odd"><td rowspan="8"><ul class="simple">
+<li><p>virtual_spectrum_spawn_range</p></li>
 </ul>
 </td>
-<td colspan="3"><p>Limits of virtual packet spectrum (giving maximum and minimum packet frequency)</p></td>
+<td colspan="3"><p>Limits of virtual packet spawn spectrum (giving maximum and minimum packet frequency)</p></td>
 </tr>
 <tr class="row-even"><td><p>type</p></td>
 <td colspan="2"><p><em>object</em></p></td>
@@ -904,36 +916,60 @@ normal operations.</p>
 <td><p><em>quantity</em></p></td>
 </tr>
 <tr class="row-even"><td><p>default</p></td>
-<td><p>50 angstrom</p></td>
+<td><p>0 angstrom</p></td>
 </tr>
 <tr class="row-odd"><td rowspan="2"><ul class="simple">
-<li><p>stop</p></li>
+<li><p>end</p></li>
 </ul>
 </td>
 <td><p>type</p></td>
 <td><p><em>quantity</em></p></td>
 </tr>
 <tr class="row-even"><td><p>default</p></td>
-<td><p>250000 angstrom</p></td>
+<td><p>inf angstrom</p></td>
 </tr>
 <tr class="row-odd"><td rowspan="3"><ul class="simple">
-<li><p>num</p></li>
-</ul>
-</td>
-<td><p>type</p></td>
-<td><p><em>number</em></p></td>
-</tr>
-<tr class="row-even"><td><p>multipleOf</p></td>
-<td><p>1.0</p></td>
-</tr>
-<tr class="row-odd"><td><p>default</p></td>
-<td><p>1000000</p></td>
-</tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
 <li><p>enable_reflective_inner_boundary</p></li>
 </ul>
 </td>
 <td colspan="3"><p>experimental feature to enable a reflective boundary.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>inner_boundary_albedo</p></li>
+</ul>
+</td>
+<td colspan="3"><p>albedo of the reflective boundary</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>convergence_strategy</p></li>
+</ul>
+</td>
+<td><p>default</p></td>
+<td><p>type</p></td>
+<td><p>damped</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>oneOf</p></td>
+<td colspan="2"><p><span class="xref std std-ref">#/definitions/convergence_strategy/damped</span></p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p><span class="xref std std-ref">#/definitions/convergence_strategy/custom</span></p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>enable_full_relativity</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Enables a more complete treatment of relativitic effects. This includes angle aberration as well as use of the fully general Doppler formula.</p></td>
 </tr>
 <tr class="row-odd"><td><p>type</p></td>
 <td colspan="2"><p><em>boolean</em></p></td>
@@ -942,41 +978,40 @@ normal operations.</p>
 <td colspan="2"><p>False</p></td>
 </tr>
 <tr class="row-odd"><td rowspan="3"><ul class="simple">
-<li><p>inner_boundary_albedo</p></li>
+<li><p>debug_packets</p></li>
 </ul>
 </td>
-<td colspan="3"><p>albedo of the reflective boundary</p></td>
-</tr>
-<tr class="row-even"><td><p>type</p></td>
-<td colspan="2"><p><em>number</em></p></td>
-</tr>
-<tr class="row-odd"><td><p>default</p></td>
-<td colspan="2"><p>0.0</p></td>
-</tr>
-<tr class="row-even"><td rowspan="3"><ul class="simple">
-<li><p>convergence_strategy</p></li>
-</ul>
-</td>
-<td><p>default</p></td>
-<td><p>type</p></td>
-<td><p>damped</p></td>
-</tr>
-<tr class="row-odd"><td rowspan="2"><p>oneOf</p></td>
-<td colspan="2"><p><span class="xref std std-ref">#/definitions/convergence_strategy/damped</span></p></td>
-</tr>
-<tr class="row-even"><td colspan="2"><p><span class="xref std std-ref">#/definitions/convergence_strategy/custom</span></p></td>
-</tr>
-<tr class="row-odd"><td rowspan="3"><ul class="simple">
-<li><p>enable_full_relativity</p></li>
-</ul>
-</td>
-<td colspan="3"><p>Enables a more complete treatment of relativitic effects. This includes angle aberration as well as use of the fully general Doppler formula.</p></td>
+<td colspan="3"><p>Decide whether to go into debugging mode. [EXPERIMENTAL FEATURE DO NOT RELY ON IT]</p></td>
 </tr>
 <tr class="row-even"><td><p>type</p></td>
 <td colspan="2"><p><em>boolean</em></p></td>
 </tr>
 <tr class="row-odd"><td><p>default</p></td>
 <td colspan="2"><p>False</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>logger_buffer</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Provides option to not log every line.</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td colspan="2"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>single_packet_seed</p></li>
+</ul>
+</td>
+<td colspan="3"><p>If debug_packets is true, this is the seed for the only packet.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>number</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td colspan="2"><p>-1</p></td>
 </tr>
 <tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="3"><p>False</p></td>
@@ -1104,7 +1139,7 @@ override the defaults.</p>
 <tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
 </tr>
-<tr class="row-odd"><td rowspan="13"><ul class="simple">
+<tr class="row-odd"><td rowspan="16"><ul class="simple">
 <li><p>virtual</p></li>
 </ul>
 </td>
@@ -1152,7 +1187,19 @@ override the defaults.</p>
 <tr class="row-even"><td><p>default</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p>additionalProperties</p></td>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>virtual_packet_logging</p></li>
+</ul>
+</td>
+<td colspan="2"><p>If True, enable virtual packet logging output</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>additionalProperties</p></td>
 <td colspan="2"><p>False</p></td>
 </tr>
 </tbody>

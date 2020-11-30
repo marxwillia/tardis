@@ -249,8 +249,158 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="tardis-plasma-properties-radiative-properties-module">
-<h1>tardis.plasma.properties.radiative_properties module<a class="headerlink" href="#tardis-plasma-properties-radiative-properties-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-tardis.plasma.properties.radiative_properties">
+<span id="tardis-plasma-properties-radiative-properties-module"></span><h1>tardis.plasma.properties.radiative_properties module<a class="headerlink" href="#module-tardis.plasma.properties.radiative_properties" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="tardis.plasma.properties.radiative_properties.BetaSobolev">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.plasma.properties.radiative_properties.</code><code class="sig-name descname">BetaSobolev</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plasma_parent</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#BetaSobolev"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.BetaSobolev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.plasma.properties.base.ProcessingPlasmaProperty</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>beta_sobolev</strong><span class="classifier">Numpy Array, dtype float</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.BetaSobolev.calculate">
+<code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tau_sobolevs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#BetaSobolev.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.BetaSobolev.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.BetaSobolev.calculate_beta_sobolev">
+<em class="property">static </em><code class="sig-name descname">calculate_beta_sobolev</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tau_sobolevs</span></em>, <em class="sig-param"><span class="n">beta_sobolevs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#BetaSobolev.calculate_beta_sobolev"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.BetaSobolev.calculate_beta_sobolev" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.radiative_properties.BetaSobolev.latex_name">
+<code class="sig-name descname">latex_name</code><em class="property"> = ('\\beta_{\\textrm{sobolev}}',)</em><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.BetaSobolev.latex_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.radiative_properties.BetaSobolev.outputs">
+<code class="sig-name descname">outputs</code><em class="property"> = ('beta_sobolev',)</em><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.BetaSobolev.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.plasma.properties.radiative_properties.</code><code class="sig-name descname">StimulatedEmissionFactor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plasma_parent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nlte_species</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#StimulatedEmissionFactor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.plasma.properties.base.ProcessingPlasmaProperty</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>stimulated_emission_factor</strong><span class="classifier">Numpy Array, dtype float</span></dt><dd><p>Indexed by lines, columns as zones.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.calculate">
+<code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">level_number_density</span></em>, <em class="sig-param"><span class="n">lines_lower_level_index</span></em>, <em class="sig-param"><span class="n">lines_upper_level_index</span></em>, <em class="sig-param"><span class="n">metastability</span></em>, <em class="sig-param"><span class="n">lines</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#StimulatedEmissionFactor.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.get_g_lower">
+<code class="sig-name descname">get_g_lower</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">lines_lower_level_index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#StimulatedEmissionFactor.get_g_lower"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.get_g_lower" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.get_g_upper">
+<code class="sig-name descname">get_g_upper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">lines_upper_level_index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#StimulatedEmissionFactor.get_g_upper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.get_g_upper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.get_metastable_upper">
+<code class="sig-name descname">get_metastable_upper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metastability</span></em>, <em class="sig-param"><span class="n">lines_upper_level_index</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#StimulatedEmissionFactor.get_metastable_upper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.get_metastable_upper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.latex_formula">
+<code class="sig-name descname">latex_formula</code><em class="property"> = ('1-\\dfrac{g_{lower}n_{upper}}{g_{upper}n_{lower}}',)</em><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.latex_formula" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.outputs">
+<code class="sig-name descname">outputs</code><em class="property"> = ('stimulated_emission_factor',)</em><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.StimulatedEmissionFactor.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tardis.plasma.properties.radiative_properties.TauSobolev">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.plasma.properties.radiative_properties.</code><code class="sig-name descname">TauSobolev</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plasma_parent</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#TauSobolev"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TauSobolev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.plasma.properties.base.ProcessingPlasmaProperty</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tau_sobolev</strong><span class="classifier">Pandas DataFrame, dtype float</span></dt><dd><p>Sobolev optical depth for each line. Indexed by line.
+Columns as zones.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.TauSobolev.calculate">
+<code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">level_number_density</span></em>, <em class="sig-param"><span class="n">lines_lower_level_index</span></em>, <em class="sig-param"><span class="n">time_explosion</span></em>, <em class="sig-param"><span class="n">stimulated_emission_factor</span></em>, <em class="sig-param"><span class="n">j_blues</span></em>, <em class="sig-param"><span class="n">f_lu</span></em>, <em class="sig-param"><span class="n">wavelength_cm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#TauSobolev.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TauSobolev.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.radiative_properties.TauSobolev.latex_formula">
+<code class="sig-name descname">latex_formula</code><em class="property"> = ('\\dfrac{\\pi e^{2}}{m_{e} c}f_{lu}\\lambda t_{exp}\\\n        n_{lower} \\Big(1-\\dfrac{g_{lower}n_{upper}}{g_{upper}n_{lower}}\\Big)',)</em><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TauSobolev.latex_formula" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.radiative_properties.TauSobolev.latex_name">
+<code class="sig-name descname">latex_name</code><em class="property"> = ('\\tau_{\\textrm{sobolev}}',)</em><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TauSobolev.latex_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.radiative_properties.TauSobolev.outputs">
+<code class="sig-name descname">outputs</code><em class="property"> = ('tau_sobolevs',)</em><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TauSobolev.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tardis.plasma.properties.radiative_properties.TransitionProbabilities">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.plasma.properties.radiative_properties.</code><code class="sig-name descname">TransitionProbabilities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plasma_parent</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#TransitionProbabilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TransitionProbabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.plasma.properties.base.ProcessingPlasmaProperty</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>transition_probabilities</strong><span class="classifier">Pandas DataFrame, dtype float</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.TransitionProbabilities.calculate">
+<code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atomic_data</span></em>, <em class="sig-param"><span class="n">beta_sobolev</span></em>, <em class="sig-param"><span class="n">j_blues</span></em>, <em class="sig-param"><span class="n">stimulated_emission_factor</span></em>, <em class="sig-param"><span class="n">tau_sobolevs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#TransitionProbabilities.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TransitionProbabilities.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.TransitionProbabilities.calculate_transition_probabilities">
+<code class="sig-name descname">calculate_transition_probabilities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">macro_atom_data</span></em>, <em class="sig-param"><span class="n">beta_sobolev</span></em>, <em class="sig-param"><span class="n">j_blues</span></em>, <em class="sig-param"><span class="n">stimulated_emission_factor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#TransitionProbabilities.calculate_transition_probabilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TransitionProbabilities.calculate_transition_probabilities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.TransitionProbabilities.initialize_macro_atom_transition_type_filters">
+<code class="sig-name descname">initialize_macro_atom_transition_type_filters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atomic_data</span></em>, <em class="sig-param"><span class="n">macro_atom_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#TransitionProbabilities.initialize_macro_atom_transition_type_filters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TransitionProbabilities.initialize_macro_atom_transition_type_filters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.radiative_properties.TransitionProbabilities.outputs">
+<code class="sig-name descname">outputs</code><em class="property"> = ('transition_probabilities',)</em><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TransitionProbabilities.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tardis.plasma.properties.radiative_properties.TransitionProbabilities.prepare_transition_probabilities">
+<code class="sig-name descname">prepare_transition_probabilities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">macro_atom_data</span></em>, <em class="sig-param"><span class="n">beta_sobolev</span></em>, <em class="sig-param"><span class="n">j_blues</span></em>, <em class="sig-param"><span class="n">stimulated_emission_factor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/radiative_properties.html#TransitionProbabilities.prepare_transition_probabilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.radiative_properties.TransitionProbabilities.prepare_transition_probabilities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

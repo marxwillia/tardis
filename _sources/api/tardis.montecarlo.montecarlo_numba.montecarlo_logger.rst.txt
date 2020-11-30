@@ -1,0 +1,7 @@
+tardis.montecarlo.montecarlo\_numba.montecarlo\_logger module
+=============================================================
+
+.. automodule:: tardis.montecarlo.montecarlo_numba.montecarlo_logger
+   :members:
+   :undoc-members:
+   :show-inheritance:

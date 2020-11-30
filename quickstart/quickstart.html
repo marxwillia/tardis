@@ -525,7 +525,7 @@ quickstart is <code class="docutils literal notranslate"><span class="pre">tardi
 <div class="highlight"><pre>
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   980  100   980    0     0   3391      0 --:--:-- --:--:-- --:--:--  3379
+100   980  100   980    0     0  14626      0 --:--:-- --:--:-- --:--:-- 14411
 </pre></div></div>
 </div>
 </div>
@@ -556,237 +556,317 @@ quickstart is <code class="docutils literal notranslate"><span class="pre">tardi
 [<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/numba/np/ufunc/parallel.py:355: NumbaWarning: The TBB threading layer requires TBB version 2019.5 or later i.e., TBB_INTERFACE_VERSION &gt;= 11005. Found TBB_INTERFACE_VERSION = 9107. The TBB threading layer is disabled.
   warnings.warn(problem)
  (<span class="ansi-bold">warnings.py</span>:110)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 1/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 7.96915e+42 erg / s Luminosity absorbed = 2.63370e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 1/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 7.94275e+42 erg / s Luminosity absorbed = 2.65805e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                      t_rad    next_t_rad         w    next_w
         Shell
-        0      9926.501965  10171.209103  0.400392  0.500372
-        5      9852.611678  10306.111379  0.211205  0.191331
-        10     9779.813302  10174.379204  0.142695  0.116864
-        15     9708.082813   9910.442275  0.104556  0.085962
+        0      9926.501965  10134.733717  0.400392  0.508204
+        5      9852.611678  10222.890845  0.211205  0.197026
+        10     9779.813302  10144.463169  0.142695  0.117179
+        15     9708.082813   9873.477846  0.104556  0.086941
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 9933.952 K -- next t_inner 11453.040 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 2/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.40398e+43 erg / s Luminosity absorbed = 4.68639e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 9933.952 K -- next t_inner 11472.055 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 2/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.40815e+43 erg / s Luminosity absorbed = 4.77001e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      10171.209103  11518.516702  0.500372  0.538298
-        5      10306.111379  11554.412119  0.191331  0.217946
-        10     10174.379204  11373.574056  0.116864  0.132935
-        15      9910.442275  11040.788763  0.085962  0.099700
+        0      10134.733717  11468.021903  0.508204  0.548671
+        5      10222.890845  11499.835340  0.197026  0.221374
+        10     10144.463169  11306.370330  0.117179  0.136291
+        15      9873.477846  10953.828130  0.086941  0.102617
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11453.040 K -- next t_inner 9948.201 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 3/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.16814e+42 erg / s Luminosity absorbed = 2.50161e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11472.055 K -- next t_inner 9949.978 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 3/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.12624e+42 erg / s Luminosity absorbed = 2.54722e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      11518.516702  10501.129902  0.538298  0.438591
-        5      11554.412119  10869.940791  0.217946  0.160809
-        10     11373.574056  10558.269547  0.132935  0.103807
-        15     11040.788763  10185.648701  0.099700  0.079165
+        0      11468.021903  10497.008397  0.548671  0.442299
+        5      11499.835340  10799.075913  0.221374  0.164288
+        10     11306.370330  10623.433274  0.136291  0.101820
+        15     10953.828130  10226.187071  0.102617  0.077629
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 9948.201 K -- next t_inner 11328.896 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 4/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.34487e+43 erg / s Luminosity absorbed = 4.47931e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 9949.978 K -- next t_inner 11360.097 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 4/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.36297e+43 erg / s Luminosity absorbed = 4.49721e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      10501.129902  11527.008679  0.438591  0.512509
-        5      10869.940791  11706.138980  0.160809  0.196458
-        10     10558.269547  11444.208532  0.103807  0.124092
-        15     10185.648701  11085.857161  0.079165  0.093694
+        0      10497.008397  11615.344313  0.442299  0.497714
+        5      10799.075913  11729.411389  0.164288  0.199205
+        10     10623.433274  11517.190317  0.101820  0.123849
+        15     10226.187071  11103.373456  0.077629  0.093930
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11328.896 K -- next t_inner 10054.300 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 5/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.44348e+42 erg / s Luminosity absorbed = 2.68000e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11360.097 K -- next t_inner 10014.843 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 5/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.27895e+42 erg / s Luminosity absorbed = 2.66933e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      11527.008679  10659.382763  0.512509  0.433573
-        5      11706.138980  11038.244897  0.196458  0.158494
-        10     11444.208532  10790.696726  0.124092  0.099660
-        15     11085.857161  10450.666394  0.093694  0.074550
+        0      11615.344313  10549.514128  0.497714  0.443441
+        5      11729.411389  10919.073481  0.199205  0.162199
+        10     11517.190317  10697.303300  0.123849  0.101289
+        15     11103.373456  10379.863073  0.093930  0.075372
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10054.300 K -- next t_inner 11261.489 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 6/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.32492e+43 erg / s Luminosity absorbed = 4.26229e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10014.843 K -- next t_inner 11328.210 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 6/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.34741e+43 erg / s Luminosity absorbed = 4.44727e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      10659.382763  11507.437689  0.433573  0.499441
-        5      11038.244897  11634.568776  0.158494  0.197953
-        10     10790.696726  11418.594559  0.099660  0.124085
-        15     10450.666394  10999.619473  0.074550  0.094676
+        0      10549.514128  11567.208184  0.443441  0.504178
+        5      10919.073481  11653.124121  0.162199  0.203042
+        10     10697.303300  11425.955010  0.101289  0.125249
+        15     10379.863073  11082.155938  0.075372  0.094028
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11261.489 K -- next t_inner 10069.444 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 7/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.49858e+42 erg / s Luminosity absorbed = 2.69247e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11328.210 K -- next t_inner 10044.200 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 7/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.39001e+42 erg / s Luminosity absorbed = 2.69230e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      11507.437689  10679.650246  0.499441  0.431088
-        5      11634.568776  11048.266431  0.197953  0.157179
-        10     11418.594559  10825.714870  0.124085  0.098608
-        15     10999.619473  10506.321595  0.094676  0.073794
+        0      11567.208184  10569.747403  0.504178  0.442290
+        5      11653.124121  11099.194259  0.203042  0.153253
+        10     11425.955010  10809.397890  0.125249  0.097256
+        15     11082.155938  10454.841299  0.094028  0.073809
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10069.444 K -- next t_inner 11241.826 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 8/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.30632e+43 erg / s Luminosity absorbed = 4.31719e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10044.200 K -- next t_inner 11285.966 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 8/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.33305e+43 erg / s Luminosity absorbed = 4.33011e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      10679.650246  11459.828312  0.431088  0.506176
-        5      11048.266431  11688.139012  0.157179  0.193468
-        10     10825.714870  11441.768967  0.098608  0.122412
-        15     10506.321595  11099.449886  0.073794  0.090915
+        0      10569.747403  11547.678162  0.442290  0.500345
+        5      11099.194259  11669.739508  0.153253  0.198338
+        10     10809.397890  11493.569590  0.097256  0.121915
+        15     10454.841299  11083.769586  0.073809  0.092834
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11241.826 K -- next t_inner 10123.177 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 9/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.68357e+42 erg / s Luminosity absorbed = 2.75015e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11285.966 K -- next t_inner 10060.511 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 9/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.44283e+42 erg / s Luminosity absorbed = 2.70894e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      11459.828312  10666.223660  0.506176  0.445097
-        5      11688.139012  11000.288585  0.193468  0.163424
-        10     11441.768967  10822.884326  0.122412  0.101641
-        15     11099.449886  10384.181273  0.090915  0.078432
+        0      11547.678162  10635.099217  0.500345  0.439520
+        5      11669.739508  11035.731464  0.198338  0.158320
+        10     11493.569590  10717.471486  0.121915  0.101642
+        15     11083.769586  10404.049299  0.092834  0.075794
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10123.177 K -- next t_inner 11180.783 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 10/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.28170e+43 erg / s Luminosity absorbed = 4.19511e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10060.511 K -- next t_inner 11268.877 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 10/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.32925e+43 erg / s Luminosity absorbed = 4.25943e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      10666.223660  11427.410445  0.445097  0.500788
-        5      11000.288585  11612.349822  0.163424  0.193129
-        10     10822.884326  11373.245169  0.101641  0.121622
-        15     10384.181273  11047.955461  0.078432  0.090937
+        0      10635.099217  11500.557678  0.439520  0.506895
+        5      11035.731464  11715.267406  0.158320  0.196690
+        10     10717.471486  11451.270656  0.101642  0.123243
+        15     10404.049299  11094.423438  0.075794  0.092243
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11180.783 K -- next t_inner 10164.432 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 11/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.79074e+42 erg / s Luminosity absorbed = 2.82804e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11268.877 K -- next t_inner 10059.624 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 11/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.49497e+42 erg / s Luminosity absorbed = 2.65616e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      11427.410445  10741.337822  0.500788  0.439938
-        5      11612.349822  11230.515356  0.193129  0.153637
-        10     11373.245169  10870.696315  0.121622  0.101050
-        15     11047.955461  10538.170159  0.090937  0.074680
+        0      11500.557678  10570.856509  0.506895  0.445926
+        5      11715.267406  10957.336276  0.196690  0.162837
+        10     11451.270656  10916.410391  0.123243  0.096229
+        15     11094.423438  10441.053929  0.092243  0.075026
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10164.432 K -- next t_inner 11157.711 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 12/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.27128e+43 erg / s Luminosity absorbed = 4.15415e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10059.624 K -- next t_inner 11233.248 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 12/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.30417e+43 erg / s Luminosity absorbed = 4.28820e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      10741.337822  11507.877578  0.439938  0.483114
-        5      11230.515356  11808.852053  0.153637  0.181826
-        10     10870.696315  11557.412757  0.101050  0.113563
-        15     10538.170159  11117.762050  0.074680  0.087418
+        0      10570.856509  11533.554419  0.445926  0.494814
+        5      10957.336276  11764.967895  0.162837  0.189464
+        10     10916.410391  11444.191999  0.096229  0.121150
+        15     10441.053929  11084.736033  0.075026  0.090825
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11157.711 K -- next t_inner 10184.966 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 13/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.90399e+42 erg / s Luminosity absorbed = 2.80864e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11233.248 K -- next t_inner 10123.784 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 13/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.69244e+42 erg / s Luminosity absorbed = 2.74548e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      11507.877578  10727.217531  0.483114  0.443706
-        5      11808.852053  11171.758889  0.181826  0.160824
-        10     11557.412757  10971.722637  0.113563  0.098588
-        15     11117.762050  10574.916600  0.087418  0.075266
+        0      11533.554419  10680.784661  0.494814  0.439281
+        5      11764.967895  10887.379428  0.189464  0.170137
+        10     11444.191999  10825.792025  0.121150  0.100780
+        15     11084.736033  10402.120228  0.090825  0.077634
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10184.966 K -- next t_inner 11108.923 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 14/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.25052e+43 erg / s Luminosity absorbed = 4.07335e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10123.784 K -- next t_inner 11175.750 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 14/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.28354e+43 erg / s Luminosity absorbed = 4.15095e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      10727.217531  11413.626870  0.443706  0.489526
-        5      11171.758889  11697.006992  0.160824  0.184795
-        10     10971.722637  11424.445844  0.098588  0.116722
-        15     10574.916600  11047.434163  0.075266  0.088067
+        0      10680.784661  11437.188130  0.439281  0.496749
+        5      10887.379428  11571.106856  0.170137  0.196714
+        10     10825.792025  11378.137918  0.100780  0.120954
+        15     10402.120228  10957.211814  0.077634  0.092896
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11108.923 K -- next t_inner 10224.266 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 15/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 9.00727e+42 erg / s Luminosity absorbed = 2.88724e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11175.750 K -- next t_inner 10152.603 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 15/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.75331e+42 erg / s Luminosity absorbed = 2.81319e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      11413.626870  10712.622749  0.489526  0.455660
-        5      11697.006992  11125.894032  0.184795  0.164091
-        10     11424.445844  10816.390451  0.116722  0.104037
-        15     11047.434163  10421.687097  0.088067  0.080401
+        0      11437.188130  10637.774893  0.496749  0.452668
+        5      11571.106856  11002.647927  0.196714  0.166197
+        10     11378.137918  10832.042108  0.120954  0.101284
+        15     10957.211814  10350.602742  0.092896  0.079468
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10224.266 K -- next t_inner 11087.666 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 16/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.23781e+43 erg / s Luminosity absorbed = 4.07435e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10152.603 K -- next t_inner 11168.529 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 16/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.27820e+43 erg / s Luminosity absorbed = 4.15606e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      10712.622749  11352.158138  0.455660  0.500754
-        5      11125.894032  11644.968350  0.164091  0.185289
-        10     10816.390451  11320.695930  0.104037  0.119195
-        15     10421.687097  10965.228363  0.080401  0.089940
+        0      10637.774893  11420.979987  0.452668  0.499488
+        5      11002.647927  11711.923994  0.166197  0.186857
+        10     10832.042108  11421.346118  0.101284  0.119700
+        15     10350.602742  11076.434180  0.079468  0.089402
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11087.666 K -- next t_inner 10256.946 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 17/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 9.18956e+42 erg / s Luminosity absorbed = 2.86249e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11168.529 K -- next t_inner 10167.208 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 17/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.81647e+42 erg / s Luminosity absorbed = 2.81681e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      11352.158138  10738.799194  0.500754  0.452965
-        5      11644.968350  11210.269586  0.185289  0.160945
-        10     11320.695930  10911.463205  0.119195  0.103910
-        15     10965.228363  10545.065525  0.089940  0.078433
+        0      11420.979987  10691.849845  0.499488  0.447482
+        5      11711.923994  11042.045712  0.186857  0.164090
+        10     11421.346118  10980.886609  0.119700  0.097369
+        15     11076.434180  10456.662007  0.089402  0.077097
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10256.946 K -- next t_inner 11012.230 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 18/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.20741e+43 erg / s Luminosity absorbed = 3.93375e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10167.208 K -- next t_inner 11144.459 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 18/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.26680e+43 erg / s Luminosity absorbed = 4.12238e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      10738.799194  11316.665617  0.452965  0.492135
-        5      11210.269586  11599.094127  0.160945  0.183929
-        10     10911.463205  11403.508986  0.103910  0.114400
-        15     10545.065525  10958.974248  0.078433  0.087415
+        0      10691.849845  11404.686443  0.447482  0.497739
+        5      11042.045712  11664.227712  0.164090  0.189070
+        10     10980.886609  11444.220669  0.097369  0.117732
+        15     10456.662007  11052.698087  0.077097  0.089141
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11012.230 K -- next t_inner 10314.623 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 19/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 9.29848e+42 erg / s Luminosity absorbed = 3.02011e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 11144.459 K -- next t_inner 10190.841 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 19/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 8.87081e+42 erg / s Luminosity absorbed = 2.87116e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
 [<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Plasma stratification:
                       t_rad    next_t_rad         w    next_w
         Shell
-        0      11316.665617  10862.505720  0.492135  0.444495
-        5      11599.094127  11194.462074  0.183929  0.162842
-        10     11403.508986  11065.620645  0.114400  0.099372
-        15     10958.974248  10599.851144  0.087415  0.077690
+        0      11404.686443  10732.832306  0.497739  0.444436
+        5      11664.227712  11084.302807  0.189070  0.162591
+        10     11444.220669  10899.736539  0.117732  0.099122
+        15     11052.698087  10465.941519  0.089141  0.077378
 
- (<span class="ansi-bold">base.py</span>:433)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10314.623 K -- next t_inner 11009.102 K (<span class="ansi-bold">base.py</span>:436)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 20/20 (<span class="ansi-bold">base.py</span>:325)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.21062e+43 erg / s Luminosity absorbed = 3.88405e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:447)
-[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Simulation finished in 20 iterations and took 37.07 s (<span class="ansi-bold">base.py</span>:380)
+ (<span class="ansi-bold">base.py</span>:437)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  t_inner 10190.841 K -- next t_inner 11136.097 K (<span class="ansi-bold">base.py</span>:440)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Starting iteration 20/20 (<span class="ansi-bold">base.py</span>:326)
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
+Running post-merge numba montecarlo (with C close lines)!
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Luminosity emitted = 1.26319e+43 erg / s Luminosity absorbed = 4.10706e+42 erg / s Luminosity requested = 1.05928e+43 erg / s (<span class="ansi-bold">base.py</span>:451)
+[<span class="ansi-bold">tardis.simulation.base</span>][<span class="ansi-white-intense-fg ansi-bold">INFO</span>   ]  Simulation finished in 20 iterations and took 40.32 s (<span class="ansi-bold">base.py</span>:384)
 </pre></div></div>
 </div>
 </div>
@@ -823,6 +903,9 @@ quickstart is <code class="docutils literal notranslate"><span class="pre">tardi
   FutureWarning,
  (<span class="ansi-bold">warnings.py</span>:110)
 Populating the interactive namespace from numpy and matplotlib
+[<span class="ansi-bold">py.warnings         </span>][<span class="ansi-yellow-intense-fg ansi-bold">WARNING</span>]  /usr/share/miniconda/envs/tardis/lib/python3.7/site-packages/astropy/units/equivalencies.py:124: RuntimeWarning: divide by zero encountered in double_scalars
+  (si.m, si.Hz, lambda x: _si.c.value / x),
+ (<span class="ansi-bold">warnings.py</span>:110)
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">

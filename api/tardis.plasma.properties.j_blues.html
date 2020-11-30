@@ -249,8 +249,111 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="tardis-plasma-properties-j-blues-module">
-<h1>tardis.plasma.properties.j_blues module<a class="headerlink" href="#tardis-plasma-properties-j-blues-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-tardis.plasma.properties.j_blues">
+<span id="tardis-plasma-properties-j-blues-module"></span><h1>tardis.plasma.properties.j_blues module<a class="headerlink" href="#module-tardis.plasma.properties.j_blues" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="tardis.plasma.properties.j_blues.JBluesBlackBody">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.plasma.properties.j_blues.</code><code class="sig-name descname">JBluesBlackBody</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plasma_parent</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/j_blues.html#JBluesBlackBody"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesBlackBody" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.plasma.properties.base.ProcessingPlasmaProperty</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lte_j_blues</strong><span class="classifier">Pandas DataFrame, dtype float</span></dt><dd><p>J_blue values as calculated in LTE.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="tardis.plasma.properties.j_blues.JBluesBlackBody.calculate">
+<em class="property">static </em><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">nu</span></em>, <em class="sig-param"><span class="n">t_rad</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/j_blues.html#JBluesBlackBody.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesBlackBody.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.j_blues.JBluesBlackBody.latex_name">
+<code class="sig-name descname">latex_name</code><em class="property"> = 'J^{b}_{lu(LTE)}'</em><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesBlackBody.latex_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.j_blues.JBluesBlackBody.outputs">
+<code class="sig-name descname">outputs</code><em class="property"> = ('j_blues',)</em><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesBlackBody.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tardis.plasma.properties.j_blues.JBluesDetailed">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.plasma.properties.j_blues.</code><code class="sig-name descname">JBluesDetailed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plasma_parent</span></em>, <em class="sig-param"><span class="n">w_epsilon</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/j_blues.html#JBluesDetailed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesDetailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.plasma.properties.base.ProcessingPlasmaProperty</span></code></a></p>
+<dl class="py method">
+<dt id="tardis.plasma.properties.j_blues.JBluesDetailed.calculate">
+<code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">nu</span></em>, <em class="sig-param"><span class="n">t_rad</span></em>, <em class="sig-param"><span class="n">w</span></em>, <em class="sig-param"><span class="n">j_blues_norm_factor</span></em>, <em class="sig-param"><span class="n">j_blue_estimator</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/j_blues.html#JBluesDetailed.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesDetailed.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.j_blues.JBluesDetailed.latex_name">
+<code class="sig-name descname">latex_name</code><em class="property"> = 'J_{\\textrm{blue}}'</em><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesDetailed.latex_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.j_blues.JBluesDetailed.outputs">
+<code class="sig-name descname">outputs</code><em class="property"> = ('j_blues',)</em><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesDetailed.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tardis.plasma.properties.j_blues.JBluesDiluteBlackBody">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.plasma.properties.j_blues.</code><code class="sig-name descname">JBluesDiluteBlackBody</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plasma_parent</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/j_blues.html#JBluesDiluteBlackBody"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesDiluteBlackBody" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.plasma.properties.base.ProcessingPlasmaProperty</span></code></a></p>
+<dl class="py method">
+<dt id="tardis.plasma.properties.j_blues.JBluesDiluteBlackBody.calculate">
+<em class="property">static </em><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span></em>, <em class="sig-param"><span class="n">nu</span></em>, <em class="sig-param"><span class="n">t_rad</span></em>, <em class="sig-param"><span class="n">w</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/j_blues.html#JBluesDiluteBlackBody.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesDiluteBlackBody.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.j_blues.JBluesDiluteBlackBody.latex_name">
+<code class="sig-name descname">latex_name</code><em class="property"> = 'J_{\\textrm{blue}}'</em><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesDiluteBlackBody.latex_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.j_blues.JBluesDiluteBlackBody.outputs">
+<code class="sig-name descname">outputs</code><em class="property"> = ('j_blues',)</em><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesDiluteBlackBody.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tardis.plasma.properties.j_blues.JBluesEstimator">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.plasma.properties.j_blues.</code><code class="sig-name descname">JBluesEstimator</code><a class="reference internal" href="../_modules/tardis/plasma/properties/j_blues.html#JBluesEstimator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesEstimator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.DataFrameInput" title="tardis.plasma.properties.base.DataFrameInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.plasma.properties.base.DataFrameInput</span></code></a></p>
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.j_blues.JBluesEstimator.outputs">
+<code class="sig-name descname">outputs</code><em class="property"> = ('j_blue_estimator',)</em><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesEstimator.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tardis.plasma.properties.j_blues.JBluesNormFactor">
+<em class="property">class </em><code class="sig-prename descclassname">tardis.plasma.properties.j_blues.</code><code class="sig-name descname">JBluesNormFactor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plasma_parent</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/j_blues.html#JBluesNormFactor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesNormFactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tardis.plasma.properties.base.html#tardis.plasma.properties.base.ProcessingPlasmaProperty" title="tardis.plasma.properties.base.ProcessingPlasmaProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">tardis.plasma.properties.base.ProcessingPlasmaProperty</span></code></a></p>
+<dl class="py method">
+<dt id="tardis.plasma.properties.j_blues.JBluesNormFactor.calculate">
+<em class="property">static </em><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time_explosion</span></em>, <em class="sig-param"><span class="n">time_simulation</span></em>, <em class="sig-param"><span class="n">volume</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/properties/j_blues.html#JBluesNormFactor.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesNormFactor.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.j_blues.JBluesNormFactor.latex">
+<code class="sig-name descname">latex</code><em class="property"> = '\\frac{c time_\\textrm{simulation}}}{4\\pitime_\\textrm{simulation} volume}'</em><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesNormFactor.latex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="tardis.plasma.properties.j_blues.JBluesNormFactor.outputs">
+<code class="sig-name descname">outputs</code><em class="property"> = ('j_blues_norm_factor',)</em><a class="headerlink" href="#tardis.plasma.properties.j_blues.JBluesNormFactor.outputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

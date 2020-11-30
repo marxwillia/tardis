@@ -200,6 +200,7 @@
 <span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
 <span class="kn">from</span> <span class="nn">tardis.io.util</span> <span class="kn">import</span> <span class="n">HDFWriterMixin</span>
 
+
 <div class="viewcode-block" id="TARDISSpectrum"><a class="viewcode-back" href="../../../api/tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum">[docs]</a><span class="k">class</span> <span class="nc">TARDISSpectrum</span><span class="p">(</span><span class="n">HDFWriterMixin</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    TARDISSpectrum(_frequency, luminosity)</span>
@@ -213,116 +214,125 @@
 <span class="sd">    After manually adding a distance attribute, the properties &#39;flux_nu&#39; and</span>
 <span class="sd">    &#39;flux_lambda&#39; become available</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">hdf_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_frequency&#39;</span><span class="p">,</span> <span class="s1">&#39;luminosity&#39;</span><span class="p">]</span>
+
+    <span class="n">hdf_properties</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_frequency&quot;</span><span class="p">,</span> <span class="s2">&quot;luminosity&quot;</span><span class="p">]</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_frequency</span><span class="p">,</span> <span class="n">luminosity</span><span class="p">):</span>
 
         <span class="c1"># Check for correct inputs</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">_frequency</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">luminosity</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;shape of &#39;_frequency&#39; and &#39;luminosity&#39; are not compatible&quot;</span>
-                    <span class="s2">&quot;: &#39;</span><span class="si">{}</span><span class="s2">&#39; and &#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                        <span class="n">_frequency</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                        <span class="n">luminosity</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-                    <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_frequency</span> <span class="o">=</span> <span class="n">_frequency</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;Hz&#39;</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">spectral</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">luminosity</span> <span class="o">=</span> <span class="n">luminosity</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;erg / s&#39;</span><span class="p">)</span>
+                <span class="s2">&quot;shape of &#39;_frequency&#39; and &#39;luminosity&#39; are not compatible&quot;</span>
+                <span class="s2">&quot;: &#39;</span><span class="si">{}</span><span class="s2">&#39; and &#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">_frequency</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">luminosity</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_frequency</span> <span class="o">=</span> <span class="n">_frequency</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;Hz&quot;</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">spectral</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">luminosity</span> <span class="o">=</span> <span class="n">luminosity</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;erg / s&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frequency</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">delta_frequency</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frequency</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frequency</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;angstrom&#39;</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">spectral</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;angstrom&quot;</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">spectral</span><span class="p">())</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_nu</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">luminosity</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_frequency</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;erg / (s Hz)&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">luminosity</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_frequency</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;erg / (s Hz)&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_lambda</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">f_nu_to_f_lambda</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_nu</span><span class="p">,</span>
-                <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_nu</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">flux_nu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;always&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;always&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                <span class="s2">&quot;TARDISSpectrum.flux_nu is deprecated, &quot;</span>
-                <span class="s2">&quot;please use TARDISSpectrum.luminosity_to_flux() in the &quot;</span>
-                <span class="s2">&quot;future.&quot;</span><span class="p">,</span>
-                <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
+            <span class="s2">&quot;TARDISSpectrum.flux_nu is deprecated, &quot;</span>
+            <span class="s2">&quot;please use TARDISSpectrum.luminosity_to_flux() in the &quot;</span>
+            <span class="s2">&quot;future.&quot;</span><span class="p">,</span>
+            <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span>
+            <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_to_flux</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_nu</span><span class="p">,</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_nu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span>
+            <span class="p">)</span>
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
-                        <span class="s1">&#39;distance is required as attribute of&#39;</span>
-                        <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> to calculate &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
-                            <span class="s1">&#39;flux_nu&#39;</span>
-                            <span class="p">)</span>
-                        <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+                <span class="s2">&quot;distance is required as attribute of&quot;</span>
+                <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> to calculate &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;flux_nu&quot;</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">flux_lambda</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;always&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;always&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                <span class="s2">&quot;TARDISSpectrum.flux_lambda is deprecated, &quot;</span>
-                <span class="s2">&quot;please use TARDISSpectrum.luminosity_to_flux() in the &quot;</span>
-                <span class="s2">&quot;future.&quot;</span><span class="p">,</span>
-                <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
+            <span class="s2">&quot;TARDISSpectrum.flux_lambda is deprecated, &quot;</span>
+            <span class="s2">&quot;please use TARDISSpectrum.luminosity_to_flux() in the &quot;</span>
+            <span class="s2">&quot;future.&quot;</span><span class="p">,</span>
+            <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">,</span>
+            <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_to_flux</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_lambda</span><span class="p">,</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">distance</span>
-                    <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_lambda</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span>
+            <span class="p">)</span>
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
-                        <span class="s1">&#39;distance is required as attribute of&#39;</span>
-                        <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> to calculate &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
-                            <span class="s1">&#39;flux_lambda&#39;</span>
-                            <span class="p">)</span>
-                        <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+                <span class="s2">&quot;distance is required as attribute of&quot;</span>
+                <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> to calculate &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;flux_lambda&quot;</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
 
 <div class="viewcode-block" id="TARDISSpectrum.luminosity_to_flux"><a class="viewcode-back" href="../../../api/tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.luminosity_to_flux">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">luminosity_to_flux</span><span class="p">(</span><span class="n">luminosity</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">luminosity</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">distance</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;cm&#39;</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">luminosity</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">distance</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cm&quot;</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="TARDISSpectrum.f_nu_to_f_lambda"><a class="viewcode-back" href="../../../api/tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.f_nu_to_f_lambda">[docs]</a>    <span class="k">def</span> <span class="nf">f_nu_to_f_lambda</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f_nu</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">f_nu</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span></div>
 
-<div class="viewcode-block" id="TARDISSpectrum.plot"><a class="viewcode-back" href="../../../api/tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;wavelength&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="TARDISSpectrum.plot"><a class="viewcode-back" href="../../../api/tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;wavelength&quot;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">gca</span>
+
             <span class="n">ax</span> <span class="o">=</span> <span class="n">gca</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;wavelength&#39;</span><span class="p">:</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_lambda</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength [</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">_repr_latex_</span><span class="p">())</span>
-                <span class="p">)</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;wavelength&quot;</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_lambda</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span>
+                <span class="s2">&quot;Wavelength [</span><span class="si">{}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">_repr_latex_</span><span class="p">())</span>
+            <span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span>
-                    <span class="s1">&#39;Flux [</span><span class="si">{:s}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_lambda</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">_repr_latex_</span><span class="p">())</span>
-                    <span class="p">)</span>
+                <span class="s2">&quot;Flux [</span><span class="si">{:s}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_lambda</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">_repr_latex_</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                    <span class="s1">&#39;Did not find plotting mode </span><span class="si">{}</span><span class="s1">, doing nothing.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                        <span class="n">mode</span><span class="p">))</span></div>
+                <span class="s2">&quot;Did not find plotting mode </span><span class="si">{}</span><span class="s2">, doing nothing.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+            <span class="p">)</span></div>
 
-<div class="viewcode-block" id="TARDISSpectrum.to_ascii"><a class="viewcode-back" href="../../../api/tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.to_ascii">[docs]</a>    <span class="k">def</span> <span class="nf">to_ascii</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;luminosity_density&#39;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;luminosity_density&#39;</span><span class="p">:</span>
+<div class="viewcode-block" id="TARDISSpectrum.to_ascii"><a class="viewcode-back" href="../../../api/tardis.montecarlo.spectrum.html#tardis.montecarlo.spectrum.TARDISSpectrum.to_ascii">[docs]</a>    <span class="k">def</span> <span class="nf">to_ascii</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;luminosity_density&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;luminosity_density&quot;</span><span class="p">:</span>
             <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span>
-                    <span class="n">fname</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span>
+                <span class="n">fname</span><span class="p">,</span>
+                <span class="nb">list</span><span class="p">(</span>
+                    <span class="nb">zip</span><span class="p">(</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_lambda</span><span class="o">.</span><span class="n">value</span><span class="p">)))</span>
-        <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;flux&#39;</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">luminosity_density_lambda</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;flux&quot;</span><span class="p">:</span>
             <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span>
-                    <span class="n">fname</span><span class="p">,</span>
-                    <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flux_lambda</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+                <span class="n">fname</span><span class="p">,</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flux_lambda</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-                    <span class="s1">&#39;only mode &quot;luminosity_density&quot;&#39;</span>
-                    <span class="s1">&#39;and &quot;flux&quot; are implemented&#39;</span><span class="p">)</span></div></div>
+                <span class="s1">&#39;only mode &quot;luminosity_density&quot;&#39;</span> <span class="s1">&#39;and &quot;flux&quot; are implemented&#39;</span>
+            <span class="p">)</span></div></div>
 </pre></div>
 
            </div>

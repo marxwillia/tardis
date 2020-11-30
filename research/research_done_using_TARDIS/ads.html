@@ -1,0 +1,1053 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link href="../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/research/research_done_using_TARDIS/ads.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<p>This notebook is available at
+<a class="reference external" href="https://github.com/tardis-sn/tardis/tree/master/docs/research/research_done_using_TARDIS/ads.ipynb">https://github.com/tardis-sn/tardis/tree/master/docs/research/research_done_using_TARDIS/ads.ipynb</a>
+—-</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">ads</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">ads</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1">#Add your token</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">papers</span> <span class="o">=</span> <span class="n">ads</span><span class="o">.</span><span class="n">SearchQuery</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;(((full:&quot;tardis&quot; AND (full:&quot;kerzendorf&quot; OR (bibstem:&quot;Natur&quot; AND full:&quot;supernova&quot;)))) AND year:2014-)+property:refereed&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="p">,</span>
+                         <span class="n">fl</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bibcode&#39;</span><span class="p">,</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;bibstem&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+
+<span class="n">bibcodes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">bibstems</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">year_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">paper</span> <span class="ow">in</span> <span class="n">papers</span><span class="p">:</span>
+    <span class="n">bibcodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paper</span><span class="o">.</span><span class="n">bibcode</span><span class="p">)</span>
+    <span class="n">titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paper</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">bibstems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paper</span><span class="o">.</span><span class="n">bibstem</span><span class="p">)</span>
+    <span class="n">authors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paper</span><span class="o">.</span><span class="n">author</span><span class="p">)</span>
+    <span class="n">year_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">paper</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_url</span><span class="p">(</span><span class="n">bibcodes</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This function takes the list of bibcodes and returns a link!&quot;&quot;&quot;</span>
+    <span class="n">url_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">bibcode</span> <span class="ow">in</span> <span class="n">bibcodes</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://ui.adsabs.harvard.edu/abs/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bibcode</span><span class="p">)</span>
+        <span class="n">url_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">url_list</span>
+
+<span class="k">def</span> <span class="nf">get_hyperlink</span><span class="p">(</span><span class="n">bibcodes</span><span class="p">):</span>
+    <span class="n">hyperlink_list</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">get_url</span><span class="p">(</span><span class="n">bibcodes</span><span class="p">):</span>
+        <span class="n">hyperlink_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;`(ADS Link) &lt;</span><span class="si">{}</span><span class="s1">&gt;`_&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">hyperlink_list</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_journal</span><span class="p">(</span><span class="n">bibstems</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This function takes the list of bibstems and returns the journal that they are in, formatted.&quot;&quot;&quot;</span>
+    <span class="n">journals</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">bibstems</span><span class="p">:</span>
+        <span class="n">journals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">journals</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_authors_formatted</span><span class="p">(</span><span class="n">authors</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This gets the first 3 authors of each paper. If there are more than 3, the first 3 followed by &#39;et al.</span>
+<span class="sd">    is returned. If it&#39;s less than or equal to 3, the first 3 are returned. This function takes in a list and</span>
+<span class="sd">    returns a modified version of the list&quot;&quot;&quot;</span>
+    <span class="n">formatted_author_list</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">author_array</span> <span class="ow">in</span> <span class="n">authors</span><span class="p">:</span> <span class="c1">#Note that array is just being used as a variable, no array is used</span>
+        <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">author_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">author_array</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">count</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">author_string</span><span class="o">+=</span><span class="n">item</span>
+                <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">count</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">:</span>
+                <span class="n">author_string</span><span class="o">+=</span><span class="s2">&quot;, &quot;</span><span class="o">+</span><span class="n">item</span>
+                <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">count</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span>
+                <span class="n">author_string</span><span class="o">+=</span><span class="s2">&quot;, et al.&quot;</span>
+                <span class="k">break</span>
+        <span class="n">formatted_author_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">author_string</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">formatted_author_list</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_titles_formatted</span><span class="p">(</span><span class="n">titles</span><span class="p">):</span>
+    <span class="n">formatted_titles_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">titles</span><span class="p">:</span>
+        <span class="n">title_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">title</span><span class="p">:</span>
+            <span class="n">title_str</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="n">title_str</span><span class="o">=</span><span class="n">title_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &lt;SUP&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;* :sup:`&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;/SUP&gt;&quot;</span><span class="p">,</span><span class="s2">&quot;`\ *&quot;</span><span class="p">)</span>
+        <span class="n">formatted_titles_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title_str</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">formatted_titles_list</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">string_list</span><span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">year_list</span><span class="p">))):</span>
+    <span class="n">string_string</span> <span class="o">=</span> <span class="s2">&quot;    &quot;</span><span class="o">+</span><span class="s2">&quot;**</span><span class="si">{}</span><span class="s2">**&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">get_authors_formatted</span><span class="p">(</span><span class="n">authors</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="n">year_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;,</span><span class="se">\</span>
+<span class="s1"> &#39;</span><span class="o">+</span><span class="n">get_journal</span><span class="p">(</span><span class="n">bibstems</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;, &#39;</span><span class="o">+</span><span class="s1">&#39;*&quot;</span><span class="si">{}</span><span class="s1">&quot;*&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">get_titles_formatted</span><span class="p">(</span><span class="n">titles</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="n">get_hyperlink</span><span class="p">(</span><span class="n">bibcodes</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="n">string_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">string_string</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test_article</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;research_papers.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">heading</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;##################</span>
+<span class="s2">Papers Using TARDIS</span>
+<span class="s2">##################&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heading</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">test_article</span><span class="p">)</span>
+<span class="n">test_master</span> <span class="o">=</span> <span class="n">string_list</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">string_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">test_article</span><span class="p">)</span>
+<span class="n">test_article</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Authors&#39;</span><span class="p">:</span> <span class="n">get_authors_formatted</span><span class="p">(</span><span class="n">authors</span><span class="p">),</span> <span class="s1">&#39;Year&#39;</span><span class="p">:</span> <span class="n">year_list</span><span class="p">,</span> <span class="s1">&#39;Journal&#39;</span><span class="p">:</span> <span class="n">get_journal</span><span class="p">(</span><span class="n">bibstems</span><span class="p">),</span>
+     <span class="s1">&#39;Title&#39;</span><span class="p">:</span> <span class="n">get_titles_formatted</span><span class="p">(</span><span class="n">titles</span><span class="p">),</span> <span class="s1">&#39;Link&#39;</span><span class="p">:</span> <span class="n">get_url</span><span class="p">(</span><span class="n">bibcodes</span><span class="p">)}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Authors</th>
+      <th>Year</th>
+      <th>Journal</th>
+      <th>Title</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Magee, M. R., Maguire, K.</td>
+      <td>2020</td>
+      <td>A&amp;A</td>
+      <td>An investigation of* :sup:`56`\ *Ni shells as ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020A&amp;A...64...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Chen, Xingzhuo, Hu, Lei, Wang, Lifan</td>
+      <td>2020</td>
+      <td>ApJS</td>
+      <td>Artificial Intelligence-Assisted Inversion (AI...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020ApJS..25...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Miller, A. A., Magee, M. R., Polin, A., et al.</td>
+      <td>2020</td>
+      <td>ApJ</td>
+      <td>The Spectacular Ultraviolet Flash from the Pec...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020ApJ...89...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Gillanders, J. H., Sim, S. A., Smartt, S. J.</td>
+      <td>2020</td>
+      <td>MNRAS</td>
+      <td>AT2018kzr: the merger of an oxygen-neon white ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020MNRAS.49...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bouquin, Daina R., Chivvis, Daniel A., Henneke...</td>
+      <td>2020</td>
+      <td>ApJS</td>
+      <td>Credit Lost: Two Decades of Software Citation ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020ApJS..24...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Tomasella, Lina, Stritzinger, Maximilian, Bene...</td>
+      <td>2020</td>
+      <td>MNRAS</td>
+      <td>Observations of the low-luminosity Type Iax su...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020MNRAS.49...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Livneh, Ran, Katz, Boaz</td>
+      <td>2020</td>
+      <td>MNRAS</td>
+      <td>An asymmetric explosion mechanism may explain ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020MNRAS.49...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Kawabata, Miho, Maeda, Keiichi, Yamanaka, Masa...</td>
+      <td>2020</td>
+      <td>ApJ</td>
+      <td>SN 2019ein: New Insights into the Similarities...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020ApJ...89...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Srivastav, Shubham, Smartt, Stephen J., Leloud...</td>
+      <td>2020</td>
+      <td>ApJL</td>
+      <td>The Lowest of the Low: Discovery of SN 2019gsc...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020ApJ...89...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Magee, M. R., Maguire, K., Kotak, R., et al.</td>
+      <td>2020</td>
+      <td>A&amp;A</td>
+      <td>Determining the* :sup:`56`\ *Ni distribution o...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020A&amp;A...63...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Vogl, C., Kerzendorf, W. E., Sim, S. A., et al.</td>
+      <td>2020</td>
+      <td>A&amp;A</td>
+      <td>Spectral modeling of type II supernovae. II. A...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2020A&amp;A...63...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>McBrien, Owen R., Smartt, Stephen J., Chen, Ti...</td>
+      <td>2019</td>
+      <td>ApJL</td>
+      <td>SN2018kzr: A Rapidly Declining Transient from ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019ApJ...88...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Watson, Darach, Hansen, Camilla J., Selsing, J...</td>
+      <td>2019</td>
+      <td>Natur</td>
+      <td>Identification of strontium in the merger of t...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019Natur.57...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Jacobson-Galán, Wynn V., Foley, Ryan J., Schwa...</td>
+      <td>2019</td>
+      <td>MNRAS</td>
+      <td>Detection of circumstellar helium in Type Iax ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019MNRAS.48...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Noebauer, Ulrich M., Sim, Stuart A.</td>
+      <td>2019</td>
+      <td>LRCA</td>
+      <td>Monte Carlo radiative transfer</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019LRCA.......</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Chatzopoulos, E., Weide, K.</td>
+      <td>2019</td>
+      <td>ApJ</td>
+      <td>Gray Radiation Hydrodynamics with the FLASH Co...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019ApJ...87...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Mulligan, Brian W., Zhang, Kaicheng, Wheeler, ...</td>
+      <td>2019</td>
+      <td>MNRAS</td>
+      <td>Exploring the shell model of high-velocity fea...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019MNRAS.48...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Magee, M. R., Sim, S. A., Kotak, R., et al.</td>
+      <td>2019</td>
+      <td>A&amp;A</td>
+      <td>Detecting the signatures of helium in type Iax...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019A&amp;A...62...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Heringer, E., van Kerkwijk, M. H., Sim, S. A.,...</td>
+      <td>2019</td>
+      <td>ApJ</td>
+      <td>Spectral Sequences of Type Ia Supernovae. II. ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019ApJ...87...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Izzo, L., de Ugarte Postigo, A., Maeda, K., et...</td>
+      <td>2019</td>
+      <td>Natur</td>
+      <td>Signatures of a jet cocoon in early spectra of...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019Natur.56...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Vogl, C., Sim, S. A., Noebauer, U. M., et al.</td>
+      <td>2019</td>
+      <td>A&amp;A</td>
+      <td>Spectral modeling of type II supernovae. I. Di...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2019A&amp;A...62...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Ergon, M., Fransson, C., Jerkstrand, A., et al.</td>
+      <td>2018</td>
+      <td>A&amp;A</td>
+      <td>Monte-Carlo methods for NLTE spectral synthesi...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2018A&amp;A...62...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Barna, Barnabás, Szalai, Tamás, Kerzendorf, Wo...</td>
+      <td>2018</td>
+      <td>MNRAS</td>
+      <td>Type Iax supernovae as a few-parameter family</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2018MNRAS.48...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Prentice, S. J., Maguire, K., Smartt, S. J., e...</td>
+      <td>2018</td>
+      <td>ApJL</td>
+      <td>The Cow: Discovery of a Luminous, Hot, and Rap...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2018ApJ...86...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Beaujean, Frederik, Eggers, Hans C., Kerzendor...</td>
+      <td>2018</td>
+      <td>MNRAS</td>
+      <td>Bayesian modelling of uncertainties of Monte C...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2018MNRAS.47...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Magee, M. R., Sim, S. A., Kotak, R., et al.</td>
+      <td>2018</td>
+      <td>A&amp;A</td>
+      <td>Modelling the early time behaviour of type Ia ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2018A&amp;A...61...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Röpke, Friedrich K., Sim, Stuart A.</td>
+      <td>2018</td>
+      <td>SSRv</td>
+      <td>Models for Type Ia Supernovae and Related Astr...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2018SSRv..21...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Barna, Barnabás, Szalai, Tamás, Kromer, Markus...</td>
+      <td>2017</td>
+      <td>MNRAS</td>
+      <td>Abundance tomography of Type Iax SN 2011ay wit...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2017MNRAS.47...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Smartt, S. J., Chen, T. -W., Jerkstrand, A., e...</td>
+      <td>2017</td>
+      <td>Natur</td>
+      <td>A kilonova as the electromagnetic counterpart ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2017Natur.55...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Heringer, E., van Kerkwijk, M. H., Sim, S. A.,...</td>
+      <td>2017</td>
+      <td>ApJ</td>
+      <td>Spectral Sequences of Type Ia Supernovae. I. C...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2017ApJ...84...</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Magee, M. R., Kotak, R., Sim, S. A., et al.</td>
+      <td>2017</td>
+      <td>A&amp;A</td>
+      <td>Growing evidence that SNe Iax are not a one-pa...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2017A&amp;A...60...</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Boyle, Aoife, Sim, Stuart A., Hachinger, Steph...</td>
+      <td>2017</td>
+      <td>A&amp;A</td>
+      <td>Helium in double-detonation models of type Ia ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2017A&amp;A...59...</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Noebauer, U. M., Taubenberger, S., Blinnikov, ...</td>
+      <td>2016</td>
+      <td>MNRAS</td>
+      <td>Type Ia supernovae within dense carbon- and ox...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2016MNRAS.46...</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Inserra, C., Bulla, M., Sim, S. A., et al.</td>
+      <td>2016</td>
+      <td>ApJ</td>
+      <td>Spectropolarimetry of Superluminous Supernovae...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2016ApJ...83...</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Szalai, Tamás, Vinkó, József, Nagy, Andrea P.,...</td>
+      <td>2016</td>
+      <td>MNRAS</td>
+      <td>The continuing story of SN IIb 2013df: new opt...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2016MNRAS.46...</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Magee, M. R., Kotak, R., Sim, S. A., et al.</td>
+      <td>2016</td>
+      <td>A&amp;A</td>
+      <td>The type Iax supernova, SN 2015H. A white dwar...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2016A&amp;A...58...</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Dubernet, M. L., Antony, B. K., Ba, Y. A., et al.</td>
+      <td>2016</td>
+      <td>JPhB</td>
+      <td>The virtual atomic and molecular data centre (...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2016JPhB...4...</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Parrent, J. T., Howell, D. A., Fesen, R. A., e...</td>
+      <td>2016</td>
+      <td>MNRAS</td>
+      <td>Comparative analysis of SN 2012dn optical spec...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2016MNRAS.45...</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Young, P. R., Dere, K. P., Landi, E., et al.</td>
+      <td>2016</td>
+      <td>JPhB</td>
+      <td>The CHIANTI atomic database</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2016JPhB...4...</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Noebauer, U. M., Sim, S. A.</td>
+      <td>2015</td>
+      <td>MNRAS</td>
+      <td>Self-consistent modelling of line-driven hot-s...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2015MNRAS.45...</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Matthews, J. H., Knigge, C., Long, K. S., et al.</td>
+      <td>2015</td>
+      <td>MNRAS</td>
+      <td>The impact of accretion disc winds on the opti...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2015MNRAS.45...</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Kerzendorf, Wolfgang E., Sim, Stuart A.</td>
+      <td>2014</td>
+      <td>MNRAS</td>
+      <td>A spectral synthesis code for rapid modelling ...</td>
+      <td>https://ui.adsabs.harvard.edu/abs/2014MNRAS.44...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

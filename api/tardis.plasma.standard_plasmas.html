@@ -247,8 +247,31 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="tardis-plasma-standard-plasmas-module">
-<h1>tardis.plasma.standard_plasmas module<a class="headerlink" href="#tardis-plasma-standard-plasmas-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-tardis.plasma.standard_plasmas">
+<span id="tardis-plasma-standard-plasmas-module"></span><h1>tardis.plasma.standard_plasmas module<a class="headerlink" href="#module-tardis.plasma.standard_plasmas" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="tardis.plasma.standard_plasmas.assemble_plasma">
+<code class="sig-prename descclassname">tardis.plasma.standard_plasmas.</code><code class="sig-name descname">assemble_plasma</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">atom_data</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tardis/plasma/standard_plasmas.html#assemble_plasma"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tardis.plasma.standard_plasmas.assemble_plasma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a BasePlasma instance from a Configuration object
+and a Radial1DModel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config: ~io.config_reader.Configuration</strong></dt><dd></dd>
+<dt><strong>model: ~model.Radial1DModel</strong></dt><dd></dd>
+<dt><strong>atom_data: ~atomic.AtomData</strong></dt><dd><p>If None, an attempt will be made to read the atomic data
+from config.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>: ~plasma.BasePlasma</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 

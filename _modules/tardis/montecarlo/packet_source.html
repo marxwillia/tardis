@@ -200,44 +200,49 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">numexpr</span> <span class="k">as</span> <span class="nn">ne</span>
 <span class="kn">from</span> <span class="nn">tardis</span> <span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
+<span class="kn">from</span> <span class="nn">tardis.montecarlo</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">montecarlo_configuration</span> <span class="k">as</span> <span class="n">montecarlo_configuration</span><span class="p">,</span>
+<span class="p">)</span>
 
 
 <div class="viewcode-block" id="BasePacketSource"><a class="viewcode-back" href="../../../api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource">[docs]</a><span class="k">class</span> <span class="nc">BasePacketSource</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span>
         <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-        
+
 <div class="viewcode-block" id="BasePacketSource.create_packets"><a class="viewcode-back" href="../../../api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_packets">[docs]</a>    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
     <span class="k">def</span> <span class="nf">create_packets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="BasePacketSource.create_zero_limb_darkening_packet_mus"><a class="viewcode-back" href="../../../api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_zero_limb_darkening_packet_mus">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">create_zero_limb_darkening_packet_mus</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">create_zero_limb_darkening_packet_mus</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create zero-limb-darkening packet :math:`\mu` distributed</span>
 <span class="sd">        according to :math:`\\mu=\\sqrt{z}, z \isin [0, 1]`</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        no_of_packets : int</span>
 <span class="sd">            number of packets to be created</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">))</span></div>
+        <span class="c1"># For testing purposes</span>
+        <span class="k">if</span> <span class="n">montecarlo_configuration</span><span class="o">.</span><span class="n">LEGACY_MODE_ENABLED</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="BasePacketSource.create_uniform_packet_energies"><a class="viewcode-back" href="../../../api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_uniform_packet_energies">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">create_uniform_packet_energies</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">create_uniform_packet_energies</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Uniformly distribute energy in arbitrary units where the ensemble of </span>
-<span class="sd">        packets has energy of 1. </span>
+<span class="sd">        Uniformly distribute energy in arbitrary units where the ensemble of</span>
+<span class="sd">        packets has energy of 1.</span>
 
-<span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        no_of_packets : int</span>
 <span class="sd">            number of packets</span>
-<span class="sd">        </span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">            : numpy.ndarray</span>
@@ -245,33 +250,26 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">)</span> <span class="o">/</span> <span class="n">no_of_packets</span></div>
 
-
 <div class="viewcode-block" id="BasePacketSource.create_blackbody_packet_nus"><a class="viewcode-back" href="../../../api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BasePacketSource.create_blackbody_packet_nus">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">create_blackbody_packet_nus</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">no_of_packets</span><span class="p">,</span> <span class="n">l_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">create_blackbody_packet_nus</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">no_of_packets</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">l_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">        Create packet :math:`\\nu` distributed using the algorithm described in </span>
-<span class="sd">        Bjorkman &amp; Wood 2001 (page 4) which references </span>
+<span class="sd">        Create packet :math:`\\nu` distributed using the algorithm described in</span>
+<span class="sd">        Bjorkman &amp; Wood 2001 (page 4) which references</span>
 <span class="sd">        Carter &amp; Cashwell 1975:</span>
-
 <span class="sd">        First, generate a uniform random number, :math:`\\xi_0 \\in [0, 1]` and</span>
-<span class="sd">        determine the minimum value of </span>
+<span class="sd">        determine the minimum value of</span>
 <span class="sd">        :math:`l, l_{\\rm min}`, that satisfies the condition</span>
-
 <span class="sd">        .. math::</span>
 <span class="sd">            \\sum_{i=1}^{l} i^{-4} \\ge {{\\pi^4}\\over{90}} m_0 \\; .</span>
-<span class="sd">        </span>
-<span class="sd">        Next obtain four additional uniform random numbers (in the range 0 </span>
-<span class="sd">        to 1) :math:`\\xi_1, \\xi_2, \\xi_3, {\\rm and } \\xi_4`.  </span>
-<span class="sd">        </span>
+
+<span class="sd">        Next obtain four additional uniform random numbers (in the range 0</span>
+<span class="sd">        to 1) :math:`\\xi_1, \\xi_2, \\xi_3, {\\rm and } \\xi_4`.</span>
+
 <span class="sd">        Finally, the packet frequency is given by</span>
-<span class="sd">        </span>
+
 <span class="sd">        .. math::</span>
 <span class="sd">            x = -\\ln{(\\xi_1\\xi_2\\xi_3\\xi_4)}/l_{\\rm min}\\; .</span>
-
-
 <span class="sd">        where :math:`x=h\\nu/kT`</span>
-
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        T : float</span>
@@ -279,35 +277,38 @@
 <span class="sd">        no_of_packets: int</span>
 <span class="sd">        l_samples: int</span>
 <span class="sd">            number of l_samples needed in the algorithm</span>
-
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-
 <span class="sd">            : numpy.ndarray</span>
 <span class="sd">            array of frequencies</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">l_samples</span> <span class="o">=</span> <span class="n">l_samples</span>
-        <span class="n">l_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l_samples</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span><span class="o">**-</span><span class="mi">4</span><span class="p">)</span>
-        <span class="n">l_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="mf">90.0</span>
+        <span class="n">l_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l_samples</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">l_coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">/</span> <span class="mf">90.0</span>
 
-        <span class="n">xis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="n">no_of_packets</span><span class="p">))</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="n">l_array</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">xis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">l_coef</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.</span>
+        <span class="c1"># For testing purposes</span>
+        <span class="k">if</span> <span class="n">montecarlo_configuration</span><span class="o">.</span><span class="n">LEGACY_MODE_ENABLED</span><span class="p">:</span>
+            <span class="n">xis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="n">no_of_packets</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">xis</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="n">no_of_packets</span><span class="p">))</span>
+
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l_array</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">xis</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">l_coef</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0</span>
         <span class="n">xis_prod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">xis</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s1">&#39;-log(xis_prod)/l&#39;</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">ne</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s2">&quot;-log(xis_prod)/l&quot;</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">k_B</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">value</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="n">const</span><span class="o">.</span><span class="n">h</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">value</span></div></div>
 
 
 <div class="viewcode-block" id="BlackBodySimpleSource"><a class="viewcode-back" href="../../../api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource">[docs]</a><span class="k">class</span> <span class="nc">BlackBodySimpleSource</span><span class="p">(</span><span class="n">BasePacketSource</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Simple packet source that generates Blackbody packets for the Montecarlo </span>
+<span class="sd">    Simple packet source that generates Blackbody packets for the Montecarlo</span>
 <span class="sd">    part.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="BlackBodySimpleSource.create_packets"><a class="viewcode-back" href="../../../api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets">[docs]</a>    <span class="k">def</span> <span class="nf">create_packets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">no_of_packets</span><span class="p">):</span>
-        <span class="n">nus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_blackbody_packet_nus</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">no_of_packets</span><span class="p">)</span>
-        <span class="n">mus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_zero_limb_darkening_packet_mus</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">)</span>
-        <span class="n">energies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_uniform_packet_energies</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">)</span>
+<div class="viewcode-block" id="BlackBodySimpleSource.create_packets"><a class="viewcode-back" href="../../../api/tardis.montecarlo.packet_source.html#tardis.montecarlo.packet_source.BlackBodySimpleSource.create_packets">[docs]</a>    <span class="k">def</span> <span class="nf">create_packets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">no_of_packets</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
+        <span class="n">nus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_blackbody_packet_nus</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">no_of_packets</span><span class="p">,</span> <span class="n">rng</span><span class="p">)</span>
+        <span class="n">mus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_zero_limb_darkening_packet_mus</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">,</span> <span class="n">rng</span><span class="p">)</span>
+        <span class="n">energies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_uniform_packet_energies</span><span class="p">(</span><span class="n">no_of_packets</span><span class="p">,</span> <span class="n">rng</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">nus</span><span class="p">,</span> <span class="n">mus</span><span class="p">,</span> <span class="n">energies</span></div></div>
 </pre></div>

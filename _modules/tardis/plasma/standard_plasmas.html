@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.plasma.standard_plasmas &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link href="../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.plasma.standard_plasmas</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.plasma.standard_plasmas</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">tardis.io.atom_data</span> <span class="kn">import</span> <span class="n">AtomData</span>
+<span class="kn">from</span> <span class="nn">tardis.io.config_reader</span> <span class="kn">import</span> <span class="n">ConfigurationError</span>
+<span class="kn">from</span> <span class="nn">tardis.util.base</span> <span class="kn">import</span> <span class="n">species_string_to_tuple</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma</span> <span class="kn">import</span> <span class="n">BasePlasma</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.properties.property_collections</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">basic_inputs</span><span class="p">,</span>
+    <span class="n">basic_properties</span><span class="p">,</span>
+    <span class="n">lte_excitation_properties</span><span class="p">,</span>
+    <span class="n">lte_ionization_properties</span><span class="p">,</span>
+    <span class="n">macro_atom_properties</span><span class="p">,</span>
+    <span class="n">dilute_lte_excitation_properties</span><span class="p">,</span>
+    <span class="n">nebular_ionization_properties</span><span class="p">,</span>
+    <span class="n">non_nlte_properties</span><span class="p">,</span>
+    <span class="n">nlte_properties</span><span class="p">,</span>
+    <span class="n">helium_nlte_properties</span><span class="p">,</span>
+    <span class="n">helium_numerical_nlte_properties</span><span class="p">,</span>
+    <span class="n">helium_lte_properties</span><span class="p">,</span>
+    <span class="n">detailed_j_blues_properties</span><span class="p">,</span>
+    <span class="n">detailed_j_blues_inputs</span><span class="p">,</span>
+    <span class="n">continuum_interaction_properties</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">tardis.plasma.exceptions</span> <span class="kn">import</span> <span class="n">PlasmaConfigError</span>
+
+<span class="kn">from</span> <span class="nn">tardis.plasma.properties</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LevelBoltzmannFactorNLTE</span><span class="p">,</span>
+    <span class="n">JBluesBlackBody</span><span class="p">,</span>
+    <span class="n">JBluesDiluteBlackBody</span><span class="p">,</span>
+    <span class="n">JBluesDetailed</span><span class="p">,</span>
+    <span class="n">RadiationFieldCorrection</span><span class="p">,</span>
+    <span class="n">StimulatedEmissionFactor</span><span class="p">,</span>
+    <span class="n">HeliumNumericalNLTE</span><span class="p">,</span>
+    <span class="n">IonNumberDensity</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="assemble_plasma"><a class="viewcode-back" href="../../../api/tardis.plasma.standard_plasmas.html#tardis.plasma.standard_plasmas.assemble_plasma">[docs]</a><span class="k">def</span> <span class="nf">assemble_plasma</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">atom_data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a BasePlasma instance from a Configuration object</span>
+<span class="sd">    and a Radial1DModel.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    config: ~io.config_reader.Configuration</span>
+<span class="sd">    model: ~model.Radial1DModel</span>
+<span class="sd">    atom_data: ~atomic.AtomData</span>
+<span class="sd">        If None, an attempt will be made to read the atomic data</span>
+<span class="sd">        from config.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    : ~plasma.BasePlasma</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Convert the nlte species list to a proper format.</span>
+    <span class="n">nlte_species</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">species_string_to_tuple</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">nlte</span><span class="o">.</span><span class="n">species</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Convert the continuum interaction species list to a proper format.</span>
+    <span class="n">continuum_interaction_species</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">species_string_to_tuple</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">continuum_interaction</span><span class="o">.</span><span class="n">species</span>
+    <span class="p">]</span>
+    <span class="n">continuum_interaction_species</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span>
+        <span class="n">continuum_interaction_species</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;atomic_number&quot;</span><span class="p">,</span> <span class="s2">&quot;ion_number&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">atom_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;atom_data&quot;</span> <span class="ow">in</span> <span class="n">config</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">atom_data</span><span class="p">):</span>
+                <span class="n">atom_data_fname</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">atom_data</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">atom_data_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                    <span class="n">config</span><span class="o">.</span><span class="n">config_dirname</span><span class="p">,</span> <span class="n">config</span><span class="o">.</span><span class="n">atom_data</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No atom_data option found in the configuration.&quot;</span><span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Reading Atomic Data from </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">atom_data_fname</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">atom_data</span> <span class="o">=</span> <span class="n">AtomData</span><span class="o">.</span><span class="n">from_hdf</span><span class="p">(</span><span class="n">atom_data_fname</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="n">e</span><span class="p">,</span>
+                <span class="s2">&quot;Error might be from the use of an old-format of the atomic database, </span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="s2">&quot;please see https://github.com/tardis-sn/tardis-refdata/tree/master/atom_data&quot;</span>
+                <span class="s2">&quot; for the most recent version.&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">raise</span>
+
+    <span class="n">atom_data</span><span class="o">.</span><span class="n">prepare_atom_data</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">abundance</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="n">line_interaction_type</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">line_interaction_type</span><span class="p">,</span>
+        <span class="n">nlte_species</span><span class="o">=</span><span class="n">nlte_species</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Check if continuum interaction species are in selected_atoms</span>
+    <span class="n">continuum_atoms</span> <span class="o">=</span> <span class="n">continuum_interaction_species</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span>
+        <span class="s2">&quot;atomic_number&quot;</span>
+    <span class="p">)</span>
+    <span class="n">continuum_atoms_in_selected_atoms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span>
+        <span class="n">continuum_atoms</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">atom_data</span><span class="o">.</span><span class="n">selected_atomic_numbers</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">continuum_atoms_in_selected_atoms</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ConfigurationError</span><span class="p">(</span>
+            <span class="s2">&quot;Not all continuum interaction species &quot;</span>
+            <span class="s2">&quot;belong to atoms that have been specified &quot;</span>
+            <span class="s2">&quot;in the configuration.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">t_rad</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">t_radiative</span><span class="p">,</span>
+        <span class="n">abundance</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">abundance</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">density</span><span class="p">,</span>
+        <span class="n">atomic_data</span><span class="o">=</span><span class="n">atom_data</span><span class="p">,</span>
+        <span class="n">time_explosion</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">time_explosion</span><span class="p">,</span>
+        <span class="n">w</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">dilution_factor</span><span class="p">,</span>
+        <span class="n">link_t_rad_t_electron</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+        <span class="n">continuum_interaction_species</span><span class="o">=</span><span class="n">continuum_interaction_species</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">plasma_modules</span> <span class="o">=</span> <span class="n">basic_inputs</span> <span class="o">+</span> <span class="n">basic_properties</span>
+    <span class="n">property_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">continuum_interaction</span><span class="o">.</span><span class="n">species</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">continuum_interaction_properties</span>
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">radiative_rates_type</span> <span class="o">==</span> <span class="s2">&quot;blackbody&quot;</span><span class="p">:</span>
+        <span class="n">plasma_modules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">JBluesBlackBody</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">radiative_rates_type</span> <span class="o">==</span> <span class="s2">&quot;dilute-blackbody&quot;</span><span class="p">:</span>
+        <span class="n">plasma_modules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">JBluesDiluteBlackBody</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">radiative_rates_type</span> <span class="o">==</span> <span class="s2">&quot;detailed&quot;</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">detailed_j_blues_properties</span> <span class="o">+</span> <span class="n">detailed_j_blues_inputs</span>
+        <span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="n">r_inner</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">r_inner</span><span class="p">,</span>
+            <span class="n">t_inner</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">t_inner</span><span class="p">,</span>
+            <span class="n">volume</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">volume</span><span class="p">,</span>
+            <span class="n">j_blue_estimator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">property_kwargs</span><span class="p">[</span><span class="n">JBluesDetailed</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;w_epsilon&quot;</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">w_epsilon</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;radiative_rates_type type unknown - </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">radiative_rates_type</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">excitation</span> <span class="o">==</span> <span class="s2">&quot;lte&quot;</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">lte_excitation_properties</span>
+    <span class="k">elif</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">excitation</span> <span class="o">==</span> <span class="s2">&quot;dilute-lte&quot;</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">dilute_lte_excitation_properties</span>
+
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">ionization</span> <span class="o">==</span> <span class="s2">&quot;lte&quot;</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">lte_ionization_properties</span>
+    <span class="k">elif</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">ionization</span> <span class="o">==</span> <span class="s2">&quot;nebular&quot;</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">nebular_ionization_properties</span>
+
+    <span class="k">if</span> <span class="n">nlte_species</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">nlte_properties</span>
+        <span class="n">nlte_conf</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">nlte</span>
+        <span class="n">plasma_modules</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LevelBoltzmannFactorNLTE</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">nlte_conf</span><span class="p">))</span>
+        <span class="n">property_kwargs</span><span class="p">[</span><span class="n">StimulatedEmissionFactor</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">nlte_species</span><span class="o">=</span><span class="n">nlte_species</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">non_nlte_properties</span>
+
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">line_interaction_type</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;downbranch&quot;</span><span class="p">,</span> <span class="s2">&quot;macroatom&quot;</span><span class="p">):</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">macro_atom_properties</span>
+
+    <span class="k">if</span> <span class="s2">&quot;delta_treatment&quot;</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="p">:</span>
+        <span class="n">property_kwargs</span><span class="p">[</span><span class="n">RadiationFieldCorrection</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">delta_treatment</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">delta_treatment</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">helium_treatment</span> <span class="o">==</span> <span class="s2">&quot;recomb-nlte&quot;</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">helium_nlte_properties</span>
+    <span class="k">elif</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">helium_treatment</span> <span class="o">==</span> <span class="s2">&quot;numerical-nlte&quot;</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">helium_numerical_nlte_properties</span>
+        <span class="c1"># TODO: See issue #633</span>
+        <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">heating_rate_data_file</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">PlasmaConfigError</span><span class="p">(</span><span class="s2">&quot;Heating rate data file not specified&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">property_kwargs</span><span class="p">[</span><span class="n">HeliumNumericalNLTE</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+                <span class="n">heating_rate_data_file</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">heating_rate_data_file</span>
+            <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plasma_modules</span> <span class="o">+=</span> <span class="n">helium_lte_properties</span>
+
+    <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">_electron_densities</span><span class="p">:</span>
+        <span class="n">electron_densities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">_electron_densities</span><span class="o">.</span><span class="n">cgs</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">helium_treatment</span> <span class="o">==</span> <span class="s2">&quot;numerical-nlte&quot;</span><span class="p">:</span>
+            <span class="n">property_kwargs</span><span class="p">[</span><span class="n">IonNumberDensityHeNLTE</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+                <span class="n">electron_densities</span><span class="o">=</span><span class="n">electron_densities</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">property_kwargs</span><span class="p">[</span><span class="n">IonNumberDensity</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+                <span class="n">electron_densities</span><span class="o">=</span><span class="n">electron_densities</span>
+            <span class="p">)</span>
+
+    <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;helium_treatment&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">plasma</span><span class="o">.</span><span class="n">helium_treatment</span>
+
+    <span class="n">plasma</span> <span class="o">=</span> <span class="n">BasePlasma</span><span class="p">(</span>
+        <span class="n">plasma_properties</span><span class="o">=</span><span class="n">plasma_modules</span><span class="p">,</span>
+        <span class="n">property_kwargs</span><span class="o">=</span><span class="n">property_kwargs</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">plasma</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

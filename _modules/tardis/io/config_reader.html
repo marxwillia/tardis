@@ -436,9 +436,10 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Overrides HDFWriterMixin to obtain HDF properties from configuration keys</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
 <div class="viewcode-block" id="ConfigWriterMixin.get_properties"><a class="viewcode-back" href="../../../api/tardis.io.config_reader.html#tardis.io.config_reader.ConfigWriterMixin.get_properties">[docs]</a>    <span class="k">def</span> <span class="nf">get_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;config&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">})</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">})</span>
         <span class="k">return</span> <span class="n">data</span></div></div>
 
 
@@ -446,6 +447,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Tardis configuration class</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">hdf_name</span> <span class="o">=</span> <span class="s2">&quot;simulation&quot;</span>
 
 <div class="viewcode-block" id="Configuration.from_yaml"><a class="viewcode-back" href="../../../api/tardis.io.config_reader.html#tardis.io.config_reader.Configuration.from_yaml">[docs]</a>    <span class="nd">@classmethod</span>
@@ -555,21 +557,21 @@
 
 <div class="viewcode-block" id="cns_representer"><a class="viewcode-back" href="../../../api/tardis.io.config_reader.html#tardis.io.config_reader.cns_representer">[docs]</a><span class="k">def</span> <span class="nf">cns_representer</span><span class="p">(</span><span class="n">dumper</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Represents Configuration as dict</span>
+<span class="sd">     Represents Configuration as dict</span>
 
-<span class="sd">   Parameters</span>
-<span class="sd">    ----------</span>
+<span class="sd">    Parameters</span>
+<span class="sd">     ----------</span>
 
-<span class="sd">    dumper :</span>
-<span class="sd">        YAML dumper object</span>
+<span class="sd">     dumper :</span>
+<span class="sd">         YAML dumper object</span>
 
-<span class="sd">    data :</span>
-<span class="sd">        ConfigurationNameSpace object</span>
+<span class="sd">     data :</span>
+<span class="sd">         ConfigurationNameSpace object</span>
 
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
+<span class="sd">     Returns</span>
+<span class="sd">     -------</span>
 
-<span class="sd">    yaml dumper representation of Configuration as dict</span>
+<span class="sd">     yaml dumper representation of Configuration as dict</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">dumper</span><span class="o">.</span><span class="n">represent_dict</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">data</span><span class="p">))</span></div>

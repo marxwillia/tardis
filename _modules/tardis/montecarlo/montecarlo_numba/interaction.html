@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tardis.montecarlo.montecarlo_numba.interaction &mdash; TARDIS v3.0.dev1</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/tardis_logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href="../../../../_static/tardis.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> TARDIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/quickstart.html">Quickstart for TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../running/index.html">Running TARDIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The Physics of TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">Physics overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/plasma/index.html">Overview of plasma calculations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Research with TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../research/index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Team &amp; Credits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../governance.html">Governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../credits.html">Credits &amp; Publication Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing to TARDIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CONTRIBUTING.html">Contributing to TARDIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development/index.html">Developer Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CHANGELOG.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roadmap.html">Development Roadmap</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">tardis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../zreferences.html">TARDIS Papers and useful References</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">TARDIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>tardis.montecarlo.montecarlo_numba.interaction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tardis.montecarlo.montecarlo_numba.interaction</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+<span class="kn">from</span> <span class="nn">tardis.montecarlo.montecarlo_numba</span> <span class="kn">import</span> <span class="n">njit_dict</span>
+<span class="kn">from</span> <span class="nn">tardis.montecarlo.montecarlo_numba.numba_interface</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LineInteractionType</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">tardis.montecarlo</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">montecarlo_configuration</span> <span class="k">as</span> <span class="n">montecarlo_configuration</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">tardis.montecarlo.montecarlo_numba.r_packet</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_doppler_factor</span><span class="p">,</span>
+    <span class="n">get_inverse_doppler_factor</span><span class="p">,</span>
+    <span class="n">get_random_mu</span><span class="p">,</span>
+    <span class="n">angle_aberration_CMF_to_LF</span><span class="p">,</span>
+    <span class="n">test_for_close_line</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">tardis.montecarlo.montecarlo_numba.macro_atom</span> <span class="kn">import</span> <span class="n">macro_atom</span>
+
+
+<div class="viewcode-block" id="thomson_scatter"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.thomson_scatter">[docs]</a><span class="nd">@njit</span><span class="p">(</span><span class="o">**</span><span class="n">njit_dict</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">thomson_scatter</span><span class="p">(</span><span class="n">r_packet</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Thomson scattering — no longer line scattering</span>
+<span class="sd">    2) get the doppler factor at that position with the old angle</span>
+<span class="sd">    3) convert the current energy and nu into the comoving</span>
+<span class="sd">        frame with the old mu</span>
+<span class="sd">    4) Scatter and draw new mu - update mu</span>
+<span class="sd">    5) Transform the comoving energy and nu back using the new mu</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    r_packet : RPacket</span>
+<span class="sd">    time_explosion: float</span>
+<span class="sd">        time since explosion in seconds</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">old_doppler_factor</span> <span class="o">=</span> <span class="n">get_doppler_factor</span><span class="p">(</span>
+        <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="n">time_explosion</span>
+    <span class="p">)</span>
+    <span class="n">comov_nu</span> <span class="o">=</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">nu</span> <span class="o">*</span> <span class="n">old_doppler_factor</span>
+    <span class="n">comov_energy</span> <span class="o">=</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">energy</span> <span class="o">*</span> <span class="n">old_doppler_factor</span>
+    <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span> <span class="o">=</span> <span class="n">get_random_mu</span><span class="p">()</span>
+    <span class="n">inverse_new_doppler_factor</span> <span class="o">=</span> <span class="n">get_inverse_doppler_factor</span><span class="p">(</span>
+        <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="n">time_explosion</span>
+    <span class="p">)</span>
+
+    <span class="n">r_packet</span><span class="o">.</span><span class="n">nu</span> <span class="o">=</span> <span class="n">comov_nu</span> <span class="o">*</span> <span class="n">inverse_new_doppler_factor</span>
+    <span class="n">r_packet</span><span class="o">.</span><span class="n">energy</span> <span class="o">=</span> <span class="n">comov_energy</span> <span class="o">*</span> <span class="n">inverse_new_doppler_factor</span>
+    <span class="k">if</span> <span class="n">montecarlo_configuration</span><span class="o">.</span><span class="n">full_relativity</span><span class="p">:</span>
+        <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span> <span class="o">=</span> <span class="n">angle_aberration_CMF_to_LF</span><span class="p">(</span>
+            <span class="n">r_packet</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">,</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="line_scatter"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.line_scatter">[docs]</a><span class="nd">@njit</span><span class="p">(</span><span class="o">**</span><span class="n">njit_dict</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">line_scatter</span><span class="p">(</span><span class="n">r_packet</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">,</span> <span class="n">line_interaction_type</span><span class="p">,</span> <span class="n">numba_plasma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Line scatter function that handles the scattering itself, including new angle drawn, and calculating nu out using macro atom</span>
+<span class="sd">    r_packet: RPacket</span>
+<span class="sd">    time_explosion: float</span>
+<span class="sd">    line_interaction_type: enum</span>
+<span class="sd">    numba_plasma: NumbaPlasma</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">old_doppler_factor</span> <span class="o">=</span> <span class="n">get_doppler_factor</span><span class="p">(</span>
+        <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="n">time_explosion</span>
+    <span class="p">)</span>
+    <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span> <span class="o">=</span> <span class="n">get_random_mu</span><span class="p">()</span>
+
+    <span class="n">inverse_new_doppler_factor</span> <span class="o">=</span> <span class="n">get_inverse_doppler_factor</span><span class="p">(</span>
+        <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="n">time_explosion</span>
+    <span class="p">)</span>
+
+    <span class="n">comov_energy</span> <span class="o">=</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">energy</span> <span class="o">*</span> <span class="n">old_doppler_factor</span>
+    <span class="n">r_packet</span><span class="o">.</span><span class="n">energy</span> <span class="o">=</span> <span class="n">comov_energy</span> <span class="o">*</span> <span class="n">inverse_new_doppler_factor</span>
+
+    <span class="k">if</span> <span class="n">line_interaction_type</span> <span class="o">==</span> <span class="n">LineInteractionType</span><span class="o">.</span><span class="n">SCATTER</span><span class="p">:</span>
+        <span class="n">line_emission</span><span class="p">(</span>
+            <span class="n">r_packet</span><span class="p">,</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">next_line_id</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">,</span> <span class="n">numba_plasma</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># includes both macro atom and downbranch - encoded in the transition probabilities</span>
+        <span class="n">emission_line_id</span> <span class="o">=</span> <span class="n">macro_atom</span><span class="p">(</span><span class="n">r_packet</span><span class="p">,</span> <span class="n">numba_plasma</span><span class="p">)</span>
+        <span class="n">line_emission</span><span class="p">(</span><span class="n">r_packet</span><span class="p">,</span> <span class="n">emission_line_id</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">,</span> <span class="n">numba_plasma</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="line_emission"><a class="viewcode-back" href="../../../../api/tardis.montecarlo.montecarlo_numba.interaction.html#tardis.montecarlo.montecarlo_numba.interaction.line_emission">[docs]</a><span class="nd">@njit</span><span class="p">(</span><span class="o">**</span><span class="n">njit_dict</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">line_emission</span><span class="p">(</span><span class="n">r_packet</span><span class="p">,</span> <span class="n">emission_line_id</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">,</span> <span class="n">numba_plasma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sets the frequency of the RPacket properly given the emission channel</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    -----------</span>
+
+<span class="sd">    r_packet: RPacket</span>
+<span class="sd">    emission_line_id: int</span>
+<span class="sd">    time_explosion: float</span>
+<span class="sd">    numba_plasma: NumbaPlasma</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">r_packet</span><span class="o">.</span><span class="n">last_line_interaction_out_id</span> <span class="o">=</span> <span class="n">emission_line_id</span>
+
+    <span class="k">if</span> <span class="n">emission_line_id</span> <span class="o">!=</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">next_line_id</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="n">inverse_doppler_factor</span> <span class="o">=</span> <span class="n">get_inverse_doppler_factor</span><span class="p">(</span>
+        <span class="n">r_packet</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="n">time_explosion</span>
+    <span class="p">)</span>
+    <span class="n">r_packet</span><span class="o">.</span><span class="n">nu</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">[</span><span class="n">emission_line_id</span><span class="p">]</span> <span class="o">*</span> <span class="n">inverse_doppler_factor</span>
+    <span class="p">)</span>
+    <span class="n">r_packet</span><span class="o">.</span><span class="n">next_line_id</span> <span class="o">=</span> <span class="n">emission_line_id</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">nu_line</span> <span class="o">=</span> <span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">[</span><span class="n">emission_line_id</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">emission_line_id</span> <span class="o">!=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">numba_plasma</span><span class="o">.</span><span class="n">line_list_nu</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">test_for_close_line</span><span class="p">(</span>
+            <span class="n">r_packet</span><span class="p">,</span> <span class="n">emission_line_id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nu_line</span><span class="p">,</span> <span class="n">numba_plasma</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">montecarlo_configuration</span><span class="o">.</span><span class="n">full_relativity</span><span class="p">:</span>
+        <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span> <span class="o">=</span> <span class="n">angle_aberration_CMF_to_LF</span><span class="p">(</span>
+            <span class="n">r_packet</span><span class="p">,</span> <span class="n">time_explosion</span><span class="p">,</span> <span class="n">r_packet</span><span class="o">.</span><span class="n">mu</span>
+        <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2013, TARDIS collaboration
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

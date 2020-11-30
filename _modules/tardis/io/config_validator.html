@@ -237,11 +237,17 @@
                     <span class="n">instance</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">property</span><span class="p">,</span> <span class="n">subschema</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">])</span>
 
         <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">validate_properties</span><span class="p">(</span>
-            <span class="n">validator</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">schema</span><span class="p">,</span>
+            <span class="n">validator</span><span class="p">,</span>
+            <span class="n">properties</span><span class="p">,</span>
+            <span class="n">instance</span><span class="p">,</span>
+            <span class="n">schema</span><span class="p">,</span>
         <span class="p">):</span>
             <span class="k">yield</span> <span class="n">error</span>
 
-    <span class="k">return</span> <span class="n">validators</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">validator_class</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="n">set_defaults</span><span class="p">},)</span></div>
+    <span class="k">return</span> <span class="n">validators</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+        <span class="n">validator_class</span><span class="p">,</span>
+        <span class="p">{</span><span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="n">set_defaults</span><span class="p">},</span>
+    <span class="p">)</span></div>
 
 
 <span class="n">DefaultDraft4Validator</span> <span class="o">=</span> <span class="n">extend_with_default</span><span class="p">(</span><span class="n">Draft4Validator</span><span class="p">)</span>
